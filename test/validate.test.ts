@@ -1,34 +1,44 @@
-import configSchema from "../src/config.schema.json";
+import configSchemaV2 from "../src/config-v2.schema.json";
+import configSchemaV3 from "../src/config-v3.schema.json";
 import {
-  ConfigMinimumExample,
+  ConfigMinimumExampleV2,
+  ConfigMinimumExampleV3,
   ErrorHostname,
   ErrorNoWallet,
   ErrorUri,
 } from "../src/examples/config-file";
 import { validateConfig } from "../src/helpers/validate-config";
 
-describe("validateConfig", () => {
+describe("validateConfig v2", () => {
   test("should not throw for minimum config example", () => {
     expect(() =>
-      validateConfig(configSchema, ConfigMinimumExample),
+      validateConfig(configSchemaV2, ConfigMinimumExampleV2),
     ).not.toThrow();
   });
 
   test("should throw error for no wallet", () => {
-    expect(() => validateConfig(configSchema, ErrorNoWallet)).toThrow(
+    expect(() => validateConfig(configSchemaV2, ErrorNoWallet)).toThrow(
       /wallet must be object/,
     );
   });
 
   test("should throw error for documentStorage format", () => {
-    expect(() => validateConfig(configSchema, ErrorUri)).toThrow(
+    expect(() => validateConfig(configSchemaV2, ErrorUri)).toThrow(
       /url must match format \"uri\"/,
     );
   });
 
   test("should throw error for location format", () => {
-    expect(() => validateConfig(configSchema, ErrorHostname)).toThrow(
+    expect(() => validateConfig(configSchemaV2, ErrorHostname)).toThrow(
       /location must match format/,
     );
+  });
+});
+
+describe("validateConfig v3", () => {
+  test("should not throw for minimum config example", () => {
+    expect(() =>
+      validateConfig(configSchemaV3, ConfigMinimumExampleV3),
+    ).not.toThrow();
   });
 });

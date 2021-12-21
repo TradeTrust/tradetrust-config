@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
-import configSchema from "./config.schema.json";
-import { configFile } from "./examples/config-file";
+import configSchemaV2 from "./config-v2.schema.json";
+import configSchemaV3 from "./config-v3.schema.json";
+import { configFileV2, configFileV3 } from "./examples/config-file";
 import { validateConfig } from "./helpers/validate-config";
 // import wallet from "./common/wallet.json";
 // import { getUpdateForms } from "@govtechsg/open-attestation-cli/src/implementations/config/helpers";
@@ -13,6 +14,17 @@ import { validateConfig } from "./helpers/validate-config";
 // const DNS_DID = "demo-tradetrust.openattestation.com";
 
 const DIR = path.join(__dirname, "../build");
+
+const writeConfigFile = (configFile: any, fileName: string) => {
+  fs.writeFile(
+    `${DIR}/${fileName}.json`,
+    JSON.stringify(configFile, null, 2),
+    (err: any) => {
+      if (err) throw err;
+      console.info(`The ${fileName} has been saved!`);
+    },
+  );
+};
 
 const generateConfig = async () => {
   try {
@@ -31,20 +43,15 @@ const generateConfig = async () => {
     //   forms: updatedForms,
     // };
 
-    validateConfig(configSchema, configFile);
+    validateConfig(configSchemaV2, configFileV2);
+    // validateConfig(configSchemaV3, configFileV3);
 
     if (!fs.existsSync(DIR)) {
       fs.mkdirSync(DIR);
     }
 
-    fs.writeFile(
-      `${DIR}/config-sample.json`,
-      JSON.stringify(configFile, null, 2),
-      (err: any) => {
-        if (err) throw err;
-        console.info("The sample config file has been saved!");
-      },
-    );
+    writeConfigFile(configFileV2, "config-sample-v2");
+    // writeConfigFile(configFileV3, "config-sample-v3");
   } catch (err) {
     console.error(err);
   }
