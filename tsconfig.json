@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "sourceMap": true
+  }
+}
