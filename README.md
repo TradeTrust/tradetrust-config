@@ -1,4 +1,4 @@
-### TradeTrust config
+# TradeTrust config
 
 Repository to house TradeTrust config schema + various configs used in TradeTrust creator.
 
@@ -14,4 +14,4 @@ Repository to house TradeTrust config schema + various configs used in TradeTrus
 
 ### Config file
 
-Example config file -> https://github.com/TradeTrust/tradetrust-config/blob/master/build/config-sample.json
+Example [config file](https://github.com/TradeTrust/tradetrust-config/blob/master/build/config-sample.json).
