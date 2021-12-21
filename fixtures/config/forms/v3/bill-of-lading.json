@@ -15,9 +15,23 @@
         "type": "EMBEDDED_RENDERER",
         "name": "BILL_OF_LADING",
         "url": "https://generic-templates.tradetrust.io"
+      },
+      "proof": {
+        "type": "OpenAttestationProofMethod",
+        "method": "TOKEN_REGISTRY",
+        "value": "0x72d9a82203Ef9177239A5E3cB7A8FB9a78D04f17"
+      },
+      "identityProof": {
+        "type": "DNS-TXT",
+        "identifier": "demo-tradetrust.openattestation.com"
       }
     },
-    "credentialSubject": {}
+    "credentialSubject": {},
+    "issuer": {
+      "id": "https://example.com",
+      "name": "DEMO DOCUMENT STORE",
+      "type": "OpenAttestationIssuer"
+    }
   },
   "schema": {
     "type": "object",
