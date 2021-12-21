@@ -1,6 +1,6 @@
 import path from "path";
-import wallet from "./wallet.json";
-import { getForms } from "./utils";
+import wallet from "../../fixtures/config/wallet/wallet.json";
+import { getForms } from "../utils/utils";
 
 const dirFormsV2 = path.join(__dirname, "../../fixtures/config/forms/v2");
 const documentFormsV2 = getForms(dirFormsV2);

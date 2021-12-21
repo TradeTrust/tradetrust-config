@@ -4,8 +4,8 @@ import {
   ErrorHostname,
   ErrorNoWallet,
   ErrorUri,
-} from "../src/common/config-file";
-import { validateConfig } from "../src/common/validate-config";
+} from "../src/examples/config-file";
+import { validateConfig } from "../src/helpers/validate-config";
 
 describe("validateConfig", () => {
   test("should not throw for minimum config example", () => {

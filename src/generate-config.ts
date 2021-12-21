@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
 import configSchema from "./config.schema.json";
-import { configFile } from "./common/config-file";
-import { validateConfig } from "./common/validate-config";
+import { configFile } from "./examples/config-file";
+import { validateConfig } from "./helpers/validate-config";
 // import wallet from "./common/wallet.json";
 // import { getUpdateForms } from "@govtechsg/open-attestation-cli/src/implementations/config/helpers";
 
