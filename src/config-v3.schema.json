@@ -1,0 +1,204 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/TradeTrust/tradetrust-config/master/src/config-v3.schema.json",
+  "type": "object",
+  "required": ["network", "wallet", "forms"],
+  "properties": {
+    "network": {
+      "type": "string",
+      "enum": ["ropsten", "rinkeby", "homestead", "local"]
+    },
+    "wallet": {
+      "anyOf": [
+        {
+          "required": ["type", "encryptedJson"],
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["ENCRYPTED_JSON"]
+            },
+            "encryptedJson": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "required": ["type", "accessKeyId", "region", "kmsKeyId"],
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["AWS_KMS"]
+            },
+            "accessKeyId": {
+              "type": "string"
+            },
+            "region": {
+              "type": "string"
+            },
+            "kmsKeyId": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "string",
+          "minLength": 1
+        }
+      ]
+    },
+    "forms": {
+      "type": "array",
+      "items": {
+        "required": ["name", "type", "defaults", "schema"],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Used for document file name."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["VERIFIABLE_DOCUMENT", "TRANSFERABLE_RECORD"]
+          },
+          "defaults": {
+            "required": ["version", "@context", "type", "issuanceDate"],
+            "type": "object",
+            "properties": {
+              "version": {
+                "type": "string",
+                "format": "uri"
+              },
+              "@context": {
+                "type": "array"
+              },
+              "type": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": ["VerifiableCredential", "OpenAttestationCredential"]
+                }
+              },
+              "issuanceDate": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "openAttestationMetadata": {
+                "required": ["template", "proof", "identityProof"],
+                "type": "object",
+                "properties": {
+                  "template": {
+                    "required": ["type", "name", "url"],
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": ["EMBEDDED_RENDERER"]
+                      },
+                      "name": {
+                        "type": "string",
+                        "enum": ["BILL_OF_LADING", "CHAFTA_COO", "INVOICE"]
+                      },
+                      "url": {
+                        "type": "string",
+                        "format": "uri"
+                      }
+                    }
+                  },
+                  "proof": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": ["OpenAttestationProofMethod"]
+                      },
+                      "method": {
+                        "type": "string",
+                        "enum": ["DOCUMENT_STORE", "TOKEN_REGISTRY"]
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "identityProof": {
+                    "required": ["type", "identifier"],
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": ["DNS-TXT", "DNS-DID", "DID"]
+                      },
+                      "identifier": {
+                        "type": "string",
+                        "format": "hostname"
+                      }
+                    }
+                  }
+                }
+              },
+              "credentialSubject": {
+                "type": "object"
+              },
+              "issuer": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": ["OpenAttestationIssuer"]
+                  }
+                }
+              }
+            }
+          },
+          "schema": {
+            "type": "object"
+          },
+          "uiSchema": {
+            "type": "object"
+          },
+          "attachments": {
+            "required": ["allow"],
+            "type": "object",
+            "properties": {
+              "allow": {
+                "type": "boolean"
+              },
+              "accept": {
+                "type": "string"
+              }
+            }
+          },
+          "extension": {
+            "type": "string",
+            "enum": ["json", "tt", "oc"]
+          },
+          "fileName": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "documentStorage": {
+      "required": ["url"],
+      "type": "object",
+      "properties": {
+        "apiKey": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/TradeTrust/tradetrust-config/master/src/config.schema.json",
+  "$id": "https://raw.githubusercontent.com/TradeTrust/tradetrust-config/master/src/config-v2.schema.json",
   "type": "object",
   "required": ["network", "wallet", "forms"],
   "properties": {
