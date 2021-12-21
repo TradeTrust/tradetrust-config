@@ -34,7 +34,7 @@ export const configFileV3 = {
 
 export const ConfigMinimumExampleV2 = {
   network: "ropsten",
-  wallet: "123",
+  wallet: walletConfig,
   forms: [
     {
       name: "Foobar",
@@ -64,7 +64,7 @@ export const ConfigMinimumExampleV2 = {
 
 export const ConfigMinimumExampleV3 = {
   network: "ropsten",
-  wallet: "123",
+  wallet: walletConfig,
   forms: [
     {
       name: "Foobar",

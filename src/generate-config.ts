@@ -28,6 +28,8 @@ const writeConfigFile = (configFile: any, fileName: string) => {
 
 const generateConfig = async () => {
   try {
+    // TODO: getUpdateForms to cater to v2, v3 forms
+
     // const { forms } = configFile;
     // const updatedForms = getUpdateForms({
     //   walletAddress: wallet.address,
@@ -43,15 +45,16 @@ const generateConfig = async () => {
     //   forms: updatedForms,
     // };
 
+    // TODO: currently using hardcode addresses from fixtures
     validateConfig(configSchemaV2, configFileV2);
-    // validateConfig(configSchemaV3, configFileV3);
+    validateConfig(configSchemaV3, configFileV3);
 
     if (!fs.existsSync(DIR)) {
       fs.mkdirSync(DIR);
     }
 
     writeConfigFile(configFileV2, "config-sample-v2");
-    // writeConfigFile(configFileV3, "config-sample-v3");
+    writeConfigFile(configFileV3, "config-sample-v3");
   } catch (err) {
     console.error(err);
   }

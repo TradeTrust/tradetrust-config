@@ -15,9 +15,23 @@
         "type": "EMBEDDED_RENDERER",
         "name": "CHAFTA_COO",
         "url": "https://generic-templates.tradetrust.io"
+      },
+      "proof": {
+        "type": "OpenAttestationProofMethod",
+        "method": "DOCUMENT_STORE",
+        "value": "0x8bA63EAB43342AAc3AdBB4B827b68Cf4aAE5Caca"
+      },
+      "identityProof": {
+        "type": "DNS-TXT",
+        "identifier": "demo-tradetrust.openattestation.com"
       }
     },
-    "credentialSubject": {}
+    "credentialSubject": {},
+    "issuer": {
+      "id": "https://example.com",
+      "name": "DEMO DOCUMENT STORE",
+      "type": "OpenAttestationIssuer"
+    }
   },
   "schema": {
     "type": "object",

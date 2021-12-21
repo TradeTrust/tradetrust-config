@@ -14,4 +14,11 @@ Repository to house TradeTrust config schema + various configs used in TradeTrus
 
 ### Config file
 
-Example [config file](https://github.com/TradeTrust/tradetrust-config/blob/master/build/config-sample-v2.json).
+Example v2 [config file](https://github.com/TradeTrust/tradetrust-config/blob/master/build/config-sample-v2.json).
+Example v3 [config file](https://github.com/TradeTrust/tradetrust-config/blob/master/build/config-sample-v3.json).
+
+### Create config with OA CLI
+
+`open-attestation config create --output-dir ./example-configs --encrypted-wallet-path </path/to>/wallet.json --config-template-url https://raw.githubusercontent.com/TradeTrust/tradetrust-config/master/build/config-sample-v2.json`
+
+Read more at [here](https://github.com/Open-Attestation/open-attestation-cli#method-1-using-config-template-url-option-recommended).
