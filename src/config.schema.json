@@ -1,0 +1,196 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://localhost:4000/configCreator",
+  "type": "object",
+  "required": ["network", "wallet", "forms"],
+  "properties": {
+    "network": {
+      "type": "string",
+      "enum": ["ropsten", "rinkeby", "homestead", "local"]
+    },
+    "wallet": {
+      "anyOf": [
+        {
+          "required": ["type", "encryptedJson"],
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["ENCRYPTED_JSON"]
+            },
+            "encryptedJson": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "required": ["type", "accessKeyId", "region", "kmsKeyId"],
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["AWS_KMS"]
+            },
+            "accessKeyId": {
+              "type": "string"
+            },
+            "region": {
+              "type": "string"
+            },
+            "kmsKeyId": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "string",
+          "minLength": 1
+        }
+      ]
+    },
+    "forms": {
+      "type": "array",
+      "items": {
+        "required": ["name", "type", "defaults", "schema"],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Used for document file name."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["VERIFIABLE_DOCUMENT", "TRANSFERABLE_RECORD"]
+          },
+          "defaults": {
+            "required": ["$template", "issuers"],
+            "type": "object",
+            "properties": {
+              "$template": {
+                "required": ["type", "name", "url"],
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": ["EMBEDDED_RENDERER"]
+                  },
+                  "name": {
+                    "type": "string",
+                    "enum": [
+                      "BILL_OF_LADING",
+                      "CHAFTA_COO",
+                      "COVERING_LETTER",
+                      "INVOICE",
+                      "SIMPLE_COO"
+                    ]
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                }
+              },
+              "issuers": {
+                "type": "array",
+                "items": {
+                  "anyOf": [
+                    {
+                      "required": ["name", "documentStore", "identityProof"],
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "documentStore": {
+                          "type": "string"
+                        },
+                        "identityProof": {
+                          "required": ["type", "location"],
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": ["DNS-TXT", "DNS-DID", "DID"]
+                            },
+                            "location": {
+                              "type": "string",
+                              "format": "hostname"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "required": ["name", "tokenRegistry", "identityProof"],
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "tokenRegistry": {
+                          "type": "string"
+                        },
+                        "identityProof": {
+                          "required": ["type", "location"],
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": ["DNS-TXT", "DNS-DID", "DID"]
+                            },
+                            "location": {
+                              "type": "string",
+                              "format": "hostname"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "schema": {
+            "type": "object"
+          },
+          "uiSchema": {
+            "type": "object"
+          },
+          "attachments": {
+            "required": ["allow"],
+            "type": "object",
+            "properties": {
+              "allow": {
+                "type": "boolean"
+              },
+              "accept": {
+                "type": "string"
+              }
+            }
+          },
+          "extension": {
+            "type": "string",
+            "enum": ["json", "tt", "oc"]
+          },
+          "fileName": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "documentStorage": {
+      "required": ["url"],
+      "type": "object",
+      "properties": {
+        "apiKey": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    }
+  }
+}
