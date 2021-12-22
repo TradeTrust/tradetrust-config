@@ -3,9 +3,7 @@ import path from "path";
 import configSchemaV2 from "./config-v2.schema.json";
 import configSchemaV3 from "./config-v3.schema.json";
 import { configFileV2, configFileV3 } from "./examples/config-file";
-import { validateConfig } from "./helpers/validate-config";
-// import wallet from "./common/wallet.json";
-// import { getUpdateForms } from "@govtechsg/open-attestation-cli/src/implementations/config/helpers";
+import { validateConfig } from "./helpers/helpers";
 
 // const DOCUMENT_STORE_ADDRESS = "0x8bA63EAB43342AAc3AdBB4B827b68Cf4aAE5Caca";
 // const TOKEN_REGISTRY_ADDRESS = "0x72d9a82203Ef9177239A5E3cB7A8FB9a78D04f17";
@@ -29,21 +27,6 @@ const writeConfigFile = (configFile: any, fileName: string) => {
 const generateConfig = async () => {
   try {
     // TODO: getUpdateForms to cater to v2, v3 forms
-
-    // const { forms } = configFile;
-    // const updatedForms = getUpdateForms({
-    //   walletAddress: wallet.address,
-    //   forms,
-    //   documentStoreAddress: DOCUMENT_STORE_ADDRESS,
-    //   tokenRegistryAddress: TOKEN_REGISTRY_ADDRESS,
-    //   dnsVerifiable: DNS_VERIFIABLE,
-    //   dnsDid: DNS_TRANSFERABLE_RECORD,
-    //   dnsTransferableRecord: DNS_DID,
-    // });
-    // const updatedConfigFile = {
-    //   ...configFile,
-    //   forms: updatedForms,
-    // };
 
     // TODO: currently using hardcode addresses from fixtures
     validateConfig(configSchemaV2, configFileV2);

@@ -7,7 +7,7 @@ import {
   ErrorNoWallet,
   ErrorUri,
 } from "../src/examples/config-file";
-import { validateConfig } from "../src/helpers/validate-config";
+import { validateConfig } from "../src/helpers/helpers";
 
 describe("validateConfig v2", () => {
   test("should not throw for minimum config example", () => {

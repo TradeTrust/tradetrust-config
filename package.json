@@ -28,7 +28,6 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@govtechsg/open-attestation-cli": "^1.47.0",
     "ajv": "^8.8.2",
     "ajv-formats": "^2.1.1"
   }
