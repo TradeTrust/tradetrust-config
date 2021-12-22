@@ -94,8 +94,20 @@
                       "required": ["name", "documentStore", "identityProof"],
                       "type": "object",
                       "properties": {
+                        "id": {
+                          "type": "string"
+                        },
                         "name": {
                           "type": "string"
+                        },
+                        "revocation": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": ["NONE", "REVOCATION_STORE"]
+                            }
+                          }
                         },
                         "documentStore": {
                           "type": "string"
@@ -111,6 +123,9 @@
                             "location": {
                               "type": "string",
                               "format": "hostname"
+                            },
+                            "key": {
+                              "type": "string"
                             }
                           }
                         }
