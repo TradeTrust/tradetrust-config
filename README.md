@@ -19,6 +19,8 @@ Example v3 [config file](https://github.com/TradeTrust/tradetrust-config/blob/ma
 
 ### Create config with OA CLI
 
-`open-attestation config create --output-dir ./example-configs --encrypted-wallet-path </path/to>/wallet.json --config-template-url https://raw.githubusercontent.com/TradeTrust/tradetrust-config/master/build/config-sample-v2.json`
+```
+open-attestation config create --output-dir ./example-configs --encrypted-wallet-path </path/to>/wallet.json --config-template-url https://raw.githubusercontent.com/TradeTrust/tradetrust-config/master/build/config-sample-v2.json
+```
 
 Read more at [here](https://github.com/Open-Attestation/open-attestation-cli#method-1-using-config-template-url-option-recommended).
