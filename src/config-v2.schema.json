@@ -9,7 +9,7 @@
       "enum": ["ropsten", "rinkeby", "homestead", "local"]
     },
     "wallet": {
-      "anyOf": [
+      "oneOf": [
         {
           "required": ["type", "encryptedJson"],
           "type": "object",
@@ -89,27 +89,15 @@
               "issuers": {
                 "type": "array",
                 "items": {
-                  "anyOf": [
+                  "oneOf": [
                     {
                       "required": ["name", "documentStore", "identityProof"],
                       "type": "object",
                       "properties": {
-                        "id": {
+                        "documentStore": {
                           "type": "string"
                         },
                         "name": {
-                          "type": "string"
-                        },
-                        "revocation": {
-                          "type": "object",
-                          "properties": {
-                            "type": {
-                              "type": "string",
-                              "enum": ["NONE", "REVOCATION_STORE"]
-                            }
-                          }
-                        },
-                        "documentStore": {
                           "type": "string"
                         },
                         "identityProof": {
@@ -128,6 +116,18 @@
                               "type": "string"
                             }
                           }
+                        },
+                        "id": {
+                          "type": "string"
+                        },
+                        "revocation": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": ["NONE", "REVOCATION_STORE"]
+                            }
+                          }
                         }
                       }
                     },
@@ -135,10 +135,10 @@
                       "required": ["name", "tokenRegistry", "identityProof"],
                       "type": "object",
                       "properties": {
-                        "name": {
+                        "tokenRegistry": {
                           "type": "string"
                         },
-                        "tokenRegistry": {
+                        "name": {
                           "type": "string"
                         },
                         "identityProof": {

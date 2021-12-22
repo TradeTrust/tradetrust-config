@@ -9,7 +9,7 @@
       "enum": ["ropsten", "rinkeby", "homestead", "local"]
     },
     "wallet": {
-      "anyOf": [
+      "oneOf": [
         {
           "required": ["type", "encryptedJson"],
           "type": "object",
