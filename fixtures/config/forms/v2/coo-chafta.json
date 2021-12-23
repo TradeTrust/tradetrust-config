@@ -10,10 +10,10 @@
     "issuers": [
       {
         "name": "Demo Issuer",
-        "documentStore": "0x8bA63EAB43342AAc3AdBB4B827b68Cf4aAE5Caca",
+        "documentStore": "<DOCUMENT_STORE_ADDRESS>",
         "identityProof": {
           "type": "DNS-TXT",
-          "location": "demo-tradetrust.openattestation.com"
+          "location": "example.com"
         }
       }
     ]
