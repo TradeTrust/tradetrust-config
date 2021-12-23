@@ -45,8 +45,11 @@ export const getConfigWithUpdatedFormsV2 = ({
             issuer.identityProof.type === "DNS-DID"
           ) {
             issuer.id = `did:ethr:0x${walletAddress}`;
-            issuer.identityProof.location = dnsDid;
             issuer.identityProof.key = `did:ethr:0x${walletAddress}#controller`;
+
+            if (issuer.identityProof.type === "DNS-DID") {
+              issuer.identityProof.location = dnsDid;
+            }
             if (issuer.revocation) {
               issuer.revocation.type = "NONE";
             }
