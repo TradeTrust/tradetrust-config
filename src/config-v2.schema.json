@@ -154,7 +154,7 @@
                       }
                     },
                     {
-                      "required": ["name", "identityProof", "id"],
+                      "required": ["name", "identityProof", "id", "revocation"],
                       "description": "Issue with did:ethr using DID or DNS-DID as verification.",
                       "type": "object",
                       "properties": {
