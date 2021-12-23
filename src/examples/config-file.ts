@@ -15,20 +15,20 @@ const walletConfig = {
 export const configFileV2 = {
   network: "ropsten",
   wallet: walletConfig,
-  documentStorage: {
-    apiKey: "randomKey",
-    url: "https://api-ropsten.tradetrust.io/storage",
-  },
+  // documentStorage: {
+  //   apiKey: "randomKey",
+  //   url: "https://api-ropsten.tradetrust.io/storage",
+  // }, // omiting documentStorage first, only after DID handling at oa-functions is solved
   forms: [...documentFormsV2],
 };
 
 export const configFileV3 = {
   network: "ropsten",
   wallet: walletConfig,
-  documentStorage: {
-    apiKey: "randomKey",
-    url: "https://api-ropsten.tradetrust.io/storage",
-  },
+  // documentStorage: {
+  //   apiKey: "randomKey",
+  //   url: "https://api-ropsten.tradetrust.io/storage",
+  // }, // omiting documentStorage first, only after DID handling at oa-functions is solved
   forms: [...documentFormsV3],
 };
 
