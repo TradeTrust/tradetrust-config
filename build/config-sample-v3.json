@@ -43,7 +43,7 @@
         "credentialSubject": {},
         "issuer": {
           "id": "https://example.com",
-          "name": "DEMO DOCUMENT STORE",
+          "name": "DEMO TOKEN REGISTRY",
           "type": "OpenAttestationIssuer"
         }
       },

@@ -20,12 +20,12 @@
         },
         "issuers": [
           {
+            "name": "DEMO TOKEN REGISTRY",
+            "tokenRegistry": "0x72d9a82203Ef9177239A5E3cB7A8FB9a78D04f17",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "demo-tradetrust.openattestation.com"
-            },
-            "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0x72d9a82203Ef9177239A5E3cB7A8FB9a78D04f17"
+            }
           }
         ]
       },

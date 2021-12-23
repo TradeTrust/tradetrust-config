@@ -19,11 +19,11 @@
       "proof": {
         "type": "OpenAttestationProofMethod",
         "method": "DOCUMENT_STORE",
-        "value": "0x8bA63EAB43342AAc3AdBB4B827b68Cf4aAE5Caca"
+        "value": "<DOCUMENT_STORE_ADDRESS>"
       },
       "identityProof": {
         "type": "DNS-TXT",
-        "identifier": "demo-tradetrust.openattestation.com"
+        "identifier": "example.com"
       }
     },
     "credentialSubject": {},
