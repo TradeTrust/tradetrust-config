@@ -6,7 +6,7 @@
   "scripts": {
     "build": "ts-node ./src/generate-config.ts --project tsconfig.json",
     "start": "npx json-server --watch ./src/response.js --port 4000 --no-cors true",
-    "lint": "eslint ./src/*.ts",
+    "lint": "eslint ./src/*/**.ts",
     "test": "jest ./test/*",
     "test:single": "jest --watch"
   },

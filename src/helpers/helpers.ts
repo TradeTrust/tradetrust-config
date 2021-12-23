@@ -33,6 +33,7 @@ export const getConfigWithUpdatedFormsV2 = ({
 
   const updatedForms = forms.map((form: any) => {
     if (form.type === "VERIFIABLE_DOCUMENT") {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       const updatedIssuers = form.defaults.issuers.map((issuer) => {
         if (issuer.identityProof) {
@@ -57,6 +58,7 @@ export const getConfigWithUpdatedFormsV2 = ({
     }
 
     if (form.type === "TRANSFERABLE_RECORD") {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       const updatedIssuers = form.defaults.issuers.map((issuer) => {
         issuer.tokenRegistry = tokenRegistryAddress;

@@ -12,10 +12,12 @@ Repository to house TradeTrust config schema + various configs used in TradeTrus
 - For interactive [explore](https://json-schema.app/view/%23?url=https%3A%2F%2Fraw.githubusercontent.com%2FTradeTrust%2Ftradetrust-config%2Fmaster%2Fsrc%2Fconfig-v2.schema.json).
 - For config file schema [itself](https://github.com/TradeTrust/tradetrust-config/blob/master/src/config-v2.schema.json).
 
+> Do note that there is config file with v3 forms too.
+
 ### Config file
 
-Example v2 [config file](https://github.com/TradeTrust/tradetrust-config/blob/master/build/config-sample-v2.json).
-Example v3 [config file](https://github.com/TradeTrust/tradetrust-config/blob/master/build/config-sample-v3.json).
+Example [config file with v2 forms](https://github.com/TradeTrust/tradetrust-config/blob/master/build/config-sample-v2.json).
+Example [config file with v3 forms](https://github.com/TradeTrust/tradetrust-config/blob/master/build/config-sample-v3.json).
 
 ### Create config with OA CLI
 
