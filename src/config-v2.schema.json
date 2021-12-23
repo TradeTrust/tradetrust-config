@@ -92,6 +92,7 @@
                   "oneOf": [
                     {
                       "required": ["name", "documentStore", "identityProof"],
+                      "description": "Issue with document store using DNS-TXT as verification.",
                       "type": "object",
                       "properties": {
                         "documentStore": {
@@ -106,7 +107,67 @@
                           "properties": {
                             "type": {
                               "type": "string",
-                              "enum": ["DNS-TXT", "DNS-DID", "DID"]
+                              "enum": ["DNS-TXT"]
+                            },
+                            "location": {
+                              "type": "string",
+                              "format": "hostname"
+                            }
+                          }
+                        },
+                        "revocation": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": ["NONE", "REVOCATION_STORE"]
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "required": ["name", "tokenRegistry", "identityProof"],
+                      "description": "Issue with token registry using DNS-TXT as verification.",
+                      "type": "object",
+                      "properties": {
+                        "tokenRegistry": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "identityProof": {
+                          "required": ["type", "location"],
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": ["DNS-TXT"]
+                            },
+                            "location": {
+                              "type": "string",
+                              "format": "hostname"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "required": ["name", "identityProof", "id"],
+                      "description": "Issue with did:ethr using DID or DNS-DID as verification.",
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "identityProof": {
+                          "required": ["type", "key"],
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": ["DNS-DID", "DID"]
                             },
                             "location": {
                               "type": "string",
@@ -126,32 +187,6 @@
                             "type": {
                               "type": "string",
                               "enum": ["NONE", "REVOCATION_STORE"]
-                            }
-                          }
-                        }
-                      }
-                    },
-                    {
-                      "required": ["name", "tokenRegistry", "identityProof"],
-                      "type": "object",
-                      "properties": {
-                        "tokenRegistry": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "identityProof": {
-                          "required": ["type", "location"],
-                          "type": "object",
-                          "properties": {
-                            "type": {
-                              "type": "string",
-                              "enum": ["DNS-TXT", "DNS-DID", "DID"]
-                            },
-                            "location": {
-                              "type": "string",
-                              "format": "hostname"
                             }
                           }
                         }
