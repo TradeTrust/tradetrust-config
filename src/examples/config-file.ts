@@ -1,20 +1,9 @@
-import path from "path";
-import wallet from "../../fixtures/config/wallet/wallet.json";
-import { getForms } from "../utils/utils";
-
-const dirFormsV2 = path.join(__dirname, "../../fixtures/config/forms/v2");
-const documentFormsV2 = getForms(dirFormsV2);
-const dirFormsV3 = path.join(__dirname, "../../fixtures/config/forms/v3");
-const documentFormsV3 = getForms(dirFormsV3);
-
-const walletConfig = {
-  type: "ENCRYPTED_JSON",
-  encryptedJson: JSON.stringify(wallet),
-};
+import { walletReference } from "./wallet";
+import { documentFormsV2, documentFormsV3 } from "./forms";
 
 export const configFileV2 = {
   network: "ropsten",
-  wallet: walletConfig,
+  wallet: walletReference,
   // documentStorage: {
   //   apiKey: "randomKey",
   //   url: "https://api-ropsten.tradetrust.io/storage",
@@ -24,7 +13,7 @@ export const configFileV2 = {
 
 export const configFileV3 = {
   network: "ropsten",
-  wallet: walletConfig,
+  wallet: walletReference,
   // documentStorage: {
   //   apiKey: "randomKey",
   //   url: "https://api-ropsten.tradetrust.io/storage",
@@ -34,7 +23,7 @@ export const configFileV3 = {
 
 export const ConfigMinimumExampleV2 = {
   network: "ropsten",
-  wallet: walletConfig,
+  wallet: walletReference,
   forms: [
     {
       name: "Foobar",
@@ -64,7 +53,7 @@ export const ConfigMinimumExampleV2 = {
 
 export const ConfigMinimumExampleV3 = {
   network: "ropsten",
-  wallet: walletConfig,
+  wallet: walletReference,
   forms: [
     {
       name: "Foobar",

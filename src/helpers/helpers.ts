@@ -1,26 +1,6 @@
-import Ajv from "ajv";
-import addFormats from "ajv-formats";
+import { WALLET_ADDRESS, walletSample } from "../examples/wallet";
 
-const ajv = new Ajv({ allErrors: true });
-addFormats(ajv);
-
-export const validateConfig = (configSchema: any, configFile: any) => {
-  const validate = ajv.compile(configSchema);
-  const valid = validate(configFile);
-  if (!valid) {
-    throw new Error(ajv.errorsText(validate.errors));
-  }
-};
-
-const getWalletAddress = (configFile: any) => {
-  const { wallet } = configFile;
-  const { encryptedJson } = wallet;
-  const { address } = JSON.parse(encryptedJson);
-  return address;
-};
-
-// type any and ignore first
-export const getConfigWithUpdatedFormsV2 = ({
+export const getUpdatedConfigV2 = ({
   configFile,
   documentStoreAddress,
   tokenRegistryAddress,
@@ -29,7 +9,6 @@ export const getConfigWithUpdatedFormsV2 = ({
   dnsTransferableRecord,
 }: any): any => {
   const { forms } = configFile;
-  const walletAddress = getWalletAddress(configFile);
 
   const updatedForms = forms.map((form: any) => {
     if (form.type === "VERIFIABLE_DOCUMENT") {
@@ -44,8 +23,8 @@ export const getConfigWithUpdatedFormsV2 = ({
             issuer.identityProof.type === "DID" ||
             issuer.identityProof.type === "DNS-DID"
           ) {
-            issuer.id = `did:ethr:0x${walletAddress}`;
-            issuer.identityProof.key = `did:ethr:0x${walletAddress}#controller`;
+            issuer.id = `did:ethr:0x${WALLET_ADDRESS}`;
+            issuer.identityProof.key = `did:ethr:0x${WALLET_ADDRESS}#controller`;
 
             if (issuer.identityProof.type === "DNS-DID") {
               issuer.identityProof.location = dnsDid;
@@ -78,12 +57,12 @@ export const getConfigWithUpdatedFormsV2 = ({
 
   return {
     ...configFile,
+    wallet: walletSample, // add in wallet sample
     forms: updatedForms,
   };
 };
 
-// type any and ignore first
-export const getConfigWithUpdatedFormsV3 = ({
+export const getUpdatedConfigV3 = ({
   configFile,
   documentStoreAddress,
   tokenRegistryAddress,
@@ -92,7 +71,6 @@ export const getConfigWithUpdatedFormsV3 = ({
   dnsTransferableRecord,
 }: any): any => {
   const { forms } = configFile;
-  const walletAddress = getWalletAddress(configFile);
 
   const updatedForms = forms.map((form: any) => {
     if (form.type === "VERIFIABLE_DOCUMENT") {
@@ -102,7 +80,7 @@ export const getConfigWithUpdatedFormsV3 = ({
         form.defaults.openAttestationMetadata.proof.value =
           documentStoreAddress;
       } else if (form.defaults.openAttestationMetadata.proof.method === "DID") {
-        form.defaults.openAttestationMetadata.proof.value = `did:ethr:0x${walletAddress}`;
+        form.defaults.openAttestationMetadata.proof.value = `did:ethr:0x${WALLET_ADDRESS}`;
       }
 
       if (
@@ -129,6 +107,7 @@ export const getConfigWithUpdatedFormsV3 = ({
 
   return {
     ...configFile,
+    wallet: walletSample, // add in wallet sample
     forms: updatedForms,
   };
 };

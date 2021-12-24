@@ -3,29 +3,84 @@ import path from "path";
 import configSchemaV2 from "./config-v2.schema.json";
 import configSchemaV3 from "./config-v3.schema.json";
 import { configFileV2, configFileV3 } from "./examples/config-file";
-import {
-  validateConfig,
-  getConfigWithUpdatedFormsV2,
-  getConfigWithUpdatedFormsV3,
-} from "./helpers/helpers";
-
-const DOCUMENT_STORE_ADDRESS = "0x8bA63EAB43342AAc3AdBB4B827b68Cf4aAE5Caca";
-const TOKEN_REGISTRY_ADDRESS = "0x72d9a82203Ef9177239A5E3cB7A8FB9a78D04f17";
-const DNS_VERIFIABLE = "demo-tradetrust.openattestation.com";
-const DNS_TRANSFERABLE_RECORD = "demo-tradetrust.openattestation.com";
-const DNS_DID = "demo-tradetrust.openattestation.com";
+import { getUpdatedConfigV2, getUpdatedConfigV3 } from "./helpers/helpers";
+import { validateConfig } from "./utils/utils";
 
 const DIR = path.join(__dirname, "../build");
 
-const writeConfigFile = (configFile: any, fileName: string) => {
-  fs.writeFile(
-    `${DIR}/${fileName}.json`,
-    JSON.stringify(configFile, null, 2),
-    (err: any) => {
-      if (err) throw err;
-      console.info(`The ${fileName} has been saved!`);
-    },
-  );
+// addresses exists as txt-records in respective domains
+const buildData = [
+  {
+    network: "ropsten",
+    documentStoreAddress: "0x8bA63EAB43342AAc3AdBB4B827b68Cf4aAE5Caca",
+    tokenRegistryAddress: "0x72d9a82203Ef9177239A5E3cB7A8FB9a78D04f17",
+    dnsVerifiable: "demo-tradetrust.openattestation.com",
+    dnsTransferableRecord: "demo-tradetrust.openattestation.com",
+    dnsDid: "demo-tradetrust.openattestation.com",
+  },
+  {
+    network: "rinkeby",
+    documentStoreAddress: "0x8bA63EAB43342AAc3AdBB4B827b68Cf4aAE5Caca",
+    tokenRegistryAddress: "0x26E730520949F9B2F73b53A35044680c2165725D",
+    dnsVerifiable: "demo-tradetrust.openattestation.com",
+    dnsTransferableRecord: "demo-tradetrust.openattestation.com",
+    dnsDid: "demo-tradetrust.openattestation.com",
+  },
+];
+
+const writeConfigFile = (configFile: any, file: string) => {
+  fs.writeFile(file, JSON.stringify(configFile, null, 2), (err: any) => {
+    if (err) throw err;
+    console.info(`The ${file} has been saved!`);
+  });
+};
+
+const writeReferences = () => {
+  if (!fs.existsSync(DIR)) {
+    fs.mkdirSync(DIR);
+  }
+
+  writeConfigFile(configFileV2, `${DIR}/config-reference-v2.json`);
+  writeConfigFile(configFileV3, `${DIR}/config-reference-v3.json`);
+};
+
+const writeSamples = () => {
+  buildData.forEach((data) => {
+    const {
+      network,
+      documentStoreAddress,
+      tokenRegistryAddress,
+      dnsVerifiable,
+      dnsDid,
+      dnsTransferableRecord,
+    } = data;
+    const DIR_NETWORK = `${DIR}/${network}`;
+
+    if (!fs.existsSync(DIR_NETWORK)) {
+      fs.mkdirSync(DIR_NETWORK);
+    }
+
+    const updatedConfigV2 = getUpdatedConfigV2({
+      configFile: configFileV2,
+      documentStoreAddress,
+      tokenRegistryAddress,
+      dnsVerifiable,
+      dnsDid,
+      dnsTransferableRecord,
+    });
+
+    const updatedConfigV3 = getUpdatedConfigV3({
+      configFile: configFileV3,
+      documentStoreAddress,
+      tokenRegistryAddress,
+      dnsVerifiable,
+      dnsDid,
+      dnsTransferableRecord,
+    });
+
+    writeConfigFile(updatedConfigV2, `${DIR_NETWORK}/config-v2.json`);
+    writeConfigFile(updatedConfigV3, `${DIR_NETWORK}/config-v3.json`);
+  });
 };
 
 const generateConfig = async () => {
@@ -33,30 +88,8 @@ const generateConfig = async () => {
     validateConfig(configSchemaV2, configFileV2);
     validateConfig(configSchemaV3, configFileV3);
 
-    const updatedConfigV2 = getConfigWithUpdatedFormsV2({
-      configFile: configFileV2,
-      documentStoreAddress: DOCUMENT_STORE_ADDRESS,
-      tokenRegistryAddress: TOKEN_REGISTRY_ADDRESS,
-      dnsVerifiable: DNS_VERIFIABLE,
-      dnsDid: DNS_TRANSFERABLE_RECORD,
-      dnsTransferableRecord: DNS_DID,
-    });
-
-    const updatedConfigV3 = getConfigWithUpdatedFormsV3({
-      configFile: configFileV3,
-      documentStoreAddress: DOCUMENT_STORE_ADDRESS,
-      tokenRegistryAddress: TOKEN_REGISTRY_ADDRESS,
-      dnsVerifiable: DNS_VERIFIABLE,
-      dnsDid: DNS_TRANSFERABLE_RECORD,
-      dnsTransferableRecord: DNS_DID,
-    });
-
-    if (!fs.existsSync(DIR)) {
-      fs.mkdirSync(DIR);
-    }
-
-    writeConfigFile(updatedConfigV2, "config-sample-v2");
-    writeConfigFile(updatedConfigV3, "config-sample-v3");
+    writeReferences();
+    writeSamples();
   } catch (err) {
     console.error(err);
   }
