@@ -1,7 +1,8 @@
 import { walletReference } from "./wallet";
 import { documentFormsV2, documentFormsV3 } from "./forms";
+import { ConfigFile } from "../types/types";
 
-export const configFileV2 = {
+export const configFileV2: ConfigFile = {
   network: "ropsten",
   wallet: walletReference,
   // documentStorage: {
@@ -11,7 +12,7 @@ export const configFileV2 = {
   forms: [...documentFormsV2],
 };
 
-export const configFileV3 = {
+export const configFileV3: ConfigFile = {
   network: "ropsten",
   wallet: walletReference,
   // documentStorage: {
@@ -21,7 +22,7 @@ export const configFileV3 = {
   forms: [...documentFormsV3],
 };
 
-export const ConfigMinimumExampleV2 = {
+export const ConfigMinimumExampleV2: ConfigFile = {
   network: "ropsten",
   wallet: walletReference,
   forms: [
@@ -51,7 +52,7 @@ export const ConfigMinimumExampleV2 = {
   ],
 };
 
-export const ConfigMinimumExampleV3 = {
+export const ConfigMinimumExampleV3: ConfigFile = {
   network: "ropsten",
   wallet: walletReference,
   forms: [
@@ -96,7 +97,7 @@ export const ErrorNoWallet = {
   wallet: "",
 };
 
-export const ErrorUri = {
+export const ErrorUri: ConfigFile = {
   ...ConfigMinimumExampleV2,
   documentStorage: {
     apiKey: "randomKey",
@@ -104,7 +105,7 @@ export const ErrorUri = {
   },
 };
 
-export const ErrorHostname = {
+export const ErrorHostname: ConfigFile = {
   ...ConfigMinimumExampleV2,
   forms: [
     {

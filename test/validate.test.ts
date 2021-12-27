@@ -17,14 +17,14 @@ describe("validateConfig v2", () => {
   });
 
   test("should throw error for no wallet", () => {
-    expect(() => validateConfig(configSchemaV2, ErrorNoWallet)).toThrow(
+    expect(() => validateConfig(configSchemaV2, ErrorNoWallet as any)).toThrow(
       /wallet must be object/,
     );
   });
 
   test("should throw error for documentStorage format", () => {
     expect(() => validateConfig(configSchemaV2, ErrorUri)).toThrow(
-      /url must match format \"uri\"/,
+      /url must match format "uri"/,
     );
   });
 
