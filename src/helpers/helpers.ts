@@ -1,7 +1,10 @@
 import {
-  ConfigFile,
-  GetUpdatedConfigFile,
-  Form,
+  ConfigFileWithFormV2,
+  ConfigFileWithFormV3,
+  GetUpdatedConfigFileWithFormV2,
+  GetUpdatedConfigFileWithFormV3,
+  FormV2,
+  FormV3,
   WalletConfig,
 } from "../types/types";
 
@@ -22,11 +25,11 @@ export const getUpdatedConfigV2 = ({
   dnsVerifiable,
   dnsDid,
   dnsTransferableRecord,
-}: GetUpdatedConfigFile): ConfigFile => {
+}: GetUpdatedConfigFileWithFormV2): ConfigFileWithFormV2 => {
   const walletAddress = getWalletAddress(wallet);
   const { forms } = configFile;
 
-  const updatedForms = forms.map((form: Form) => {
+  const updatedForms = forms.map((form: FormV2) => {
     if (form.type === "VERIFIABLE_DOCUMENT") {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
@@ -44,9 +47,6 @@ export const getUpdatedConfigV2 = ({
 
             if (issuer.identityProof.type === "DNS-DID") {
               issuer.identityProof.location = dnsDid;
-            }
-            if (issuer.revocation) {
-              issuer.revocation.type = "NONE";
             }
           }
         }
@@ -86,11 +86,11 @@ export const getUpdatedConfigV3 = ({
   dnsVerifiable,
   dnsDid,
   dnsTransferableRecord,
-}: GetUpdatedConfigFile): ConfigFile => {
+}: GetUpdatedConfigFileWithFormV3): ConfigFileWithFormV3 => {
   const walletAddress = getWalletAddress(wallet);
   const { forms } = configFile;
 
-  const updatedForms = forms.map((form: Form) => {
+  const updatedForms = forms.map((form: FormV3) => {
     if (form.type === "VERIFIABLE_DOCUMENT") {
       if (
         form.defaults.openAttestationMetadata.proof.method === "DOCUMENT_STORE"

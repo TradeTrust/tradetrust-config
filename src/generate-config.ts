@@ -6,7 +6,7 @@ import { walletSample } from "./examples/wallet";
 import { configFileV2, configFileV3 } from "./examples/config-file";
 import { getUpdatedConfigV2, getUpdatedConfigV3 } from "./helpers/helpers";
 import { validateConfig } from "./utils/utils";
-import { ConfigFile } from "./types/types";
+import { ConfigFileWithFormV2, ConfigFileWithFormV3 } from "./types/types";
 
 const DIR = path.join(__dirname, "../build");
 
@@ -30,7 +30,10 @@ const buildData = [
   },
 ];
 
-const writeConfigFile = (configFile: ConfigFile, file: string) => {
+const writeConfigFile = (
+  configFile: ConfigFileWithFormV2 | ConfigFileWithFormV3,
+  file: string,
+) => {
   fs.writeFile(file, JSON.stringify(configFile, null, 2), (err: any) => {
     if (err) throw err;
     console.info(`The ${file} has been saved!`);

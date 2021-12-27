@@ -1,28 +1,35 @@
+import { v2 } from "@govtechsg/open-attestation";
+import { TemplateType } from "@govtechsg/open-attestation/dist/types/__generated__/schema.2.0";
+import {
+  ProofType,
+  Method,
+  IdentityProofType,
+} from "@govtechsg/open-attestation/dist/types/__generated__/schema.3.0";
 import { walletReference } from "./wallet";
-import { documentFormsV2, documentFormsV3 } from "./forms";
-import { ConfigFile } from "../types/types";
+import { formsV2, formsV3 } from "./forms";
+import { ConfigFileWithFormV2, ConfigFileWithFormV3 } from "../types/types";
 
-export const configFileV2: ConfigFile = {
+export const configFileV2: ConfigFileWithFormV2 = {
   network: "ropsten",
   wallet: walletReference,
   // documentStorage: {
   //   apiKey: "randomKey",
   //   url: "https://api-ropsten.tradetrust.io/storage",
   // }, // omiting documentStorage first, only after DID handling at oa-functions is solved
-  forms: [...documentFormsV2],
+  forms: [...formsV2],
 };
 
-export const configFileV3: ConfigFile = {
+export const configFileV3: ConfigFileWithFormV3 = {
   network: "ropsten",
   wallet: walletReference,
   // documentStorage: {
   //   apiKey: "randomKey",
   //   url: "https://api-ropsten.tradetrust.io/storage",
   // }, // omiting documentStorage first, only after DID handling at oa-functions is solved
-  forms: [...documentFormsV3],
+  forms: [...formsV3],
 };
 
-export const ConfigMinimumExampleV2: ConfigFile = {
+export const ConfigMinimumExampleV2: ConfigFileWithFormV2 = {
   network: "ropsten",
   wallet: walletReference,
   forms: [
@@ -31,7 +38,7 @@ export const ConfigMinimumExampleV2: ConfigFile = {
       type: "VERIFIABLE_DOCUMENT",
       defaults: {
         $template: {
-          type: "EMBEDDED_RENDERER",
+          type: "EMBEDDED_RENDERER" as TemplateType.EmbeddedRenderer,
           name: "INVOICE",
           url: "https://example.com",
         },
@@ -40,8 +47,11 @@ export const ConfigMinimumExampleV2: ConfigFile = {
             name: "Hello world",
             documentStore: "0x123",
             identityProof: {
-              type: "DNS-TXT",
+              type: "DNS-TXT" as v2.IdentityProofType.DNSTxt,
               location: "foobar.xyz",
+            },
+            revocation: {
+              type: "NONE" as v2.RevocationType.None,
             },
           },
         ],
@@ -52,7 +62,7 @@ export const ConfigMinimumExampleV2: ConfigFile = {
   ],
 };
 
-export const ConfigMinimumExampleV3: ConfigFile = {
+export const ConfigMinimumExampleV3: ConfigFileWithFormV3 = {
   network: "ropsten",
   wallet: walletReference,
   forms: [
@@ -60,7 +70,6 @@ export const ConfigMinimumExampleV3: ConfigFile = {
       name: "Foobar",
       type: "VERIFIABLE_DOCUMENT",
       defaults: {
-        version: "https://example.com/3.0/schema.json",
         "@context": [
           "https://www.w3.org/2018/credentials/v1",
           "https://schemata.openattestation.com/com/openattestation/1.0/OpenAttestation.v3.json",
@@ -70,19 +79,23 @@ export const ConfigMinimumExampleV3: ConfigFile = {
         issuanceDate: "2010-01-01T19:23:24Z",
         openAttestationMetadata: {
           template: {
-            type: "EMBEDDED_RENDERER",
+            type: "EMBEDDED_RENDERER" as TemplateType.EmbeddedRenderer,
             name: "INVOICE",
             url: "https://example.com",
           },
           proof: {
-            type: "OpenAttestationProofMethod",
-            method: "DOCUMENT_STORE",
+            type: "OpenAttestationProofMethod" as ProofType.OpenAttestationProofMethod,
+            method: "DOCUMENT_STORE" as Method.DocumentStore,
             value: "123",
           },
           identityProof: {
-            type: "DNS-TXT",
+            type: "DNS-TXT" as IdentityProofType.DNSTxt,
             identifier: "foobar.xyz",
           },
+        },
+        issuer: {
+          id: "https://example.com",
+          name: "DEMO STORE",
         },
         credentialSubject: {},
       },
@@ -97,7 +110,7 @@ export const ErrorNoWallet = {
   wallet: "",
 };
 
-export const ErrorUri: ConfigFile = {
+export const ErrorUri = {
   ...ConfigMinimumExampleV2,
   documentStorage: {
     apiKey: "randomKey",
@@ -105,7 +118,7 @@ export const ErrorUri: ConfigFile = {
   },
 };
 
-export const ErrorHostname: ConfigFile = {
+export const ErrorHostname = {
   ...ConfigMinimumExampleV2,
   forms: [
     {
@@ -116,7 +129,7 @@ export const ErrorHostname: ConfigFile = {
           {
             ...ConfigMinimumExampleV2.forms[0].defaults.issuers[0],
             identityProof: {
-              type: "DNS-TXT",
+              type: "DNS-TXT" as v2.IdentityProofType.DNSTxt,
               location: "https://example.com", // handles "format": "hostname"
             },
           },
