@@ -2,9 +2,11 @@ import fs from "fs";
 import path from "path";
 import configSchemaV2 from "./config-v2.schema.json";
 import configSchemaV3 from "./config-v3.schema.json";
+import { walletSample } from "./examples/wallet";
 import { configFileV2, configFileV3 } from "./examples/config-file";
 import { getUpdatedConfigV2, getUpdatedConfigV3 } from "./helpers/helpers";
 import { validateConfig } from "./utils/utils";
+import { ConfigFile } from "./types/types";
 
 const DIR = path.join(__dirname, "../build");
 
@@ -28,7 +30,7 @@ const buildData = [
   },
 ];
 
-const writeConfigFile = (configFile: any, file: string) => {
+const writeConfigFile = (configFile: ConfigFile, file: string) => {
   fs.writeFile(file, JSON.stringify(configFile, null, 2), (err: any) => {
     if (err) throw err;
     console.info(`The ${file} has been saved!`);
@@ -61,6 +63,7 @@ const writeSamples = () => {
     }
 
     const updatedConfigV2 = getUpdatedConfigV2({
+      wallet: walletSample,
       configFile: configFileV2,
       documentStoreAddress,
       tokenRegistryAddress,
@@ -70,6 +73,7 @@ const writeSamples = () => {
     });
 
     const updatedConfigV3 = getUpdatedConfigV3({
+      wallet: walletSample,
       configFile: configFileV3,
       documentStoreAddress,
       tokenRegistryAddress,

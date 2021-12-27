@@ -1,16 +1,32 @@
-import { WALLET_ADDRESS, walletSample } from "../examples/wallet";
+import {
+  ConfigFile,
+  GetUpdatedConfigFile,
+  Form,
+  WalletConfig,
+} from "../types/types";
+
+const getWalletAddress = (wallet: WalletConfig) => {
+  if (wallet.type === "ENCRYPTED_JSON") {
+    const { encryptedJson } = wallet;
+    const { address } = JSON.parse(encryptedJson);
+    return address;
+  }
+  throw new Error("Unable to get wallet address");
+};
 
 export const getUpdatedConfigV2 = ({
+  wallet,
   configFile,
   documentStoreAddress,
   tokenRegistryAddress,
   dnsVerifiable,
   dnsDid,
   dnsTransferableRecord,
-}: any): any => {
+}: GetUpdatedConfigFile): ConfigFile => {
+  const walletAddress = getWalletAddress(wallet);
   const { forms } = configFile;
 
-  const updatedForms = forms.map((form: any) => {
+  const updatedForms = forms.map((form: Form) => {
     if (form.type === "VERIFIABLE_DOCUMENT") {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
@@ -23,8 +39,8 @@ export const getUpdatedConfigV2 = ({
             issuer.identityProof.type === "DID" ||
             issuer.identityProof.type === "DNS-DID"
           ) {
-            issuer.id = `did:ethr:0x${WALLET_ADDRESS}`;
-            issuer.identityProof.key = `did:ethr:0x${WALLET_ADDRESS}#controller`;
+            issuer.id = `did:ethr:0x${walletAddress}`;
+            issuer.identityProof.key = `did:ethr:0x${walletAddress}#controller`;
 
             if (issuer.identityProof.type === "DNS-DID") {
               issuer.identityProof.location = dnsDid;
@@ -57,22 +73,24 @@ export const getUpdatedConfigV2 = ({
 
   return {
     ...configFile,
-    wallet: walletSample, // add in wallet sample
+    wallet,
     forms: updatedForms,
   };
 };
 
 export const getUpdatedConfigV3 = ({
+  wallet,
   configFile,
   documentStoreAddress,
   tokenRegistryAddress,
   dnsVerifiable,
   dnsDid,
   dnsTransferableRecord,
-}: any): any => {
+}: GetUpdatedConfigFile): ConfigFile => {
+  const walletAddress = getWalletAddress(wallet);
   const { forms } = configFile;
 
-  const updatedForms = forms.map((form: any) => {
+  const updatedForms = forms.map((form: Form) => {
     if (form.type === "VERIFIABLE_DOCUMENT") {
       if (
         form.defaults.openAttestationMetadata.proof.method === "DOCUMENT_STORE"
@@ -80,7 +98,7 @@ export const getUpdatedConfigV3 = ({
         form.defaults.openAttestationMetadata.proof.value =
           documentStoreAddress;
       } else if (form.defaults.openAttestationMetadata.proof.method === "DID") {
-        form.defaults.openAttestationMetadata.proof.value = `did:ethr:0x${WALLET_ADDRESS}`;
+        form.defaults.openAttestationMetadata.proof.value = `did:ethr:0x${walletAddress}`;
       }
 
       if (
@@ -107,7 +125,7 @@ export const getUpdatedConfigV3 = ({
 
   return {
     ...configFile,
-    wallet: walletSample, // add in wallet sample
+    wallet,
     forms: updatedForms,
   };
 };
