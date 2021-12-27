@@ -59,13 +59,9 @@
             "enum": ["VERIFIABLE_DOCUMENT", "TRANSFERABLE_RECORD"]
           },
           "defaults": {
-            "required": ["version", "@context", "type", "issuanceDate"],
+            "required": ["@context", "type", "issuanceDate"],
             "type": "object",
             "properties": {
-              "version": {
-                "type": "string",
-                "format": "uri"
-              },
               "@context": {
                 "type": "array"
               },
@@ -123,6 +119,10 @@
                           "type": {
                             "type": "string",
                             "enum": ["NONE", "REVOCATION_STORE"]
+                          },
+                          "location": {
+                            "type": "string",
+                            "format": "hostname"
                           }
                         }
                       }

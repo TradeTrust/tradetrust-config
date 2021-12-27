@@ -17,3 +17,5 @@ jobs:
         run: npm run test
       - name: Build config
         run: npm run build
+      - name: Build docs
+        run: npm run docs

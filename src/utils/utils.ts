@@ -3,12 +3,15 @@ import path from "path";
 import junk from "junk";
 import Ajv from "ajv";
 import addFormats from "ajv-formats";
-import { ConfigFile, Form } from "../types/types";
+import { ConfigFileWithFormV2, ConfigFileWithFormV3 } from "../types/types";
 
 const ajv = new Ajv({ allErrors: true });
 addFormats(ajv);
 
-export const validateConfig = (configSchema: any, configFile: ConfigFile) => {
+export const validateConfig = (
+  configSchema: any,
+  configFile: ConfigFileWithFormV2 | ConfigFileWithFormV3,
+) => {
   const validate = ajv.compile(configSchema);
   const valid = validate(configFile);
   if (!valid) {
@@ -17,7 +20,7 @@ export const validateConfig = (configSchema: any, configFile: ConfigFile) => {
 };
 
 export const getForms = (dir: string) => {
-  const forms: Form[] = [];
+  const forms: any[] = []; // let it be v2 or v3 forms
   fs.readdirSync(dir)
     .filter(junk.not)
     .forEach((filename: string) => {
