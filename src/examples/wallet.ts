@@ -1,5 +1,5 @@
 import wallet from "../../fixtures/config/wallet/wallet.json";
-import { WalletEncryptedJson, WalletAws } from "../types/types";
+import { WalletEncryptedJson, WalletAws } from "../types";
 
 export const walletAws: WalletAws = {
   type: "AWS_KMS",

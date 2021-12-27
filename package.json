@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "ts-node ./src/generate-config.ts --project tsconfig.json",
-    "docs": "npx typedoc",
+    "docs": "npx typedoc --excludeInternal",
     "start": "npx json-server --watch ./src/response.js --port 4000 --no-cors true",
     "lint": "eslint ./src/*/**.ts",
     "test": "jest ./test/*",

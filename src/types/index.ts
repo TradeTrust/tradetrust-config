@@ -12,9 +12,10 @@ export type WalletAws = {
   kmsKeyId: string;
 };
 
-export type WalletConfig = WalletEncryptedJson | WalletAws;
+export type Wallet = WalletEncryptedJson | WalletAws;
 
-type Form = {
+/** @internal */
+interface Form {
   name: string;
   type: "VERIFIABLE_DOCUMENT" | "TRANSFERABLE_RECORD";
   schema: any;
@@ -25,19 +26,19 @@ type Form = {
   };
   extension?: string;
   fileName?: string;
-};
+}
 
-export type FormV2 = Form & {
+export interface FormV2 extends Form {
   defaults: v2.OpenAttestationDocument;
-};
+}
 
-export type FormV3 = Form & {
+export interface FormV3 extends Form {
   defaults: v3.OpenAttestationDocument;
-};
+}
 
 interface ConfigFile {
   network: "ropsten" | "rinkeby" | "homestead" | "local";
-  wallet: WalletConfig;
+  wallet: Wallet;
   documentStorage?: {
     apiKey?: string;
     url: string;
@@ -53,7 +54,7 @@ export interface ConfigFileWithFormV3 extends ConfigFile {
 }
 
 interface GetUpdatedConfigFile {
-  wallet: WalletConfig;
+  wallet: Wallet;
   documentStoreAddress: string;
   tokenRegistryAddress: string;
   dnsVerifiable: string;
@@ -61,10 +62,12 @@ interface GetUpdatedConfigFile {
   dnsTransferableRecord: string;
 }
 
+/** @internal */
 export interface GetUpdatedConfigFileWithFormV2 extends GetUpdatedConfigFile {
   configFile: ConfigFileWithFormV2;
 }
 
+/** @internal */
 export interface GetUpdatedConfigFileWithFormV3 extends GetUpdatedConfigFile {
   configFile: ConfigFileWithFormV3;
 }

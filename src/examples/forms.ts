@@ -1,6 +1,6 @@
 import path from "path";
 import { getForms } from "../utils/utils";
-import { FormV2, FormV3 } from "../types/types";
+import { FormV2, FormV3 } from "../types";
 
 const dirFormsV2 = path.join(__dirname, "../../fixtures/config/forms/v2");
 const dirFormsV3 = path.join(__dirname, "../../fixtures/config/forms/v3");

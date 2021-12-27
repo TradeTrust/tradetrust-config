@@ -5,10 +5,10 @@ import {
   GetUpdatedConfigFileWithFormV3,
   FormV2,
   FormV3,
-  WalletConfig,
-} from "../types/types";
+  Wallet,
+} from "../types";
 
-const getWalletAddress = (wallet: WalletConfig) => {
+const getWalletAddress = (wallet: Wallet) => {
   if (wallet.type === "ENCRYPTED_JSON") {
     const { encryptedJson } = wallet;
     const { address } = JSON.parse(encryptedJson);

@@ -7,7 +7,7 @@ import {
 } from "@govtechsg/open-attestation/dist/types/__generated__/schema.3.0";
 import { walletReference } from "./wallet";
 import { formsV2, formsV3 } from "./forms";
-import { ConfigFileWithFormV2, ConfigFileWithFormV3 } from "../types/types";
+import { ConfigFileWithFormV2, ConfigFileWithFormV3 } from "../types";
 
 export const configFileV2: ConfigFileWithFormV2 = {
   network: "ropsten",

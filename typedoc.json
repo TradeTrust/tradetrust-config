@@ -1,9 +1,9 @@
 {
+  "name": "TradeTrust Config",
   "entryPoints": [
-    "./src/types/types.ts",
+    "./src/types",
     "./node_modules/@govtechsg/open-attestation/dist/types/__generated__/schema.2.0.d.ts",
     "./node_modules/@govtechsg/open-attestation/dist/types/__generated__/schema.3.0.d.ts"
   ],
-  "intentionallyNotExported": ["Form"],
   "out": "docs"
 }
