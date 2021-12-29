@@ -36,8 +36,10 @@ export interface FormV3 extends Form {
   defaults: v3.OpenAttestationDocument;
 }
 
+export type Network = "ropsten" | "rinkeby" | "homestead" | "local";
+
 interface ConfigFile {
-  network: "ropsten" | "rinkeby" | "homestead" | "local";
+  network: Network;
   wallet: Wallet;
   documentStorage?: {
     apiKey?: string;
@@ -54,6 +56,7 @@ export interface ConfigFileWithFormV3 extends ConfigFile {
 }
 
 interface GetUpdatedConfigFile {
+  network: Network;
   wallet: Wallet;
   documentStoreAddress: string;
   tokenRegistryAddress: string;

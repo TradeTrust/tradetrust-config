@@ -18,6 +18,7 @@ const getWalletAddress = (wallet: Wallet) => {
 };
 
 export const getUpdatedConfigV2 = ({
+  network,
   wallet,
   configFile,
   documentStoreAddress,
@@ -73,12 +74,14 @@ export const getUpdatedConfigV2 = ({
 
   return {
     ...configFile,
+    network,
     wallet,
     forms: updatedForms,
   };
 };
 
 export const getUpdatedConfigV3 = ({
+  network,
   wallet,
   configFile,
   documentStoreAddress,
@@ -125,6 +128,7 @@ export const getUpdatedConfigV3 = ({
 
   return {
     ...configFile,
+    network,
     wallet,
     forms: updatedForms,
   };

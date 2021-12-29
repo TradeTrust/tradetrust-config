@@ -10,7 +10,7 @@ import { formsV2, formsV3 } from "./forms";
 import { ConfigFileWithFormV2, ConfigFileWithFormV3 } from "../types";
 
 export const configFileV2: ConfigFileWithFormV2 = {
-  network: "ropsten",
+  network: "ropsten", // do not change yet, oa-cli should hard overwrite with ropsten
   wallet: walletReference,
   // documentStorage: {
   //   apiKey: "randomKey",
@@ -20,7 +20,7 @@ export const configFileV2: ConfigFileWithFormV2 = {
 };
 
 export const configFileV3: ConfigFileWithFormV3 = {
-  network: "ropsten",
+  network: "ropsten", // do not change yet, oa-cli should hard overwrite with ropsten
   wallet: walletReference,
   // documentStorage: {
   //   apiKey: "randomKey",
