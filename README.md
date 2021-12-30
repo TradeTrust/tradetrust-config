@@ -2,9 +2,17 @@
 
 Repository to house TradeTrust config schema + various configs used in TradeTrust creator.
 
-### Dev
+### Latest config files
+
+- https://github.com/TradeTrust/tradetrust-config/tree/master/build
+
+### Development
 
 `npm run start`
+
+### Build config files
+
+`npm run build`
 
 ### Documentation
 
@@ -19,12 +27,14 @@ Repository to house TradeTrust config schema + various configs used in TradeTrus
 - Reference [config file with v2 forms](https://github.com/TradeTrust/tradetrust-config/blob/master/build/config-reference-v2.json).
 - Reference [config file with v3 forms](https://github.com/TradeTrust/tradetrust-config/blob/master/build/config-reference-v3.json).
 
-### What is different between config file with v2 forms and v3 forms?
+### Differences between config file with v2 forms and v3 forms?
 
 Mainly the `OpenAttestationDocument` in `defaults` field.
 
-- form v2 -> https://tradetrust-config.netlify.app/interfaces/src_types.formv2#defaults
-- form v3 -> https://tradetrust-config.netlify.app/interfaces/src_types.formv3#defaults
+- form v2 [defaults](https://tradetrust-config.netlify.app/interfaces/src_types.formv2#defaults).
+  - [OpenAttestationDocument](https://tradetrust-config.netlify.app/interfaces/node_modules__govtechsg_open_attestation_dist_types___generated___schema_2_0.openattestationdocument).
+- form v3 [defaults](https://tradetrust-config.netlify.app/interfaces/src_types.formv3#defaults).
+  - [OpenAttestationDocument](https://tradetrust-config.netlify.app/interfaces/node_modules__govtechsg_open_attestation_dist_types___generated___schema_3_0.openattestationdocument).
 
 ### Create config with OA CLI
 
