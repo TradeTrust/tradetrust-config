@@ -1,9 +1,12 @@
-import { v2 } from "@govtechsg/open-attestation";
-import { TemplateType } from "@govtechsg/open-attestation/dist/types/__generated__/schema.2.0";
 import {
+  IdentityProofType as IdentityProofTypeV2,
+  RevocationType as RevocationTypeV2,
+  TemplateType,
+} from "@govtechsg/open-attestation/dist/types/__generated__/schema.2.0";
+import {
+  IdentityProofType as IdentityProofTypeV3,
   ProofType,
   Method,
-  IdentityProofType,
 } from "@govtechsg/open-attestation/dist/types/__generated__/schema.3.0";
 import { walletReference } from "./wallet";
 import { formsV2, formsV3 } from "./forms";
@@ -12,20 +15,20 @@ import { ConfigFileWithFormV2, ConfigFileWithFormV3 } from "../types";
 export const configFileV2: ConfigFileWithFormV2 = {
   network: "ropsten", // do not change yet, oa-cli should hard overwrite with ropsten
   wallet: walletReference,
-  // documentStorage: {
-  //   apiKey: "randomKey",
-  //   url: "https://api-ropsten.tradetrust.io/storage",
-  // }, // omiting documentStorage first, only after DID handling at oa-functions is solved
+  documentStorage: {
+    apiKey: "randomKey",
+    url: "https://api-ropsten.tradetrust.io/storage",
+  },
   forms: [...formsV2],
 };
 
 export const configFileV3: ConfigFileWithFormV3 = {
   network: "ropsten", // do not change yet, oa-cli should hard overwrite with ropsten
   wallet: walletReference,
-  // documentStorage: {
-  //   apiKey: "randomKey",
-  //   url: "https://api-ropsten.tradetrust.io/storage",
-  // }, // omiting documentStorage first, only after DID handling at oa-functions is solved
+  documentStorage: {
+    apiKey: "randomKey",
+    url: "https://api-ropsten.tradetrust.io/storage",
+  },
   forms: [...formsV3],
 };
 
@@ -47,11 +50,11 @@ export const ConfigMinimumExampleV2: ConfigFileWithFormV2 = {
             name: "Hello world",
             documentStore: "0x123",
             identityProof: {
-              type: "DNS-TXT" as v2.IdentityProofType.DNSTxt,
+              type: "DNS-TXT" as IdentityProofTypeV2.DNSTxt,
               location: "foobar.xyz",
             },
             revocation: {
-              type: "NONE" as v2.RevocationType.None,
+              type: "NONE" as RevocationTypeV2.None,
             },
           },
         ],
@@ -89,7 +92,7 @@ export const ConfigMinimumExampleV3: ConfigFileWithFormV3 = {
             value: "123",
           },
           identityProof: {
-            type: "DNS-TXT" as IdentityProofType.DNSTxt,
+            type: "DNS-TXT" as IdentityProofTypeV3.DNSTxt,
             identifier: "foobar.xyz",
           },
         },
@@ -129,7 +132,7 @@ export const ErrorHostname = {
           {
             ...ConfigMinimumExampleV2.forms[0].defaults.issuers[0],
             identityProof: {
-              type: "DNS-TXT" as v2.IdentityProofType.DNSTxt,
+              type: "DNS-TXT" as IdentityProofTypeV2.DNSTxt,
               location: "https://example.com", // handles "format": "hostname"
             },
           },

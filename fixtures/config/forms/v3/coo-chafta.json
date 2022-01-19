@@ -19,7 +19,10 @@
       "proof": {
         "type": "OpenAttestationProofMethod",
         "method": "DOCUMENT_STORE",
-        "value": "<DOCUMENT_STORE_ADDRESS>"
+        "value": "<DOCUMENT_STORE_ADDRESS>",
+        "revocation": {
+          "type": "NONE"
+        }
       },
       "identityProof": {
         "type": "DNS-TXT",

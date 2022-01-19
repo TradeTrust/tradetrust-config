@@ -4,6 +4,10 @@
     "type": "ENCRYPTED_JSON",
     "encryptedJson": "<WALLET>"
   },
+  "documentStorage": {
+    "apiKey": "randomKey",
+    "url": "https://api-ropsten.tradetrust.io/storage"
+  },
   "forms": [
     {
       "name": "TradeTrust Bill of Lading v2",
@@ -146,6 +150,9 @@
             "identityProof": {
               "type": "DNS-TXT",
               "location": "example.com"
+            },
+            "revocation": {
+              "type": "NONE"
             }
           }
         ]
@@ -573,6 +580,9 @@
             "identityProof": {
               "type": "DNS-TXT",
               "location": "example.com"
+            },
+            "revocation": {
+              "type": "NONE"
             }
           }
         ]
@@ -758,6 +768,9 @@
             "identityProof": {
               "type": "DNS-TXT",
               "location": "example.com"
+            },
+            "revocation": {
+              "type": "NONE"
             }
           }
         ]
@@ -1001,6 +1014,9 @@
             "identityProof": {
               "type": "DNS-TXT",
               "location": "example.com"
+            },
+            "revocation": {
+              "type": "NONE"
             }
           }
         ]

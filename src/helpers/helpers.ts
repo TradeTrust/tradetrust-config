@@ -38,8 +38,8 @@ export const getUpdatedConfigV2 = ({
             issuer.documentStore = documentStoreAddress;
             issuer.identityProof.location = dnsVerifiable;
           } else if (
-            issuer.identityProof.type === "DID" ||
-            issuer.identityProof.type === "DNS-DID"
+            issuer.identityProof.type === "DNS-DID" ||
+            issuer.identityProof.type === "DID"
           ) {
             issuer.id = `did:ethr:0x${walletAddress}`;
             issuer.identityProof.key = `did:ethr:0x${walletAddress}#controller`;
@@ -47,6 +47,10 @@ export const getUpdatedConfigV2 = ({
             if (issuer.identityProof.type === "DNS-DID") {
               issuer.identityProof.location = dnsDid;
             }
+            // // creator does not have DID only handling yet + recomendation is to use DNS-DID
+            // else if (issuer.identityProof.type === "DID") {
+            //   delete issuer.identityProof.location;
+            // }
           }
         }
         return issuer;
@@ -106,11 +110,16 @@ export const getUpdatedConfigV3 = ({
         form.defaults.openAttestationMetadata.identityProof.identifier =
           dnsVerifiable;
       } else if (
-        form.defaults.openAttestationMetadata.identityProof.type === "DID" ||
         form.defaults.openAttestationMetadata.identityProof.type === "DNS-DID"
       ) {
         form.defaults.openAttestationMetadata.identityProof.identifier = dnsDid;
       }
+      // // creator does not have DID only handling yet + recomendation is to use DNS-DID
+      // else if (
+      //   form.defaults.openAttestationMetadata.identityProof.type === "DID"
+      // ) {
+      //   form.defaults.openAttestationMetadata.identityProof.identifier = `did:ethr:0x${walletAddress}`;
+      // }
     }
 
     if (form.type === "TRANSFERABLE_RECORD") {
