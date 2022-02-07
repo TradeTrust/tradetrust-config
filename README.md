@@ -43,3 +43,9 @@ open-attestation config create --output-dir ./example-configs --encrypted-wallet
 ```
 
 Read more at [here](https://github.com/Open-Attestation/open-attestation-cli#method-1-using-config-template-url-option-recommended).
+
+### Debugging netlify functions
+
+`npm run netlify`
+
+make an url / postman GET request to `http://localhost:9999/.netlify/functions/schema`
