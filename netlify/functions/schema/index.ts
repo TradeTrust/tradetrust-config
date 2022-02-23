@@ -12,11 +12,13 @@ export const handler: Handler = async (event) => {
 
   if (process.env.NETLIFY_LOCAL) {
     headers = {
+      "Content-Type": "application/json",
       "Access-Control-Allow-Credentials": true,
       "Access-Control-Allow-Origin": "*",
     };
   } else if (ALLOWED_ORIGINS.includes(origin)) {
     headers = {
+      "Content-Type": "application/json",
       "Access-Control-Allow-Credentials": true,
       "Access-Control-Allow-Origin": origin,
     };
