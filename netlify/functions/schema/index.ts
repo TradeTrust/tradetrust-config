@@ -10,11 +10,17 @@ export const handler: Handler = async (event) => {
   const schema = version === "3.0" ? schemaV3 : schemaV2;
   let headers;
 
-  if (ALLOWED_ORIGINS.includes(origin)) {
+  if (process.env.NETLIFY_LOCAL) {
     headers = {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": origin,
       "Access-Control-Allow-Credentials": true,
+      "Access-Control-Allow-Origin": "*",
+    };
+  } else if (ALLOWED_ORIGINS.includes(origin)) {
+    headers = {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Credentials": true,
+      "Access-Control-Allow-Origin": origin,
     };
   } else {
     headers = {
