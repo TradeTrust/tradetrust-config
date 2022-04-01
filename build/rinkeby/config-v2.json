@@ -25,6 +25,9 @@
             "identityProof": {
               "type": "DNS-TXT",
               "location": "demo-tradetrust.openattestation.com"
+            },
+            "revocation": {
+              "type": "NONE"
             }
           }
         ]

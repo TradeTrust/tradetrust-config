@@ -19,7 +19,10 @@
       "proof": {
         "type": "OpenAttestationProofMethod",
         "method": "TOKEN_REGISTRY",
-        "value": "<TOKEN_REGISTRY_ADDRESS>"
+        "value": "<TOKEN_REGISTRY_ADDRESS>",
+        "revocation": {
+          "type": "NONE"
+        }
       },
       "identityProof": {
         "type": "DNS-TXT",

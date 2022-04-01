@@ -6,6 +6,7 @@ import {
 import {
   IdentityProofType as IdentityProofTypeV3,
   ProofType,
+  RevocationType as RevocationTypeV3,
   Method,
 } from "@govtechsg/open-attestation/dist/types/__generated__/schema.3.0";
 import { walletReference } from "./wallet";
@@ -90,6 +91,9 @@ export const ConfigMinimumExampleV3: ConfigFileWithFormV3 = {
             type: "OpenAttestationProofMethod" as ProofType.OpenAttestationProofMethod,
             method: "DOCUMENT_STORE" as Method.DocumentStore,
             value: "123",
+            revocation: {
+              type: "NONE" as RevocationTypeV3.None,
+            },
           },
           identityProof: {
             type: "DNS-TXT" as IdentityProofTypeV3.DNSTxt,

@@ -25,6 +25,9 @@
             "identityProof": {
               "type": "DNS-TXT",
               "location": "example.com"
+            },
+            "revocation": {
+              "type": "NONE"
             }
           }
         ]

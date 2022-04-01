@@ -33,7 +33,10 @@
           "proof": {
             "type": "OpenAttestationProofMethod",
             "method": "TOKEN_REGISTRY",
-            "value": "0x72d9a82203Ef9177239A5E3cB7A8FB9a78D04f17"
+            "value": "0x72d9a82203Ef9177239A5E3cB7A8FB9a78D04f17",
+            "revocation": {
+              "type": "NONE"
+            }
           },
           "identityProof": {
             "type": "DNS-TXT",

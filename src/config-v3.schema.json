@@ -99,7 +99,7 @@
                     }
                   },
                   "proof": {
-                    "required": ["type", "method"],
+                    "required": ["type", "method", "revocation"],
                     "type": "object",
                     "properties": {
                       "type": {
@@ -114,6 +114,7 @@
                         "type": "string"
                       },
                       "revocation": {
+                        "required": ["type"],
                         "type": "object",
                         "properties": {
                           "type": {

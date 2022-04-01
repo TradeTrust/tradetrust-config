@@ -91,7 +91,12 @@
                 "items": {
                   "oneOf": [
                     {
-                      "required": ["name", "documentStore", "identityProof"],
+                      "required": [
+                        "name",
+                        "documentStore",
+                        "identityProof",
+                        "revocation"
+                      ],
                       "description": "Issue with document store using DNS-TXT as verification.",
                       "type": "object",
                       "properties": {
@@ -116,6 +121,7 @@
                           }
                         },
                         "revocation": {
+                          "required": ["type"],
                           "type": "object",
                           "properties": {
                             "type": {
@@ -182,6 +188,7 @@
                           "type": "string"
                         },
                         "revocation": {
+                          "required": ["type"],
                           "type": "object",
                           "properties": {
                             "type": {
