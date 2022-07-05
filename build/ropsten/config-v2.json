@@ -34,6 +34,7 @@
       },
       "schema": {
         "type": "object",
+        "additionalProperties": false,
         "required": [
           "blNumber",
           "scac"
@@ -162,6 +163,7 @@
       },
       "schema": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "iD": {
             "type": "string",
@@ -592,6 +594,7 @@
       },
       "schema": {
         "type": "object",
+        "additionalProperties": false,
         "required": [
           "documentName"
         ],
@@ -780,6 +783,7 @@
       },
       "schema": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "logo": {
             "type": "string",
@@ -868,6 +872,7 @@
       },
       "schema": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "string",
@@ -1026,6 +1031,7 @@
       },
       "schema": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "string",

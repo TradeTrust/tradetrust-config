@@ -23,6 +23,7 @@
   },
   "schema": {
     "type": "object",
+    "additionalProperties": false,
     "required": ["blNumber", "scac"],
     "properties": {
       "blNumber": {
