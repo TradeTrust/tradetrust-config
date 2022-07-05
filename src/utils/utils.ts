@@ -19,6 +19,13 @@ export const validateConfig = (
   }
 };
 
+export const validateSchema = (schema: any, data: any) => {
+  const ajv = new Ajv({ allErrors: true });
+  const isValidated = ajv.validate(schema, data);
+
+  return { isValidated, errors: ajv.errors };
+};
+
 export const getForms = (dir: string) => {
   const forms: any[] = []; // let it be v2 or v3 forms
   fs.readdirSync(dir)

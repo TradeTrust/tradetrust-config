@@ -7,7 +7,8 @@ import {
   ErrorNoWallet,
   ErrorUri,
 } from "../src/examples/config-file";
-import { validateConfig } from "../src/utils/utils";
+import { validateConfig, validateSchema } from "../src/utils/utils";
+import configSchemaFormExample from "../build/ropsten/config-v2.json";
 
 describe("validateConfig v2", () => {
   test("should not throw for minimum config example", () => {
@@ -40,5 +41,29 @@ describe("validateConfig v3", () => {
     expect(() =>
       validateConfig(configSchemaV3, ConfigMinimumExampleV3),
     ).not.toThrow();
+  });
+});
+
+describe("validateSchema", () => {
+  const { forms } = configSchemaFormExample;
+  const invoice = forms.find(
+    (form) => form.name === "TradeTrust Covering Letter v2",
+  );
+  const { schema } = invoice;
+
+  test("should pass with valid data", () => {
+    const { isValidated } = validateSchema(schema, {
+      logo: "",
+    });
+
+    expect(isValidated).toBe(true);
+  });
+
+  test("should fail with additional data", () => {
+    const { isValidated } = validateSchema(schema, {
+      foo: "",
+    });
+
+    expect(isValidated).toBe(false);
   });
 });
