@@ -38,10 +38,10 @@
   },
   "schema": {
     "type": "object",
-    "additionalProperties": false,
     "properties": {
       "credentialSubject": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "string",
