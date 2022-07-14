@@ -74,9 +74,7 @@ describe("validateSchema", () => {
 
   test("should pass with valid data", () => {
     const { isValidated } = validateSchema(schema, {
-      credentialSubject: {
-        billFrom: {},
-      },
+      billFrom: {},
     });
 
     expect(isValidated).toBe(true);
@@ -84,9 +82,7 @@ describe("validateSchema", () => {
 
   test("should fail with additional data", () => {
     const { isValidated } = validateSchema(schema, {
-      credentialSubject: {
-        foo: "",
-      },
+      foo: "",
     });
 
     expect(isValidated).toBe(false);
