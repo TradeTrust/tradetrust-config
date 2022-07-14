@@ -38,30 +38,65 @@
   },
   "schema": {
     "type": "object",
+    "additionalProperties": false,
     "properties": {
-      "credentialSubject": {
+      "id": {
+        "type": "string",
+        "title": "Invoice ID"
+      },
+      "date": {
+        "type": "string",
+        "title": "Date"
+      },
+      "customerId": {
+        "type": "string",
+        "title": "Customer ID"
+      },
+      "terms": {
+        "type": "string",
+        "title": "Terms"
+      },
+      "billFrom": {
         "type": "object",
-        "additionalProperties": false,
+        "title": "Bill From",
         "properties": {
-          "id": {
+          "name": {
             "type": "string",
-            "title": "Invoice ID"
+            "title": "Name"
           },
-          "date": {
+          "streetAddress": {
             "type": "string",
-            "title": "Date"
+            "title": "Street Address"
           },
-          "customerId": {
+          "city": {
             "type": "string",
-            "title": "Customer ID"
+            "title": "City"
           },
-          "terms": {
+          "postalCode": {
             "type": "string",
-            "title": "Terms"
+            "title": "Postal Code"
           },
-          "billFrom": {
+          "phoneNumber": {
+            "type": "string",
+            "title": "Phone Number"
+          }
+        }
+      },
+      "billTo": {
+        "type": "object",
+        "title": "Bill To",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "email": {
+            "type": "string",
+            "title": "Email"
+          },
+          "company": {
             "type": "object",
-            "title": "Bill From",
+            "title": "Bill To Company",
             "properties": {
               "name": {
                 "type": "string",
@@ -84,89 +119,49 @@
                 "title": "Phone Number"
               }
             }
-          },
-          "billTo": {
-            "type": "object",
-            "title": "Bill To",
-            "properties": {
-              "name": {
-                "type": "string",
-                "title": "Name"
-              },
-              "email": {
-                "type": "string",
-                "title": "Email"
-              },
-              "company": {
-                "type": "object",
-                "title": "Bill To Company",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "title": "Name"
-                  },
-                  "streetAddress": {
-                    "type": "string",
-                    "title": "Street Address"
-                  },
-                  "city": {
-                    "type": "string",
-                    "title": "City"
-                  },
-                  "postalCode": {
-                    "type": "string",
-                    "title": "Postal Code"
-                  },
-                  "phoneNumber": {
-                    "type": "string",
-                    "title": "Phone Number"
-                  }
-                }
-              }
-            }
-          },
-          "billableItems": {
-            "type": "array",
-            "title": "Billable Items",
-            "items": {
-              "type": "object",
-              "properties": {
-                "description": {
-                  "type": "string",
-                  "title": "Description"
-                },
-                "quantity": {
-                  "type": "string",
-                  "title": "Quantity"
-                },
-                "unitPrice": {
-                  "type": "string",
-                  "title": "Unit Price"
-                },
-                "amount": {
-                  "type": "string",
-                  "title": "Amount"
-                }
-              }
-            }
-          },
-          "subtotal": {
-            "type": "string",
-            "title": "Subtotal"
-          },
-          "tax": {
-            "type": "string",
-            "title": "Tax (%)"
-          },
-          "taxTotal": {
-            "type": "string",
-            "title": "Tax Total"
-          },
-          "total": {
-            "type": "string",
-            "title": "Total"
           }
         }
+      },
+      "billableItems": {
+        "type": "array",
+        "title": "Billable Items",
+        "items": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "title": "Description"
+            },
+            "quantity": {
+              "type": "string",
+              "title": "Quantity"
+            },
+            "unitPrice": {
+              "type": "string",
+              "title": "Unit Price"
+            },
+            "amount": {
+              "type": "string",
+              "title": "Amount"
+            }
+          }
+        }
+      },
+      "subtotal": {
+        "type": "string",
+        "title": "Subtotal"
+      },
+      "tax": {
+        "type": "string",
+        "title": "Tax (%)"
+      },
+      "taxTotal": {
+        "type": "string",
+        "title": "Tax Total"
+      },
+      "total": {
+        "type": "string",
+        "title": "Total"
       }
     }
   }
