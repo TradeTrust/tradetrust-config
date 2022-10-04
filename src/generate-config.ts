@@ -2,20 +2,20 @@ import fs from "fs";
 import path from "path";
 import configSchemaV2 from "./config-v2.schema.json";
 import configSchemaV3 from "./config-v3.schema.json";
-import { walletSample, walletLocal } from "./examples/wallet";
 import { configFileV2, configFileV3 } from "./examples/config-file";
+import { walletLocal, walletSample } from "./examples/wallet";
 import { getUpdatedConfigV2, getUpdatedConfigV3 } from "./helpers/helpers";
+import { ConfigFileWithFormV2, ConfigFileWithFormV3, Network } from "./types";
 import { validateConfig } from "./utils/utils";
-import { Network, ConfigFileWithFormV2, ConfigFileWithFormV3 } from "./types";
 
 const DIR = path.join(__dirname, "../build");
 
 // addresses exists as txt-records in respective domains
 const buildData = [
   {
-    network: "ropsten" as Network,
-    documentStoreAddress: "0x8bA63EAB43342AAc3AdBB4B827b68Cf4aAE5Caca",
-    tokenRegistryAddress: "0x72d9a82203Ef9177239A5E3cB7A8FB9a78D04f17",
+    network: "goerli" as Network,
+    documentStoreAddress: "0x49b2969bF0E4aa822023a9eA2293b24E4518C1DD",
+    tokenRegistryAddress: "0x921dC7cEF00155ac3A33f04DA7395324d7809757",
     dnsVerifiable: "demo-tradetrust.openattestation.com",
     dnsTransferableRecord: "demo-tradetrust.openattestation.com",
     dnsDid: "demo-tradetrust.openattestation.com",
@@ -40,7 +40,7 @@ const buildData = [
 
 const writeConfigFile = (
   configFile: ConfigFileWithFormV2 | ConfigFileWithFormV3,
-  file: string,
+  file: string
 ) => {
   fs.writeFile(file, JSON.stringify(configFile, null, 2), (err: any) => {
     if (err) throw err;
