@@ -121,11 +121,10 @@ export const ErrorNoWallet = {
 
 export const ErrorUri = {
   ...ConfigMinimumExampleV2,
-  //remove document storage for the moment as it is only for ropsten test net.
-  // documentStorage: {
-  //   apiKey: "randomKey",
-  //   url: "123", // handles "format": "uri"
-  // },
+  documentStorage: {
+    apiKey: "randomKey",
+    url: "123", // handles "format": "uri"
+  },
 };
 
 export const ErrorHostname = {
