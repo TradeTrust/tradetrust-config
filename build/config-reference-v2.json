@@ -1,5 +1,5 @@
 {
-  "network": "ropsten",
+  "network": "goerli",
   "wallet": {
     "type": "ENCRYPTED_JSON",
     "encryptedJson": "<WALLET>"
@@ -31,10 +31,7 @@
       "schema": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "blNumber",
-          "scac"
-        ],
+        "required": ["blNumber", "scac"],
         "properties": {
           "blNumber": {
             "type": "string",
@@ -591,9 +588,7 @@
       "schema": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "documentName"
-        ],
+        "required": ["documentName"],
         "properties": {
           "documentName": {
             "type": "string",

@@ -14,7 +14,7 @@ import { formsV2, formsV3 } from "./forms";
 import { walletReference } from "./wallet";
 
 export const configFileV2: ConfigFileWithFormV2 = {
-  network: "ropsten", // do not change yet, oa-cli should hard overwrite with ropsten
+  network: "goerli",
   wallet: walletReference,
   // remove document storage for the moment as it is only for ropsten test net.
   // documentStorage: {
@@ -25,7 +25,7 @@ export const configFileV2: ConfigFileWithFormV2 = {
 };
 
 export const configFileV3: ConfigFileWithFormV3 = {
-  network: "ropsten", // do not change yet, oa-cli should hard overwrite with ropsten
+  network: "goerli",
   wallet: walletReference,
   // remove document storage for the moment as it is only for ropsten test net.
   // documentStorage: {
@@ -36,7 +36,7 @@ export const configFileV3: ConfigFileWithFormV3 = {
 };
 
 export const ConfigMinimumExampleV2: ConfigFileWithFormV2 = {
-  network: "ropsten",
+  network: "goerli",
   wallet: walletReference,
   forms: [
     {
@@ -69,7 +69,7 @@ export const ConfigMinimumExampleV2: ConfigFileWithFormV2 = {
 };
 
 export const ConfigMinimumExampleV3: ConfigFileWithFormV3 = {
-  network: "ropsten",
+  network: "goerli",
   wallet: walletReference,
   forms: [
     {
