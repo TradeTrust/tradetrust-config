@@ -36,7 +36,14 @@ export interface FormV3 extends Form {
   defaults: v3.OpenAttestationDocument;
 }
 
-export type Network = "ropsten" | "rinkeby" | "homestead" | "local";
+export type Network =
+  | "goerli"
+  | "rinkeby"
+  | "homestead"
+  | "local"
+  | "sepolia"
+  | "matic"
+  | "maticmum";
 
 interface ConfigFile {
   network: Network;

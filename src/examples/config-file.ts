@@ -5,36 +5,38 @@ import {
 } from "@govtechsg/open-attestation/dist/types/__generated__/schema.2.0";
 import {
   IdentityProofType as IdentityProofTypeV3,
+  Method,
   ProofType,
   RevocationType as RevocationTypeV3,
-  Method,
 } from "@govtechsg/open-attestation/dist/types/__generated__/schema.3.0";
-import { walletReference } from "./wallet";
-import { formsV2, formsV3 } from "./forms";
 import { ConfigFileWithFormV2, ConfigFileWithFormV3 } from "../types";
+import { formsV2, formsV3 } from "./forms";
+import { walletReference } from "./wallet";
 
 export const configFileV2: ConfigFileWithFormV2 = {
-  network: "ropsten", // do not change yet, oa-cli should hard overwrite with ropsten
+  network: "goerli",
   wallet: walletReference,
-  documentStorage: {
-    apiKey: "randomKey",
-    url: "https://api-ropsten.tradetrust.io/storage",
-  },
+  // remove document storage for the moment as it is only for ropsten test net.
+  // documentStorage: {
+  //   apiKey: "randomKey",
+  //   url: "https://api-ropsten.tradetrust.io/storage",
+  // },
   forms: [...formsV2],
 };
 
 export const configFileV3: ConfigFileWithFormV3 = {
-  network: "ropsten", // do not change yet, oa-cli should hard overwrite with ropsten
+  network: "goerli",
   wallet: walletReference,
-  documentStorage: {
-    apiKey: "randomKey",
-    url: "https://api-ropsten.tradetrust.io/storage",
-  },
+  // remove document storage for the moment as it is only for ropsten test net.
+  // documentStorage: {
+  //   apiKey: "randomKey",
+  //   url: "https://api-ropsten.tradetrust.io/storage",
+  // },
   forms: [...formsV3],
 };
 
 export const ConfigMinimumExampleV2: ConfigFileWithFormV2 = {
-  network: "ropsten",
+  network: "goerli",
   wallet: walletReference,
   forms: [
     {
@@ -67,7 +69,7 @@ export const ConfigMinimumExampleV2: ConfigFileWithFormV2 = {
 };
 
 export const ConfigMinimumExampleV3: ConfigFileWithFormV3 = {
-  network: "ropsten",
+  network: "goerli",
   wallet: walletReference,
   forms: [
     {

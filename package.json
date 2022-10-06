@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "ts-node ./src/generate-config.ts --project tsconfig.json",
+    "clean": "npx rimraf ./build",
+    "generate": "ts-node ./src/generate-config.ts --project tsconfig.json",
+    "build": "npm run clean && npm run generate",
     "docs": "npx typedoc --excludeInternal",
     "start": "npx json-server --watch ./src/response.js --port 4000 --no-cors true",
     "lint": "eslint ./src/*/**.ts",

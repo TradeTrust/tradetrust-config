@@ -1,12 +1,8 @@
 {
-  "network": "ropsten",
+  "network": "goerli",
   "wallet": {
     "type": "ENCRYPTED_JSON",
     "encryptedJson": "<WALLET>"
-  },
-  "documentStorage": {
-    "apiKey": "randomKey",
-    "url": "https://api-ropsten.tradetrust.io/storage"
   },
   "forms": [
     {
