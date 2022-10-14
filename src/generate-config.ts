@@ -21,14 +21,6 @@ const buildData = [
     dnsDid: "demo-tradetrust.openattestation.com",
   },
   {
-    network: "rinkeby" as Network,
-    documentStoreAddress: "0x8bA63EAB43342AAc3AdBB4B827b68Cf4aAE5Caca",
-    tokenRegistryAddress: "0x26E730520949F9B2F73b53A35044680c2165725D",
-    dnsVerifiable: "demo-tradetrust.openattestation.com",
-    dnsTransferableRecord: "demo-tradetrust.openattestation.com",
-    dnsDid: "demo-tradetrust.openattestation.com",
-  },
-  {
     network: "local" as Network, // local network will skip dns verifier
     documentStoreAddress: "0x63a223e025256790e88778a01f480eba77731d04",
     tokenRegistryAddress: "0x9Eb613a88534E2939518f4ffBFE65F5969b491FF",

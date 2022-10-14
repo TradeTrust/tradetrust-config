@@ -38,7 +38,6 @@ export interface FormV3 extends Form {
 
 export type Network =
   | "goerli"
-  | "rinkeby"
   | "homestead"
   | "local"
   | "sepolia"
