@@ -16,22 +16,20 @@ import { walletReference } from "./wallet";
 export const configFileV2: ConfigFileWithFormV2 = {
   network: "goerli",
   wallet: walletReference,
-  // remove document storage for the moment as it is only for ropsten test net.
-  // documentStorage: {
-  //   apiKey: "randomKey",
-  //   url: "https://api-ropsten.tradetrust.io/storage",
-  // },
+  documentStorage: {
+    apiKey: "randomKey",
+    url: "https://tradetrust-functions.netlify.app/.netlify/functions/storage",
+  },
   forms: [...formsV2],
 };
 
 export const configFileV3: ConfigFileWithFormV3 = {
   network: "goerli",
   wallet: walletReference,
-  // remove document storage for the moment as it is only for ropsten test net.
-  // documentStorage: {
-  //   apiKey: "randomKey",
-  //   url: "https://api-ropsten.tradetrust.io/storage",
-  // },
+  documentStorage: {
+    apiKey: "randomKey",
+    url: "https://tradetrust-functions.netlify.app/.netlify/functions/storage",
+  },
   forms: [...formsV3],
 };
 
