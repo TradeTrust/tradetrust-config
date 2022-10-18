@@ -4,6 +4,10 @@
     "type": "ENCRYPTED_JSON",
     "encryptedJson": "<WALLET>"
   },
+  "documentStorage": {
+    "apiKey": "randomKey",
+    "url": "https://tradetrust-functions.netlify.app/.netlify/functions/storage"
+  },
   "forms": [
     {
       "name": "TradeTrust Bill of Lading v3",
