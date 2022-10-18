@@ -537,6 +537,9 @@
         }
       },
       "uiSchema": {
+        "issueDateTime": {
+          "ui:widget": "datetime"
+        },
         "firstSignatoryAuthentication": {
           "signature": {
             "ui:widget": "file",
@@ -546,10 +549,20 @@
             }
           }
         },
-        "issueDateTime": {
-          "ui:widget": "datetime"
-        },
         "supplyChainConsignment": {
+          "includedConsignmentItems": {
+            "items": {
+              "tradeLineItems": {
+                "items": {
+                  "invoiceReference": {
+                    "formattedIssueDateTime": {
+                      "ui:widget": "datetime"
+                    }
+                  }
+                }
+              }
+            }
+          },
           "mainCarriageTransportMovement": {
             "departureEvent": {
               "departureDateTime": {
@@ -745,6 +758,9 @@
           "actualDate": {
             "ui:widget": "date"
           }
+        },
+        "issueDateAndTime": {
+          "ui:widget": "datetime"
         },
         "descriptionOfGoods": {
           "dateOfInvoice": {
