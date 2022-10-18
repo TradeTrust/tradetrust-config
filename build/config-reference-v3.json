@@ -772,7 +772,13 @@
             "title": "Total"
           }
         }
-      }
+      },
+      "uiSchema": {
+        "date": {
+          "ui:widget": "date"
+        }
+      },
+      "extension": "tt"
     },
     {
       "name": "TradeTrust Invoice v3",
@@ -943,7 +949,15 @@
             "title": "Total"
           }
         }
-      }
+      },
+      "uiSchema": {
+        "credentialSubject": {
+          "date": {
+            "ui:widget": "date"
+          }
+        }
+      },
+      "extension": "tt"
     }
   ]
 }

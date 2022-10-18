@@ -164,5 +164,11 @@
         "title": "Total"
       }
     }
-  }
+  },
+  "uiSchema": {
+    "date": {
+      "ui:widget": "date"
+    }
+  },
+  "extension": "tt"
 }
