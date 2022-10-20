@@ -574,28 +574,39 @@
         }
       },
       "uiSchema": {
-        "credentialSubject": {
-          "firstSignatoryAuthentication": {
-            "signature": {
-              "ui:widget": "file",
-              "ui:options": {
-                "text": "Upload Signature",
-                "accept": ".png, .jpeg, .jpg"
-              }
-            },
-            "actualDateTime": {
-              "ui:widget": "datetime"
+        "firstSignatoryAuthentication": {
+          "signature": {
+            "ui:widget": "file",
+            "ui:options": {
+              "text": "Upload Signature",
+              "accept": ".png, .jpeg, .jpg"
             }
           },
-          "issueDateTime": {
+          "actualDateTime": {
             "ui:widget": "datetime"
-          },
-          "supplyChainConsignment": {
-            "mainCarriageTransportMovement": {
-              "departureEvent": {
-                "departureDateTime": {
-                  "ui:widget": "datetime"
+          }
+        },
+        "issueDateTime": {
+          "ui:widget": "datetime"
+        },
+        "supplyChainConsignment": {
+          "includedConsignmentItems": {
+            "items": {
+              "tradeLineItems": {
+                "items": {
+                  "invoiceReference": {
+                    "formattedIssueDateTime": {
+                      "ui:widget": "datetime"
+                    }
+                  }
                 }
+              }
+            }
+          },
+          "mainCarriageTransportMovement": {
+            "departureEvent": {
+              "departureDateTime": {
+                "ui:widget": "datetime"
               }
             }
           }
@@ -955,10 +966,8 @@
         }
       },
       "uiSchema": {
-        "credentialSubject": {
-          "date": {
-            "ui:widget": "date"
-          }
+        "date": {
+          "ui:widget": "date"
         }
       },
       "extension": "tt"

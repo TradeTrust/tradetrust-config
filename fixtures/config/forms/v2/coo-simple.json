@@ -177,6 +177,9 @@
         "ui:widget": "date"
       }
     },
+    "issueDateAndTime": {
+      "ui:widget": "datetime"
+    },
     "descriptionOfGoods": {
       "dateOfInvoice": {
         "ui:widget": "date"
