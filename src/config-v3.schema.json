@@ -6,15 +6,7 @@
   "properties": {
     "network": {
       "type": "string",
-      "enum": [
-        "rinkeby",
-        "homestead",
-        "local",
-        "goerli",
-        "sepolia",
-        "matic",
-        "maticmum"
-      ]
+      "enum": ["homestead", "local", "goerli", "sepolia", "matic", "maticmum"]
     },
     "wallet": {
       "oneOf": [
