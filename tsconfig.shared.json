@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "moduleResolution": "Node"
+  },
+  "include": ["./src/shared/**/*.ts"],
+  "exclude": ["node_modules"]
+}

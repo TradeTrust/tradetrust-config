@@ -3,10 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "clean": "npx rimraf ./build",
     "generate": "ts-node ./src/generate-config.ts --project tsconfig.json",
     "build": "npm run clean && npm run generate",
+    "dist:cjs": "tsc --project tsconfig.shared.json --module commonjs --target es2015 --outDir dist/cjs",
+    "dist:esm": "tsc --project tsconfig.shared.json --module es2015 --target es2015 --outDir dist/esm",
+    "dist": "npx rimraf ./dist && npm run dist:cjs && npm run dist:esm",
     "docs": "npx typedoc --excludeInternal",
     "start": "npx json-server --watch ./src/response.js --port 4000 --no-cors true",
     "lint": "eslint ./src/*/**.ts",

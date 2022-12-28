@@ -1,4 +1,4 @@
-# TradeTrust config
+# TradeTrust Creator configs
 
 Repository to house TradeTrust config schema + various configs used in TradeTrust creator.
 
