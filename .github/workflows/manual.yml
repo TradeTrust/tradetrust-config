@@ -19,6 +19,8 @@ jobs:
         run: npm run test
       - name: Build docs
         run: npm run docs
+      - name: Build dist
+        run: npm run dist
       - name: Release
         run: npx semantic-release --branches master
         env:
