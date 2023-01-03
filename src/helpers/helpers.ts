@@ -1,4 +1,4 @@
-import { utils } from "@govtechsg/open-attestation";
+import { updateFormV2, updateFormV3 } from "../shared";
 import {
   ConfigFileWithFormV2,
   ConfigFileWithFormV3,
@@ -7,9 +7,10 @@ import {
   FormV2,
   FormV3,
 } from "../types";
+import { SUPPORTED_CHAINS } from "@govtechsg/tradetrust-utils/constants/supportedChains";
 
 export const getUpdatedConfigV2 = ({
-  network,
+  chainId,
   wallet,
   configFile,
   documentStoreAddress,
@@ -19,9 +20,10 @@ export const getUpdatedConfigV2 = ({
   dnsTransferableRecord,
 }: GetUpdatedConfigFileWithFormV2): ConfigFileWithFormV2 => {
   const { forms } = configFile;
+  const chain = SUPPORTED_CHAINS[chainId];
 
   const updatedForms = forms.map((form: FormV2) => {
-    utils.updateFormV2({
+    updateFormV2({
       wallet,
       form,
       documentStoreAddress,
@@ -30,19 +32,29 @@ export const getUpdatedConfigV2 = ({
       dnsDid,
       dnsTransferableRecord,
     });
-    return form;
+
+    return {
+      ...form,
+      defaults: {
+        ...form.defaults,
+        network: {
+          chain: chain.currency,
+          chainId,
+        },
+      },
+    };
   });
 
   return {
     ...configFile,
-    network,
+    network: chain.name,
     wallet,
     forms: updatedForms,
   };
 };
 
 export const getUpdatedConfigV3 = ({
-  network,
+  chainId,
   wallet,
   configFile,
   documentStoreAddress,
@@ -52,9 +64,10 @@ export const getUpdatedConfigV3 = ({
   dnsTransferableRecord,
 }: GetUpdatedConfigFileWithFormV3): ConfigFileWithFormV3 => {
   const { forms } = configFile;
+  const chain = SUPPORTED_CHAINS[chainId];
 
   const updatedForms = forms.map((form: FormV3) => {
-    utils.updateFormV3({
+    updateFormV3({
       wallet,
       form,
       documentStoreAddress,
@@ -64,12 +77,18 @@ export const getUpdatedConfigV3 = ({
       dnsTransferableRecord,
     });
 
-    return form;
+    return {
+      ...form,
+      network: {
+        chain: chain.currency,
+        chainId,
+      },
+    };
   });
 
   return {
     ...configFile,
-    network,
+    network: chain.name,
     wallet,
     forms: updatedForms,
   };
