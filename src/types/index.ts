@@ -1,4 +1,6 @@
 import { v2, v3 } from "@govtechsg/open-attestation";
+import { CHAIN_ID } from "@govtechsg/tradetrust-utils/constants/supportedChains";
+import { networkName } from "@govtechsg/tradetrust-utils/constants/network";
 
 export type WalletEncryptedJson = {
   type: "ENCRYPTED_JSON";
@@ -36,16 +38,8 @@ export interface FormV3 extends Form {
   defaults: v3.OpenAttestationDocument;
 }
 
-export type Network =
-  | "goerli"
-  | "homestead"
-  | "local"
-  | "sepolia"
-  | "matic"
-  | "maticmum";
-
 interface ConfigFile {
-  network: Network;
+  network: networkName;
   wallet: Wallet;
   documentStorage?: {
     apiKey?: string;
@@ -62,7 +56,7 @@ export interface ConfigFileWithFormV3 extends ConfigFile {
 }
 
 interface GetUpdatedConfigFile {
-  network: Network;
+  chainId: CHAIN_ID;
   wallet: Wallet;
   documentStoreAddress: string;
   tokenRegistryAddress: string;
