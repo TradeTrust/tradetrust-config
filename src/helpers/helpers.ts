@@ -33,16 +33,7 @@ export const getUpdatedConfigV2 = ({
       dnsTransferableRecord,
     });
 
-    return {
-      ...form,
-      defaults: {
-        ...form.defaults,
-        network: {
-          chain: chain.currency,
-          chainId,
-        },
-      },
-    };
+    return form;
   });
 
   return {
@@ -77,13 +68,7 @@ export const getUpdatedConfigV3 = ({
       dnsTransferableRecord,
     });
 
-    return {
-      ...form,
-      network: {
-        chain: chain.currency,
-        chainId,
-      },
-    };
+    return form;
   });
 
   return {

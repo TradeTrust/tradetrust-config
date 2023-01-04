@@ -148,10 +148,6 @@
             }
           }
         }
-      },
-      "network": {
-        "chain": "ETH",
-        "chainId": "1337"
       }
     },
     {
@@ -620,11 +616,7 @@
         "allow": true,
         "accept": ".pdf"
       },
-      "extension": "tt",
-      "network": {
-        "chain": "ETH",
-        "chainId": "1337"
-      }
+      "extension": "tt"
     },
     {
       "name": "TradeTrust Invoice v3 (DNS-DID)",
@@ -801,11 +793,7 @@
           "ui:widget": "date"
         }
       },
-      "extension": "tt",
-      "network": {
-        "chain": "ETH",
-        "chainId": "1337"
-      }
+      "extension": "tt"
     },
     {
       "name": "TradeTrust Invoice v3",
@@ -982,11 +970,7 @@
           "ui:widget": "date"
         }
       },
-      "extension": "tt",
-      "network": {
-        "chain": "ETH",
-        "chainId": "1337"
-      }
+      "extension": "tt"
     }
   ]
 }
