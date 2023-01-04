@@ -30,11 +30,7 @@
               "type": "NONE"
             }
           }
-        ],
-        "network": {
-          "chain": "MATIC",
-          "chainId": "80001"
-        }
+        ]
       },
       "schema": {
         "type": "object",
@@ -163,11 +159,7 @@
               "type": "NONE"
             }
           }
-        ],
-        "network": {
-          "chain": "MATIC",
-          "chainId": "80001"
-        }
+        ]
       },
       "schema": {
         "type": "object",
@@ -611,11 +603,7 @@
               "type": "NONE"
             }
           }
-        ],
-        "network": {
-          "chain": "MATIC",
-          "chainId": "80001"
-        }
+        ]
       },
       "schema": {
         "type": "object",
@@ -807,11 +795,7 @@
               "type": "NONE"
             }
           }
-        ],
-        "network": {
-          "chain": "MATIC",
-          "chainId": "80001"
-        }
+        ]
       },
       "schema": {
         "type": "object",
@@ -900,11 +884,7 @@
               "type": "NONE"
             }
           }
-        ],
-        "network": {
-          "chain": "MATIC",
-          "chainId": "80001"
-        }
+        ]
       },
       "schema": {
         "type": "object",
@@ -1063,11 +1043,7 @@
               "type": "NONE"
             }
           }
-        ],
-        "network": {
-          "chain": "MATIC",
-          "chainId": "80001"
-        }
+        ]
       },
       "schema": {
         "type": "object",
