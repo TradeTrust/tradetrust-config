@@ -100,6 +100,9 @@ const writeSamples = () => {
       dnsTransferableRecord,
     });
 
+    validateConfig(configSchemaV2, updatedConfigV2);
+    validateConfig(configSchemaV3, updatedConfigV3);
+
     writeConfigFile(updatedConfigV2, `${DIR_NETWORK}/config-v2.json`);
     writeConfigFile(updatedConfigV3, `${DIR_NETWORK}/config-v3.json`);
   });
@@ -107,9 +110,6 @@ const writeSamples = () => {
 
 const generateConfig = async () => {
   try {
-    validateConfig(configSchemaV2, configFileV2);
-    validateConfig(configSchemaV3, configFileV3);
-
     writeReferences();
     writeSamples();
   } catch (err) {
