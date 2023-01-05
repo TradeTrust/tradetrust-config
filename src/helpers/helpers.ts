@@ -23,7 +23,7 @@ export const getUpdatedConfigV2 = ({
   const chain = SUPPORTED_CHAINS[chainId];
 
   const updatedForms = forms.map((form: FormV2) => {
-    updateFormV2({
+    return updateFormV2({
       wallet,
       form,
       documentStoreAddress,
@@ -32,8 +32,6 @@ export const getUpdatedConfigV2 = ({
       dnsDid,
       dnsTransferableRecord,
     });
-
-    return form;
   });
 
   return {
@@ -58,7 +56,7 @@ export const getUpdatedConfigV3 = ({
   const chain = SUPPORTED_CHAINS[chainId];
 
   const updatedForms = forms.map((form: FormV3) => {
-    updateFormV3({
+    return updateFormV3({
       wallet,
       form,
       documentStoreAddress,
@@ -67,8 +65,6 @@ export const getUpdatedConfigV3 = ({
       dnsDid,
       dnsTransferableRecord,
     });
-
-    return form;
   });
 
   return {
