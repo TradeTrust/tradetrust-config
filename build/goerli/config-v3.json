@@ -48,6 +48,10 @@
           "id": "https://example.com",
           "name": "DEMO TOKEN REGISTRY",
           "type": "OpenAttestationIssuer"
+        },
+        "network": {
+          "chain": "ETH",
+          "chainId": "5"
         }
       },
       "schema": {
@@ -148,10 +152,6 @@
             }
           }
         }
-      },
-      "network": {
-        "chain": "ETH",
-        "chainId": "5"
       }
     },
     {
@@ -193,6 +193,10 @@
           "id": "https://example.com",
           "name": "DEMO DOCUMENT STORE",
           "type": "OpenAttestationIssuer"
+        },
+        "network": {
+          "chain": "ETH",
+          "chainId": "5"
         }
       },
       "schema": {
@@ -620,11 +624,7 @@
         "allow": true,
         "accept": ".pdf"
       },
-      "extension": "tt",
-      "network": {
-        "chain": "ETH",
-        "chainId": "5"
-      }
+      "extension": "tt"
     },
     {
       "name": "TradeTrust Invoice v3 (DNS-DID)",
@@ -665,6 +665,10 @@
           "id": "https://example.com",
           "name": "DEMO DNS-DID",
           "type": "OpenAttestationIssuer"
+        },
+        "network": {
+          "chain": "ETH",
+          "chainId": "5"
         }
       },
       "schema": {
@@ -801,11 +805,7 @@
           "ui:widget": "date"
         }
       },
-      "extension": "tt",
-      "network": {
-        "chain": "ETH",
-        "chainId": "5"
-      }
+      "extension": "tt"
     },
     {
       "name": "TradeTrust Invoice v3",
@@ -846,6 +846,10 @@
           "id": "https://example.com",
           "name": "DEMO DOCUMENT STORE",
           "type": "OpenAttestationIssuer"
+        },
+        "network": {
+          "chain": "ETH",
+          "chainId": "5"
         }
       },
       "schema": {
@@ -982,11 +986,7 @@
           "ui:widget": "date"
         }
       },
-      "extension": "tt",
-      "network": {
-        "chain": "ETH",
-        "chainId": "5"
-      }
+      "extension": "tt"
     }
   ]
 }

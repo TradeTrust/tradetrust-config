@@ -130,7 +130,7 @@ export const updateFormV3 = ({
       dnsTransferableRecord;
   }
 
-  form.network = {
+  form.defaults.network = {
     chain: chain.currency,
     chainId: chain.id,
   };

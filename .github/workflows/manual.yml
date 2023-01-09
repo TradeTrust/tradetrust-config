@@ -13,7 +13,7 @@ jobs:
       - name: Build config
         run: npm run build
       - name: Run test
-        run: sleep 2 && npm run test
+        run: npm run test
       - name: Build docs
         run: npm run docs
       - name: Build dist
