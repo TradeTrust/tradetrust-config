@@ -24,6 +24,7 @@ export const getUpdatedConfigV2 = ({
 
   const updatedForms = forms.map((form: FormV2) => {
     return updateFormV2({
+      chain,
       wallet,
       form,
       documentStoreAddress,
@@ -57,6 +58,7 @@ export const getUpdatedConfigV3 = ({
 
   const updatedForms = forms.map((form: FormV3) => {
     return updateFormV3({
+      chain,
       wallet,
       form,
       documentStoreAddress,

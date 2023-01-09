@@ -148,6 +148,10 @@
             }
           }
         }
+      },
+      "network": {
+        "chain": "MATIC",
+        "chainId": "80001"
       }
     },
     {
@@ -616,7 +620,11 @@
         "allow": true,
         "accept": ".pdf"
       },
-      "extension": "tt"
+      "extension": "tt",
+      "network": {
+        "chain": "MATIC",
+        "chainId": "80001"
+      }
     },
     {
       "name": "TradeTrust Invoice v3 (DNS-DID)",
@@ -793,7 +801,11 @@
           "ui:widget": "date"
         }
       },
-      "extension": "tt"
+      "extension": "tt",
+      "network": {
+        "chain": "MATIC",
+        "chainId": "80001"
+      }
     },
     {
       "name": "TradeTrust Invoice v3",
@@ -970,7 +982,11 @@
           "ui:widget": "date"
         }
       },
-      "extension": "tt"
+      "extension": "tt",
+      "network": {
+        "chain": "MATIC",
+        "chainId": "80001"
+      }
     }
   ]
 }

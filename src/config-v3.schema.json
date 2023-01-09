@@ -59,7 +59,7 @@
             "enum": ["VERIFIABLE_DOCUMENT", "TRANSFERABLE_RECORD"]
           },
           "defaults": {
-            "required": ["@context", "type", "issuanceDate"],
+            "required": ["@context", "type", "issuanceDate", "network"],
             "type": "object",
             "properties": {
               "@context": {
@@ -164,6 +164,19 @@
                   "type": {
                     "type": "string",
                     "enum": ["OpenAttestationIssuer"]
+                  }
+                }
+              },
+              "network": {
+                "type": "object",
+                "properties": {
+                  "chain": {
+                    "type": "string",
+                    "enum": ["ETH", "MATIC"]
+                  },
+                  "chainId": {
+                    "type": "string",
+                    "enum": ["1337", "1", "137", "80001", "5", "11155111"]
                   }
                 }
               }
