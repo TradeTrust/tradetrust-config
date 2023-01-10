@@ -1,7 +1,15 @@
-name: CI/CD
-on: [push]
+name: Continuous Integration
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    types:
+      - closed
 jobs:
-  test:
+  if_push:
+    name: Tests
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -23,3 +31,16 @@ jobs:
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  if_pr_merged:
+    name: Post build
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: |
+          npm run build
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add ./build
+          git diff-index --quiet HEAD || git commit -m 'chore: automated post build' && git push
