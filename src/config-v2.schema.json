@@ -59,7 +59,7 @@
             "enum": ["VERIFIABLE_DOCUMENT", "TRANSFERABLE_RECORD"]
           },
           "defaults": {
-            "required": ["$template", "issuers"],
+            "required": ["$template", "issuers", "network"],
             "type": "object",
             "properties": {
               "$template": {
@@ -204,6 +204,19 @@
                       }
                     }
                   ]
+                }
+              },
+              "network": {
+                "type": "object",
+                "properties": {
+                  "chain": {
+                    "type": "string",
+                    "enum": ["ETH", "MATIC"]
+                  },
+                  "chainId": {
+                    "type": "string",
+                    "enum": ["1337", "1", "137", "80001", "5", "11155111"]
+                  }
                 }
               }
             }

@@ -59,6 +59,10 @@ export const ConfigMinimumExampleV2: ConfigFileWithFormV2 = {
             },
           },
         ],
+        network: {
+          chain: "ETH",
+          chainId: "5",
+        },
       },
       schema: {},
       uiSchema: {},
@@ -105,6 +109,10 @@ export const ConfigMinimumExampleV3: ConfigFileWithFormV3 = {
           name: "DEMO STORE",
         },
         credentialSubject: {},
+        network: {
+          chain: "ETH",
+          chainId: "5",
+        },
       },
       schema: {},
       uiSchema: {},

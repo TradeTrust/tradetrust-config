@@ -1,3 +1,6 @@
+import { networkCurrency } from "@govtechsg/tradetrust-utils/constants/network";
+import { CHAIN_ID } from "@govtechsg/tradetrust-utils/constants/supportedChains";
+
 type WalletEncryptedJson = {
   type: "ENCRYPTED_JSON";
   encryptedJson: string;
@@ -13,6 +16,10 @@ type WalletAws = {
 type Wallet = WalletEncryptedJson | WalletAws;
 
 interface UpdateForm {
+  chain: {
+    currency: networkCurrency;
+    id: CHAIN_ID;
+  };
   wallet: Wallet;
   form: any;
   documentStoreAddress: string;
@@ -23,6 +30,7 @@ interface UpdateForm {
 }
 
 export const updateFormV2 = ({
+  chain,
   wallet,
   form,
   documentStoreAddress,
@@ -70,10 +78,16 @@ export const updateFormV2 = ({
     form.defaults.issuers = updatedIssuers;
   }
 
+  form.defaults.network = {
+    chain: chain.currency,
+    chainId: chain.id,
+  };
+
   return form;
 };
 
 export const updateFormV3 = ({
+  chain,
   wallet,
   form,
   documentStoreAddress,
@@ -115,6 +129,11 @@ export const updateFormV3 = ({
     form.defaults.openAttestationMetadata.identityProof.identifier =
       dnsTransferableRecord;
   }
+
+  form.defaults.network = {
+    chain: chain.currency,
+    chainId: chain.id,
+  };
 
   return form;
 };

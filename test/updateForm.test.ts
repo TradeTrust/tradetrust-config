@@ -1,3 +1,4 @@
+import { CHAIN_ID } from "@govtechsg/tradetrust-utils/constants/supportedChains";
 import { Wallet } from "ethers";
 import { updateFormV2, updateFormV3 } from "../src/shared/updateForm";
 import v2VerifiableDocumentForm from "../fixtures/config/forms/v2/invoice.json";
@@ -80,6 +81,7 @@ describe("updateFormV2", () => {
 
   it("should update the form from a verifiable document correctly", () => {
     const updatedForm = updateFormV2({
+      chain: { currency: "ETH", id: CHAIN_ID.goerli },
       wallet: { type: "ENCRYPTED_JSON", encryptedJson: walletString },
       form: v2VerifiableDocumentForm,
       documentStoreAddress: "0xabcDocumentStore",
@@ -98,6 +100,7 @@ describe("updateFormV2", () => {
 
   it("should update the form from a DID verifiable document correctly", () => {
     const updatedForm = updateFormV2({
+      chain: { currency: "ETH", id: CHAIN_ID.goerli },
       wallet: { type: "ENCRYPTED_JSON", encryptedJson: walletString },
       form: v2DidForm,
       documentStoreAddress: "0xabcDocumentStore",
@@ -120,6 +123,7 @@ describe("updateFormV2", () => {
 
   it("should update the form from a DNS-DID verifiable document correctly", () => {
     const updatedForm = updateFormV2({
+      chain: { currency: "ETH", id: CHAIN_ID.goerli },
       wallet: { type: "ENCRYPTED_JSON", encryptedJson: walletString },
       form: v2DnsDidForm,
       documentStoreAddress: "0xabcDocumentStore",
@@ -141,6 +145,7 @@ describe("updateFormV2", () => {
 
   it("should update the form from a transferable document correctly", () => {
     const updatedForm = updateFormV2({
+      chain: { currency: "ETH", id: CHAIN_ID.goerli },
       wallet: { type: "ENCRYPTED_JSON", encryptedJson: walletString },
       form: v2TransferableRecordForm,
       documentStoreAddress: "0xabcDocumentStore",
@@ -166,6 +171,7 @@ describe("updateFormV3", () => {
 
   it("should update the form from a verifiable document correctly", () => {
     const updatedForm = updateFormV3({
+      chain: { currency: "ETH", id: CHAIN_ID.goerli },
       wallet: { type: "ENCRYPTED_JSON", encryptedJson: walletString },
       form: v3VerifiableDocumentForm,
       documentStoreAddress: "0xabcDocumentStore",
@@ -184,6 +190,7 @@ describe("updateFormV3", () => {
 
   it("should update the form from a DID verifiable document correctly", () => {
     const updatedForm = updateFormV3({
+      chain: { currency: "ETH", id: CHAIN_ID.goerli },
       wallet: { type: "ENCRYPTED_JSON", encryptedJson: walletString },
       form: v3DidForm,
       documentStoreAddress: "0xabcDocumentStore",
@@ -202,6 +209,7 @@ describe("updateFormV3", () => {
 
   it("should update the form from a DNS-DID verifiable document correctly", () => {
     const updatedForm = updateFormV3({
+      chain: { currency: "ETH", id: CHAIN_ID.goerli },
       wallet: { type: "ENCRYPTED_JSON", encryptedJson: walletString },
       form: v3DnsDidForm,
       documentStoreAddress: "0xabcDocumentStore",
@@ -220,6 +228,7 @@ describe("updateFormV3", () => {
 
   it("should update the form from a transferable document correctly", () => {
     const updatedForm = updateFormV3({
+      chain: { currency: "ETH", id: CHAIN_ID.goerli },
       wallet: { type: "ENCRYPTED_JSON", encryptedJson: walletString },
       form: v3TransferableRecordForm,
       documentStoreAddress: "0xabcDocumentStore",
