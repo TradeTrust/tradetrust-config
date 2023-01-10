@@ -10,7 +10,7 @@ Repository to house TradeTrust config schema + various configs used in TradeTrus
 
 `npm run start`
 
-> Run `git update-index --assume-unchanged build/**` once to ignore local build files. Built config files will be automatically commited on PR merged.
+> Run `git update-index --assume-unchanged build/**` once to ignore local build files. Built config files will be automatically committed on PR merged.
 
 ### Documentation
 
