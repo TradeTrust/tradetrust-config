@@ -12,9 +12,7 @@ This repo:
 
 - https://github.com/TradeTrust/tradetrust-config/tree/master/build
 
-#### About build folder
-
-`build` folder with the respective config files should always exists + available for download in this repo. They are meant to be shared with product owner end.
+The above [`build`](https://github.com/TradeTrust/tradetrust-config/tree/master/build) folder with the respective config files should always exists + available for download in this repo. They are meant to be shared with product owner end.
 
 > Run `git update-index --assume-unchanged build/**/*` once to ignore local build files. Built config files will be automatically committed on PR merged.
 
