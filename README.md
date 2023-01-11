@@ -1,18 +1,28 @@
-# TradeTrust Creator configs
+# TradeTrust creator configs
 
-Repository to house TradeTrust config schema + various configs used in TradeTrust creator.
+Repository to house TradeTrust creator config schema + various configs used in TradeTrust creator.
 
-### Latest config files
+This repo:
+
+- Aims to synchronise all the forms used in TradeTrust.
+- Generates various config files with inputted `network`, `addresses`, `wallet`. Wallets used are testnets only!
+- Is only as relevent as [TradeTrust creator](https://creator.tradetrust.io). If one day TradeTrust creator is obsolete, this should cease too.
+
+## ✅ Latest config files
 
 - https://github.com/TradeTrust/tradetrust-config/tree/master/build
+
+The above [`build`](https://github.com/TradeTrust/tradetrust-config/tree/master/build) folder with the respective config files should always exists + available for download in this repo. They are meant to be shared with product owner end.
+
+> Run `git update-index --assume-unchanged build/**/*` once to ignore local build files. Built config files will be automatically committed on PR merged.
 
 ### Development
 
 `npm run start`
 
-> Run `git update-index --assume-unchanged build/**` once to ignore local build files. Built config files will be automatically committed on PR merged.
+---
 
-### Documentation
+## Documentation
 
 - For [reading](https://docs.tradetrust.io/docs/document-creator/config-file/file-structure).
 - For interactive [explore](https://tradetrust-config.netlify.app). (based on types)
@@ -20,10 +30,9 @@ Repository to house TradeTrust config schema + various configs used in TradeTrus
 
 > Do note that there is config file with v3 forms too.
 
-### Config file
+---
 
-- Reference [config file with v2 forms](https://github.com/TradeTrust/tradetrust-config/blob/master/build/config-reference-v2.json).
-- Reference [config file with v3 forms](https://github.com/TradeTrust/tradetrust-config/blob/master/build/config-reference-v3.json).
+## Miscellaneous
 
 ### Differences between config file with v2 forms and v3 forms?
 
@@ -36,13 +45,11 @@ Mainly the `OpenAttestationDocument` in `defaults` field.
 
 ### Create config with OA CLI
 
-```
-open-attestation config create --output-dir ./example-configs --encrypted-wallet-path </path/to>/wallet.json --config-template-url https://raw.githubusercontent.com/TradeTrust/tradetrust-config/master/build/config-reference-v2.json
-```
-
 Read more at [here](https://github.com/Open-Attestation/open-attestation-cli#method-1-using-config-template-url-option-recommended).
 
 ### Debugging netlify functions
+
+There is exposed config schema service available, however it is still experimental.
 
 `npm run netlify`
 

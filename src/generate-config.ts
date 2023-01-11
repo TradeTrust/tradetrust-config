@@ -53,12 +53,14 @@ const writeConfigFile = (
 };
 
 const writeReferences = () => {
-  if (!fs.existsSync(DIR)) {
-    fs.mkdirSync(DIR);
+  const DIR_REFERENCE = `${DIR}/reference`;
+
+  if (!fs.existsSync(DIR_REFERENCE)) {
+    fs.mkdirSync(DIR_REFERENCE, { recursive: true });
   }
 
-  writeConfigFile(configFileV2, `${DIR}/config-reference-v2.json`);
-  writeConfigFile(configFileV3, `${DIR}/config-reference-v3.json`);
+  writeConfigFile(configFileV2, `${DIR_REFERENCE}/config-v2.json`);
+  writeConfigFile(configFileV3, `${DIR_REFERENCE}/config-v3.json`);
 };
 
 const writeSamples = () => {
