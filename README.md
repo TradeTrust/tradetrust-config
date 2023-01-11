@@ -1,24 +1,26 @@
 # TradeTrust creator configs
 
-Repository to house TradeTrust config schema + various configs used in TradeTrust creator.
+Repository to house TradeTrust creator config schema + various configs used in TradeTrust creator.
 
 This repo:
 
-- aims to synchronise all the forms used in TradeTrust.
-- generates various config files with inputted `network`, `addresses`, `wallet`.
-- is only as relevent as [TradeTrust Creator](https://creator.tradetrust.io). If one day TradeTrust Creator is obsolete, this should cease too.
+- Aims to synchronise all the forms used in TradeTrust.
+- Generates various config files with inputted `network`, `addresses`, `wallet`. Wallets used are testnets only!
+- Is only as relevent as [TradeTrust creator](https://creator.tradetrust.io). If one day TradeTrust creator is obsolete, this should cease too.
 
 ## ✅ Latest config files
 
 - https://github.com/TradeTrust/tradetrust-config/tree/master/build
 
+#### About build folder
+
+`build` folder with the respective config files should always exists + available for download in this repo. They are meant to be shared with product owner end.
+
+> Run `git update-index --assume-unchanged build/**/*` once to ignore local build files. Built config files will be automatically committed on PR merged.
+
 ### Development
 
 `npm run start`
-
-`build` folder with the respecetive config files should always exists + available for download in this repo. They are meant to be shared with product owner end.
-
-> Run `git update-index --assume-unchanged build/**/*` once to ignore local build files. Built config files will be automatically committed on PR merged.
 
 ---
 
