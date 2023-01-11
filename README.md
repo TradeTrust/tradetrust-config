@@ -8,13 +8,15 @@ This repo:
 - generates various config files with inputted `network`, `addresses`, `wallet`.
 - is only as relevent as [TradeTrust Creator](https://creator.tradetrust.io). If one day TradeTrust Creator is obsolete, this should cease too.
 
-✅ ## Latest config files
+## ✅ Latest config files
 
-https://github.com/TradeTrust/tradetrust-config/tree/master/build
+- https://github.com/TradeTrust/tradetrust-config/tree/master/build
 
 ### Development
 
 `npm run start`
+
+`build` folder with the respecetive config files should always exists + available for download in this repo. They are meant to be shared with product owner end.
 
 > Run `git update-index --assume-unchanged build/**/*` once to ignore local build files. Built config files will be automatically committed on PR merged.
 
