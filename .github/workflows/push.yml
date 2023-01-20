@@ -8,7 +8,7 @@ jobs:
     name: Linters
     uses: ./.github/workflows/linters.yml
   build:
-    name: Docs
+    name: Build
     uses: ./.github/workflows/build.yml
   tests:
     name: Test
