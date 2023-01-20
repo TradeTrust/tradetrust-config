@@ -1,0 +1,17 @@
+name: Build
+on:
+  workflow_call:
+jobs:
+  build:
+    name: Build All
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: npm ci
+      - name: Build Docs
+        run: npm run docs
+      - name: Build Config Files
+        run: npm run build
+      - name: Build Distributed
+        run: npm run dist

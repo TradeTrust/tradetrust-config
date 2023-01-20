@@ -1,0 +1,17 @@
+name: Push
+on:
+  push:
+    branches-ignore:
+      - master
+jobs:
+  lint:
+    name: Linters
+    uses: ./.github/workflows/linters.yml
+  build:
+    name: Build
+    uses: ./.github/workflows/build.yml
+  tests:
+    needs: [lint, build]
+    name: Test
+    uses: ./.github/workflows/test.yml
+
