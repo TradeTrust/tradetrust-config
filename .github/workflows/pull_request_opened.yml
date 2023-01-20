@@ -1,0 +1,19 @@
+name: Pull Request Opened
+on:
+  push:
+    branches-ignore:
+      - master
+  pull_request:
+    types:
+      - opened
+      - reopened
+jobs:
+  lint:
+    name: Linters
+    uses: ./.github/workflows/linters.yml
+  build:
+    name: Docs
+    uses: ./.github/workflows/build.yml
+  tests:
+    name: Test
+    uses: ./.github/workflows/test.yml
