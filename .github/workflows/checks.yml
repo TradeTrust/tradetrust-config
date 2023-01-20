@@ -1,0 +1,13 @@
+name: Checks
+on:
+  workflow_call:
+jobs:
+  lint:
+    name: Linters
+    uses: ./.github/workflows/linters.yml
+  build:
+    name: Build
+    uses: ./.github/workflows/build.yml
+  tests:
+    name: Test
+    uses: ./.github/workflows/test.yml

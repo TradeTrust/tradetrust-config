@@ -4,12 +4,6 @@ on:
     branches-ignore:
       - master
 jobs:
-  lint:
-    name: Linters
-    uses: ./.github/workflows/linters.yml
-  build:
-    name: Build
-    uses: ./.github/workflows/build.yml
-  tests:
-    name: Test
-    uses: ./.github/workflows/test.yml
+  checks:
+    name: Checks
+    uses: ./.github/workflows/checks.yml
