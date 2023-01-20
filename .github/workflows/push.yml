@@ -1,12 +1,8 @@
-name: Pull Request Opened
+name: Push
 on:
   push:
     branches-ignore:
       - master
-  pull_request:
-    types:
-      - opened
-      - reopened
 jobs:
   lint:
     name: Linters
