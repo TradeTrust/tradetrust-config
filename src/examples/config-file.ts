@@ -14,7 +14,7 @@ import { formsV2, formsV3 } from "./forms";
 import { walletReference } from "./wallet";
 
 export const configFileV2: ConfigFileWithFormV2 = {
-  network: "goerli",
+  network: "sepolia",
   wallet: walletReference,
   documentStorage: {
     apiKey: "randomKey",
@@ -24,7 +24,7 @@ export const configFileV2: ConfigFileWithFormV2 = {
 };
 
 export const configFileV3: ConfigFileWithFormV3 = {
-  network: "goerli",
+  network: "sepolia",
   wallet: walletReference,
   documentStorage: {
     apiKey: "randomKey",
@@ -34,7 +34,7 @@ export const configFileV3: ConfigFileWithFormV3 = {
 };
 
 export const ConfigMinimumExampleV2: ConfigFileWithFormV2 = {
-  network: "goerli",
+  network: "sepolia",
   wallet: walletReference,
   forms: [
     {
@@ -71,7 +71,7 @@ export const ConfigMinimumExampleV2: ConfigFileWithFormV2 = {
 };
 
 export const ConfigMinimumExampleV3: ConfigFileWithFormV3 = {
-  network: "goerli",
+  network: "sepolia",
   wallet: walletReference,
   forms: [
     {
