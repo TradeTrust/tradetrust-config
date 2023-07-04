@@ -1,5 +1,5 @@
-import configSchemaFormExampleV2 from "../build/goerli/config-v2.json";
-import configSchemaFormExampleV3 from "../build/goerli/config-v3.json";
+import configSchemaFormExampleV2 from "../build/sepolia/config-v2.json";
+import configSchemaFormExampleV3 from "../build/sepolia/config-v3.json";
 import configSchemaV2 from "../src/config-v2.schema.json";
 import configSchemaV3 from "../src/config-v3.schema.json";
 import {
