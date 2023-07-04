@@ -25,14 +25,6 @@ const buildData = [
     dnsDid: "demo-tradetrust.openattestation.com",
   },
   {
-    chainId: "5" as CHAIN_ID,
-    documentStoreAddress: "0x49b2969bF0E4aa822023a9eA2293b24E4518C1DD",
-    tokenRegistryAddress: "0x921dC7cEF00155ac3A33f04DA7395324d7809757",
-    dnsVerifiable: "demo-tradetrust.openattestation.com",
-    dnsTransferableRecord: "demo-tradetrust.openattestation.com",
-    dnsDid: "demo-tradetrust.openattestation.com",
-  },
-  {
     chainId: "11155111" as CHAIN_ID,
     documentStoreAddress: "0x71D28767662cB233F887aD2Bb65d048d760bA694",
     tokenRegistryAddress: "0x142Ca30e3b78A840a82192529cA047ED759a6F7e",
