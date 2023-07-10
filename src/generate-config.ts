@@ -18,11 +18,11 @@ const DIR = path.join(__dirname, "../build");
 const buildData = [
   {
     chainId: "80001" as CHAIN_ID,
-    documentStoreAddress: "0xDAcbd662C0cC48797e490eEd946b6D8b414c52B0",
-    tokenRegistryAddress: "0x4E945Eb5A2FF89AE6f2f828e283aEf1fB657DC59",
-    dnsVerifiable: "demo-tradetrust.openattestation.com",
-    dnsTransferableRecord: "demo-tradetrust.openattestation.com",
-    dnsDid: "demo-tradetrust.openattestation.com",
+    documentStoreAddress: "0x93092C2B449712281008112870063fF439367C00",
+    tokenRegistryAddress: "0x072FB36B73a7f52A23ea53162583f78ba3Bc6DEa",
+    dnsVerifiable: "example.tradetrust.io",
+    dnsTransferableRecord: "example.tradetrust.io",
+    dnsDid: "example.tradetrust.io",
   },
   {
     chainId: "11155111" as CHAIN_ID,
@@ -44,7 +44,7 @@ const buildData = [
 
 const writeConfigFile = (
   configFile: ConfigFileWithFormV2 | ConfigFileWithFormV3,
-  file: string
+  file: string,
 ) => {
   fs.writeFile(file, JSON.stringify(configFile, null, 2), (err: any) => {
     if (err) throw err;
