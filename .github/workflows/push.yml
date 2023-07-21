@@ -3,6 +3,7 @@ on:
   push:
     branches-ignore:
       - master
+  pull_request:
 jobs:
   lint:
     name: Linters
@@ -14,4 +15,3 @@ jobs:
     needs: [lint, build]
     name: Test
     uses: ./.github/workflows/test.yml
-
