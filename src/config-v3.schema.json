@@ -90,7 +90,12 @@
                       },
                       "name": {
                         "type": "string",
-                        "enum": ["BILL_OF_LADING", "CHAFTA_COO", "INVOICE"]
+                        "enum": [
+                          "BILL_OF_LADING",
+                          "CHAFTA_COO",
+                          "INVOICE",
+                          "COVERING_LETTER"
+                        ]
                       },
                       "url": {
                         "type": "string",
