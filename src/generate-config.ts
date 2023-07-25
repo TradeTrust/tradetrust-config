@@ -3,7 +3,7 @@ import path from "path";
 import configSchemaV2 from "./config-v2.schema.json";
 import configSchemaV3 from "./config-v3.schema.json";
 import { configFileV2, configFileV3 } from "./examples/config-file";
-import { walletLocal, walletSample } from "./examples/wallet";
+import { walletLocal, walletSample, walletApothem } from "./examples/wallet";
 import { getUpdatedConfigV2, getUpdatedConfigV3 } from "./helpers/helpers";
 import { ConfigFileWithFormV2, ConfigFileWithFormV3 } from "./types";
 import { SUPPORTED_CHAINS } from "@govtechsg/tradetrust-utils/constants/supportedChains";
@@ -43,8 +43,19 @@ const writeSamples = () => {
       dnsTransferableRecord,
     } = data;
     const DIR_NETWORK = `${DIR}/${SUPPORTED_CHAINS[chainId].name}`;
-    const wallet = chainId === "1337" ? walletLocal : walletSample;
+    let wallet;
 
+    switch (chainId) {
+      case "1337":
+        wallet = walletLocal;
+        break;
+      case "51":
+        wallet = walletApothem;
+        break;
+      default:
+        wallet = walletSample;
+        break;
+    }
     if (!fs.existsSync(DIR_NETWORK)) {
       fs.mkdirSync(DIR_NETWORK);
     }
