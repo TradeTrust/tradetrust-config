@@ -6,7 +6,7 @@
   "properties": {
     "network": {
       "type": "string",
-      "enum": ["homestead", "local", "goerli", "sepolia", "matic", "maticmum"]
+      "enum": ["homestead", "local", "goerli", "sepolia", "matic", "maticmum","xdc","xdcapothem"]
     },
     "wallet": {
       "oneOf": [
@@ -211,11 +211,11 @@
                 "properties": {
                   "chain": {
                     "type": "string",
-                    "enum": ["ETH", "MATIC"]
+                    "enum": ["ETH", "MATIC", "XDC"]
                   },
                   "chainId": {
                     "type": "string",
-                    "enum": ["1337", "1", "137", "80001", "5", "11155111"]
+                    "enum": ["1337", "1", "137", "80001", "5", "11155111","50","51"]
                   }
                 }
               }
