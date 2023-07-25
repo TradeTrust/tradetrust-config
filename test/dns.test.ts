@@ -20,8 +20,8 @@ const resolveDns = async (domainName: string) => {
   }
 };
 
-describe("dns text", () => {
-  test("should contain respective verifiable txt-records", async () => {
+describe("dns txt-records", () => {
+  test("should contain respective document store address", async () => {
     const found: boolean[] = [];
 
     for (let i = 0; i < testNetworks.length; i++) {
@@ -35,7 +35,7 @@ describe("dns text", () => {
     expect(found.every((bool) => bool === true)).toBe(true);
   });
 
-  test("should contain respective transferable txt-records", async () => {
+  test("should contain respective token registry address", async () => {
     const found: boolean[] = [];
 
     for (let i = 0; i < testNetworks.length; i++) {
