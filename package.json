@@ -35,7 +35,7 @@
   "homepage": "https://github.com/TradeTrust/tradetrust-config#readme",
   "devDependencies": {
     "@govtechsg/open-attestation": "^6.6.0",
-    "@govtechsg/tradetrust-utils": "^1.4.1",
+    "@govtechsg/tradetrust-utils": "^1.6.0",
     "@netlify/functions": "^1.3.0",
     "@types/jest": "^29.5.0",
     "@types/node": "^18.15.10",
