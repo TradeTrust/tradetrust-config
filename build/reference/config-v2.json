@@ -163,17 +163,8 @@
             "accept": ".png, .jpeg, .jpg"
           }
         },
-        "carrierReceipt": {
-          "ui:widget": "textarea"
-        },
-        "placeOfIssueBL": {
-          "ui:widget": "textarea"
-        },
-        "numberOfOriginalBL": {
-          "ui:widget": "textarea"
-        },
         "dateOfIssueBL": {
-          "ui:widget": "textarea"
+          "ui:widget": "date"
         },
         "carrierSignature": {
           "ui:widget": "file",
