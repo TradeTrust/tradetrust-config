@@ -1,0 +1,27 @@
+name: CI
+on:
+  push:
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Clean Install
+        run: npm ci
+      - name: Run lint
+        run: npm run lint
+      - name: Build Docs
+        run: npm run docs
+      - name: Build Config Files
+        run: npm run build
+      - name: Build Distributed
+        run: npm run dist
+      - name: Run test
+        run: npm run test
+      - name: Release
+        run: npx semantic-release@19.0.5 --branches master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
