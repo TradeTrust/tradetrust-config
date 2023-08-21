@@ -74,6 +74,7 @@
                     "type": "string",
                     "enum": [
                       "BILL_OF_LADING",
+                      "BILL_OF_LADING_MAERSK_PILOT",
                       "CHAFTA_COO",
                       "COVERING_LETTER",
                       "INVOICE",
