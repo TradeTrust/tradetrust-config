@@ -1,4 +1,5 @@
 import walletTestnet from "../../fixtures/config/wallet/wallet-testnet.json";
+import walletXDCTestNet from "../../fixtures/config/wallet/wallet-apothem.json";
 import walletGanache from "../../fixtures/config/wallet/wallet-ganache.json";
 import { WalletEncryptedJson, WalletAws } from "../types";
 
@@ -17,6 +18,11 @@ export const walletReference: WalletEncryptedJson = {
 export const walletSample: WalletEncryptedJson = {
   type: "ENCRYPTED_JSON",
   encryptedJson: JSON.stringify(walletTestnet),
+};
+
+export const walletApothem: WalletEncryptedJson = {
+  type: "ENCRYPTED_JSON",
+  encryptedJson: JSON.stringify(walletXDCTestNet),
 };
 
 export const walletLocal: WalletEncryptedJson = {
