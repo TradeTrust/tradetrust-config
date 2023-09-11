@@ -138,6 +138,10 @@
       "carrierSignature": {
         "type": "string",
         "title": "Carrier Signature"
+      },
+      "shippedOnBoardDate": {
+        "type": "string",
+        "title": "Shipped on Board Date"
       }
     }
   },
@@ -158,6 +162,9 @@
         "text": "Upload Carrier Signature",
         "accept": ".png, .jpeg, .jpg"
       }
+    },
+    "shippedOnBoardDate": {
+      "ui:widget": "date"
     }
   },
   "attachments": {
