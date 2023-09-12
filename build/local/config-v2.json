@@ -10,12 +10,12 @@
   },
   "forms": [
     {
-      "name": "TradeTrust Bill of Lading v2 (Maersk Pilot)",
+      "name": "TradeTrust Bill of Lading v2 (Carrier)",
       "type": "TRANSFERABLE_RECORD",
       "defaults": {
         "$template": {
           "type": "EMBEDDED_RENDERER",
-          "name": "BILL_OF_LADING_MAERSK_PILOT",
+          "name": "BILL_OF_LADING_CARRIER",
           "url": "https://generic-templates.tradetrust.io"
         },
         "issuers": [
@@ -79,9 +79,17 @@
               }
             }
           },
+          "onwardInlandRouting": {
+            "type": "string",
+            "title": "Onward Inland Routing"
+          },
           "consignee": {
             "type": "object",
             "properties": {
+              "toOrderOfText": {
+                "title": "is consigned to (e.g. TO ORDER OF, TO ORDER, etc..)",
+                "type": "string"
+              },
               "name": {
                 "type": "string"
               }
@@ -153,9 +161,25 @@
             "title": "Date of Issue of B/L",
             "type": "string"
           },
+          "shippedOnBoardDate": {
+            "title": "Shipped on Board Date",
+            "type": "string"
+          },
+          "signForTermsAndCondition": {
+            "title": "Signed for Terms and Conditions",
+            "type": "string"
+          },
+          "signedForCarrierText": {
+            "title": "Text for signed for carrier",
+            "type": "string"
+          },
           "carrierSignature": {
             "type": "string",
             "title": "Carrier Signature"
+          },
+          "termsOfCarriage": {
+            "type": "string",
+            "title": "Terms Of Carriage"
           }
         }
       },
@@ -167,8 +191,35 @@
             "accept": ".png, .jpeg, .jpg"
           }
         },
+        "notifyParty": {
+          "name": {
+            "ui:widget": "textarea"
+          }
+        },
+        "packages": {
+          "items": {
+            "description": {
+              "ui:widget": "textarea"
+            }
+          }
+        },
+        "carrierReceipt": {
+          "ui:widget": "textarea"
+        },
+        "placeOfIssueBL": {
+          "ui:widget": "textarea"
+        },
+        "numberOfOriginalBL": {
+          "ui:widget": "textarea"
+        },
         "dateOfIssueBL": {
           "ui:widget": "date"
+        },
+        "shippedOnBoardDate": {
+          "ui:widget": "date"
+        },
+        "signForTermsAndCondition": {
+          "ui:widget": "textarea"
         },
         "carrierSignature": {
           "ui:widget": "file",
@@ -176,6 +227,9 @@
             "text": "Upload Carrier Signature",
             "accept": ".png, .jpeg, .jpg"
           }
+        },
+        "termsOfCarriage": {
+          "ui:widget": "textarea"
         }
       },
       "attachments": {
