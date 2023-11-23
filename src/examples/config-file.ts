@@ -2,13 +2,13 @@ import {
   IdentityProofType as IdentityProofTypeV2,
   RevocationType as RevocationTypeV2,
   TemplateType,
-} from "@govtechsg/open-attestation/dist/types/__generated__/schema.2.0";
+} from "@tradetrust-tt/tradetrust/dist/types/__generated__/schema.2.0";
 import {
   IdentityProofType as IdentityProofTypeV3,
   Method,
   ProofType,
   RevocationType as RevocationTypeV3,
-} from "@govtechsg/open-attestation/dist/types/__generated__/schema.3.0";
+} from "@tradetrust-tt/tradetrust/dist/types/__generated__/schema.3.0";
 import { ConfigFileWithFormV2, ConfigFileWithFormV3 } from "../types";
 import { formsV2, formsV3 } from "./forms";
 import { walletReference } from "./wallet";
