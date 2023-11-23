@@ -1,4 +1,4 @@
-import { v2, v3 } from "@govtechsg/open-attestation";
+import { v2, v3 } from "@tradetrust-tt/tradetrust";
 import { CHAIN_ID } from "@govtechsg/tradetrust-utils/constants/supportedChains";
 import { networkName } from "@govtechsg/tradetrust-utils/constants/network";
 
