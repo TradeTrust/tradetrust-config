@@ -1,5 +1,5 @@
-import { networkCurrency } from "@govtechsg/tradetrust-utils/constants/network";
-import { CHAIN_ID } from "@govtechsg/tradetrust-utils/constants/supportedChains";
+import { networkCurrency } from "@tradetrust-tt/tradetrust-utils/constants/network";
+import { CHAIN_ID } from "@tradetrust-tt/tradetrust-utils/constants/supportedChains";
 
 type WalletEncryptedJson = {
   type: "ENCRYPTED_JSON";

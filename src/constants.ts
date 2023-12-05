@@ -1,4 +1,4 @@
-import { CHAIN_ID } from "@govtechsg/tradetrust-utils/constants/supportedChains";
+import { CHAIN_ID } from "@tradetrust-tt/tradetrust-utils/constants/supportedChains";
 
 // addresses exists as txt-records in respective domains
 export const buildData = [

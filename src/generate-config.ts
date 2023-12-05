@@ -6,7 +6,7 @@ import { configFileV2, configFileV3 } from "./examples/config-file";
 import { walletLocal, walletSample, walletApothem } from "./examples/wallet";
 import { getUpdatedConfigV2, getUpdatedConfigV3 } from "./helpers/helpers";
 import { ConfigFileWithFormV2, ConfigFileWithFormV3 } from "./types";
-import { SUPPORTED_CHAINS } from "@govtechsg/tradetrust-utils/constants/supportedChains";
+import { SUPPORTED_CHAINS } from "@tradetrust-tt/tradetrust-utils/constants/supportedChains";
 import { validateConfig } from "./utils/utils";
 import { buildData } from "./constants";
 const DIR = path.join(__dirname, "../build");

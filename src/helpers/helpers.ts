@@ -7,7 +7,7 @@ import {
   FormV2,
   FormV3,
 } from "../types";
-import { SUPPORTED_CHAINS } from "@govtechsg/tradetrust-utils/constants/supportedChains";
+import { SUPPORTED_CHAINS } from "@tradetrust-tt/tradetrust-utils/constants/supportedChains";
 
 export const getUpdatedConfigV2 = ({
   chainId,
