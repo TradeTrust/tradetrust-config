@@ -1,4 +1,4 @@
-import { CHAIN_ID } from "@govtechsg/tradetrust-utils/constants/supportedChains";
+import { CHAIN_ID } from "@tradetrust-tt/tradetrust-utils/constants/supportedChains";
 import { Wallet } from "ethers";
 import { updateFormV2, updateFormV3 } from "../src/shared/updateForm";
 import v2VerifiableDocumentForm from "../fixtures/config/forms/v2/invoice.json";

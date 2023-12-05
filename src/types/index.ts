@@ -1,6 +1,6 @@
 import { v2, v3 } from "@tradetrust-tt/tradetrust";
-import { CHAIN_ID } from "@govtechsg/tradetrust-utils/constants/supportedChains";
-import { networkName } from "@govtechsg/tradetrust-utils/constants/network";
+import { CHAIN_ID } from "@tradetrust-tt/tradetrust-utils/constants/supportedChains";
+import { networkName } from "@tradetrust-tt/tradetrust-utils/constants/network";
 
 export type WalletEncryptedJson = {
   type: "ENCRYPTED_JSON";
