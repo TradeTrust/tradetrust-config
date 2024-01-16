@@ -54,7 +54,7 @@
     "ajv": "^8.12.0",
     "ajv-formats": "^2.1.1",
     "junk": "3.1.0",
-    "typedoc": "^0.23.28"
+    "typedoc": "^0.25.4"
   },
   "publishConfig": {
     "access": "public"
