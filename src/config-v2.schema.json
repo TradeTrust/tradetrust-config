@@ -87,7 +87,8 @@
                       "CHAFTA_COO",
                       "COVERING_LETTER",
                       "INVOICE",
-                      "SIMPLE_COO"
+                      "SIMPLE_COO",
+                      "WAREHOUSE_RECEIPT"
                     ]
                   },
                   "url": {
