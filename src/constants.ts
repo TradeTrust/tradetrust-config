@@ -3,6 +3,14 @@ import { CHAIN_ID } from "@tradetrust-tt/tradetrust-utils/constants/supportedCha
 // addresses exists as txt-records in respective domains
 export const buildData = [
   {
+    chainId: "20180427" as CHAIN_ID,
+    documentStoreAddress: "0x69E29FA634573BB6b82C01b3FEA3B704488bd853",
+    tokenRegistryAddress: "0x3d23649EB097fa729A8e1e15Fdb37680Caf766F7",
+    dnsVerifiable: "tradetrust-testnet.stabilityprotocol.com",
+    dnsTransferableRecord: "tradetrust-testnet.stabilityprotocol.com",
+    dnsDid: "tradetrust-testnet.stabilityprotocol.com",
+  },
+  {
     chainId: "51" as CHAIN_ID,
     documentStoreAddress: "0x268852277C0eED5A9999B41b0FdbA0443De76475",
     tokenRegistryAddress: "0x1a378fEEc3ed9B63B872B11561FCf19f6d2CE793",
