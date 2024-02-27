@@ -15,7 +15,9 @@
         "maticmum",
         "xdc",
         "xdcapothem",
-        "stabilitytestnet"
+        "stabilitytestnet",
+        "hederatestnet",
+        "hederamainnet"
       ]
     },
     "wallet": {
@@ -223,7 +225,7 @@
                 "properties": {
                   "chain": {
                     "type": "string",
-                    "enum": ["ETH", "MATIC", "XDC", "FREE"]
+                    "enum": ["ETH", "MATIC", "XDC", "FREE","HBAR"]
                   },
                   "chainId": {
                     "type": "string",
@@ -236,7 +238,9 @@
                       "11155111",
                       "50",
                       "51",
-                      "20180427"
+                      "20180427",
+                      "296",
+                      "295"
                     ]
                   }
                 }
