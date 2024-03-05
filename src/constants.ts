@@ -42,4 +42,12 @@ export const buildData = [
     dnsTransferableRecord: "example.com",
     dnsDid: "example.com",
   },
+  {
+    chainId: "296" as CHAIN_ID,
+    documentStoreAddress: "0x222B69788e2e9B7FB93a3a0fE258D4604Dc7df21",
+    tokenRegistryAddress: "0x3DE43bfd3D771931E46CbBd4EDE0D3d95C85f81A",
+    dnsVerifiable: "trustlv.org",
+    dnsTransferableRecord: "trustlv.org",
+    dnsDid: "trustlv.org",
+  },
 ];
