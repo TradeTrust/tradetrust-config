@@ -97,7 +97,24 @@ describe("updateFormV2", () => {
       "0xabcDocumentStore"
     );
   });
-
+  it("should update the form from a verifiable document correctly for hederatesnet ", () => {
+    const updatedForm = updateFormV2({
+      chain: { currency: "HBAR", id: CHAIN_ID.hederatestnet },
+      wallet: { type: "ENCRYPTED_JSON", encryptedJson: walletString },
+      form: v2VerifiableDocumentForm,
+      documentStoreAddress: "0xabcDocumentStore",
+      tokenRegistryAddress: "0xabcTokenRegistry",
+      dnsVerifiable: "VerifiableDNS.com",
+      dnsDid: "DNSDID.com",
+      dnsTransferableRecord: "TransferableDNS.com",
+    });
+    expect(
+        updatedForm.defaults.issuers[0].identityProof.location
+    ).toStrictEqual("VerifiableDNS.com");
+    expect(updatedForm.defaults.issuers[0].documentStore).toStrictEqual(
+        "0xabcDocumentStore"
+    );
+  });
   it("should update the form from a DID verifiable document correctly", () => {
     const updatedForm = updateFormV2({
       chain: { currency: "ETH", id: CHAIN_ID.sepolia },
@@ -187,7 +204,24 @@ describe("updateFormV3", () => {
       updatedForm.defaults.openAttestationMetadata.proof.value
     ).toStrictEqual("0xabcDocumentStore");
   });
-
+  it("should update the form from a verifiable document correctly for hederatestnet", () => {
+    const updatedForm = updateFormV3({
+      chain: { currency: "HBAR", id: CHAIN_ID.hederatestnet },
+      wallet: { type: "ENCRYPTED_JSON", encryptedJson: walletString },
+      form: v3VerifiableDocumentForm,
+      documentStoreAddress: "0xabcDocumentStore",
+      tokenRegistryAddress: "0xabcTokenRegistry",
+      dnsVerifiable: "VerifiableDNS.com",
+      dnsDid: "DNSDID.com",
+      dnsTransferableRecord: "TransferableDNS.com",
+    });
+    expect(
+        updatedForm.defaults.openAttestationMetadata.identityProof.identifier
+    ).toStrictEqual("VerifiableDNS.com");
+    expect(
+        updatedForm.defaults.openAttestationMetadata.proof.value
+    ).toStrictEqual("0xabcDocumentStore");
+  });
   it("should update the form from a DID verifiable document correctly", () => {
     const updatedForm = updateFormV3({
       chain: { currency: "ETH", id: CHAIN_ID.sepolia },
