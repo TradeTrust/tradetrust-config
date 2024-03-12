@@ -16,6 +16,7 @@
         "xdc",
         "xdcapothem",
         "stabilitytestnet",
+        "stability",
         "hederatestnet",
         "hederamainnet"
       ]
@@ -239,6 +240,7 @@
                       "50",
                       "51",
                       "20180427",
+                      "101010",
                       "296",
                       "295"
                     ]
