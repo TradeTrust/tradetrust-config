@@ -12,7 +12,7 @@ export const buildData = [
   },
   {
     chainId: "101010" as CHAIN_ID,
-    documentStoreAddress: "0x5B5F8d94782be18E22420f3276D5ef5a1bc65C53",
+    documentStoreAddress: "0xB3601037855017C8a4d2188C9097C056dd1eDAA6",
     tokenRegistryAddress: "0x03f9950d6cd37a6040834aded3f47a4755983f53",
     dnsVerifiable: "tradetrust-gtn.stabilityprotocol.com",
     dnsTransferableRecord: "tradetrust-gtn.stabilityprotocol.com",
