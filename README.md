@@ -22,7 +22,7 @@ The above [`build`](https://github.com/TradeTrust/tradetrust-config/tree/master/
 
 ## Documentation
 
-- For [reading](https://docs.tradetrust.io/docs/document-creator/config-file/file-structure).
+- For [reading](https://docs.tradetrust.io/docs/reference/document-creator/config-file#config-file-structure).
 - For interactive [explore](https://tradetrust-config.netlify.app). (based on types)
 - For alternative interactive [explore](https://json-schema.app/view/%23?url=https%3A%2F%2Fraw.githubusercontent.com%2FTradeTrust%2Ftradetrust-config%2Fmaster%2Fsrc%2Fconfig-v2.schema.json). (based on json schema)
 
@@ -37,13 +37,13 @@ The above [`build`](https://github.com/TradeTrust/tradetrust-config/tree/master/
 Mainly the `OpenAttestationDocument` in `defaults` field.
 
 - form v2 [defaults](https://tradetrust-config.netlify.app/interfaces/src_types.formv2#defaults).
-  - [OpenAttestationDocument](https://tradetrust-config.netlify.app/interfaces/node_modules__govtechsg_open_attestation_dist_types___generated___schema_2_0.openattestationdocument).
+  - [OpenAttestationDocument](https://tradetrust-config.netlify.app/interfaces/node_modules__tradetrust_tt_tradetrust_dist_types___generated___schema_2_0.openattestationdocument).
 - form v3 [defaults](https://tradetrust-config.netlify.app/interfaces/src_types.formv3#defaults).
-  - [OpenAttestationDocument](https://tradetrust-config.netlify.app/interfaces/node_modules__govtechsg_open_attestation_dist_types___generated___schema_3_0.openattestationdocument).
+  - [OpenAttestationDocument](https://tradetrust-config.netlify.app/interfaces/node_modules__tradetrust_tt_tradetrust_dist_types___generated___schema_3_0.openattestationdocument).
 
-### Create config with OA CLI
+### Create config with TradeTrust CLI
 
-Read more at [here](https://github.com/Open-Attestation/open-attestation-cli#method-1-using-config-template-url-option-recommended).
+Read more at [here](https://github.com/TradeTrust/tradetrust-cli#method-1-using-config-template-url-option-recommended).
 
 ### Debugging netlify functions
 
