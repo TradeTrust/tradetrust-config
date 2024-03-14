@@ -6,7 +6,7 @@
   "properties": {
     "network": {
       "type": "string",
-      "enum": ["homestead", "local", "goerli", "sepolia", "matic", "maticmum","xdc","xdcapothem", "stabilitytestnet", "hederatestnet", "hederamainnet"]
+      "enum": ["homestead", "local", "goerli", "sepolia", "matic", "maticmum","xdc","xdcapothem", "stabilitytestnet", "stability", "hederatestnet", "hederamainnet"]
     },
     "wallet": {
       "oneOf": [
@@ -191,6 +191,7 @@
                       "50",
                       "51",
                       "20180427",
+                      "101010",
                       "296",
                       "295"
                     ]
