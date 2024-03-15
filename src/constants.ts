@@ -58,4 +58,12 @@ export const buildData = [
     dnsTransferableRecord: "trustlv.org",
     dnsDid: "trustlv.org",
   },
+  {
+    chainId: "80002" as CHAIN_ID,
+    documentStoreAddress: "0x93092C2B449712281008112870063fF439367C00",
+    tokenRegistryAddress: "0x71D28767662cB233F887aD2Bb65d048d760bA694",
+    dnsVerifiable: "example.tradetrust.io",
+    dnsTransferableRecord: "example.tradetrust.io",
+    dnsDid: "example.tradetrust.io",
+  },
 ];

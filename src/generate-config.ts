@@ -6,14 +6,17 @@ import { configFileV2, configFileV3 } from "./examples/config-file";
 import { walletLocal, walletSample, walletApothem } from "./examples/wallet";
 import { getUpdatedConfigV2, getUpdatedConfigV3 } from "./helpers/helpers";
 import { ConfigFileWithFormV2, ConfigFileWithFormV3 } from "./types";
-import { SUPPORTED_CHAINS } from "@tradetrust-tt/tradetrust-utils/constants/supportedChains";
+import {
+  SUPPORTED_CHAINS,
+  CHAIN_ID,
+} from "@tradetrust-tt/tradetrust-utils/constants/supportedChains";
 import { validateConfig } from "./utils/utils";
 import { buildData } from "./constants";
 const DIR = path.join(__dirname, "../build");
 
 const writeConfigFile = (
   configFile: ConfigFileWithFormV2 | ConfigFileWithFormV3,
-  file: string,
+  file: string
 ) => {
   fs.writeFile(file, JSON.stringify(configFile, null, 2), (err: any) => {
     if (err) throw err;
@@ -46,13 +49,18 @@ const writeSamples = () => {
     let wallet;
 
     switch (chainId) {
-      case "1337":
+      case CHAIN_ID.local:
         wallet = walletLocal;
         break;
-      case "51":
+      case CHAIN_ID.xdcapothem:
         wallet = walletApothem;
         break;
-      default:
+      case CHAIN_ID.maticmum:
+      case CHAIN_ID.amoy:
+      case CHAIN_ID.sepolia:
+      case CHAIN_ID.hederatestnet:
+      case CHAIN_ID.stabilitytestnet:
+      case CHAIN_ID.stability:
         wallet = walletSample;
         break;
     }
