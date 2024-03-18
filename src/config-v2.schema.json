@@ -9,10 +9,10 @@
       "enum": [
         "homestead",
         "local",
-        "goerli",
         "sepolia",
         "matic",
         "maticmum",
+        "amoy",
         "xdc",
         "xdcapothem",
         "stabilitytestnet",
@@ -226,7 +226,7 @@
                 "properties": {
                   "chain": {
                     "type": "string",
-                    "enum": ["ETH", "MATIC", "XDC", "FREE","HBAR"]
+                    "enum": ["ETH", "MATIC", "XDC", "FREE", "HBAR"]
                   },
                   "chainId": {
                     "type": "string",
@@ -235,7 +235,7 @@
                       "1",
                       "137",
                       "80001",
-                      "5",
+                      "80002",
                       "11155111",
                       "50",
                       "51",

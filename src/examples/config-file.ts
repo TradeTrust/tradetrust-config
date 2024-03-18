@@ -61,7 +61,7 @@ export const ConfigMinimumExampleV2: ConfigFileWithFormV2 = {
         ],
         network: {
           chain: "ETH",
-          chainId: "5",
+          chainId: "11155111",
         },
       },
       schema: {},
@@ -111,7 +111,7 @@ export const ConfigMinimumExampleV3: ConfigFileWithFormV3 = {
         credentialSubject: {},
         network: {
           chain: "ETH",
-          chainId: "5",
+          chainId: "11155111",
         },
       },
       schema: {},

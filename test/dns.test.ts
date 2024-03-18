@@ -16,7 +16,7 @@ const mockFailData = [
 const resolveDns = async (domainName: string) => {
   try {
     const response = await fetch(
-      `https://dns.google/resolve?name=${domainName}&type=TXT`,
+      `https://dns.google/resolve?name=${domainName}&type=TXT`
     );
     const data = await response.json();
 
@@ -35,7 +35,7 @@ type answerData = string | string[];
 const hasDnsTxtAddress = (
   dnsResponseData: answerData,
   chainId: string,
-  address: string,
+  address: string
 ) => {
   const netId = `netId=${chainId}`;
   const addr = `addr=${address}`;
@@ -51,7 +51,7 @@ describe("dns txt-records", () => {
       const { dnsVerifiable, chainId, documentStoreAddress } = testNetworks[i];
       const answers = await resolveDns(dnsVerifiable);
       const isFound = answers.some((answer: { data: answerData }) =>
-        hasDnsTxtAddress(answer.data, chainId, documentStoreAddress),
+        hasDnsTxtAddress(answer.data, chainId, documentStoreAddress)
       );
       found.push(isFound);
     }
@@ -67,7 +67,7 @@ describe("dns txt-records", () => {
         testNetworks[i];
       const answers = await resolveDns(dnsTransferableRecord);
       const isFound = answers.some((answer: { data: string | string[] }) =>
-        hasDnsTxtAddress(answer.data, chainId, tokenRegistryAddress),
+        hasDnsTxtAddress(answer.data, chainId, tokenRegistryAddress)
       );
       found.push(isFound);
     }
@@ -83,7 +83,7 @@ describe("dns txt-records", () => {
 
       const answers = await resolveDns(dnsVerifiable);
       const isFound = answers.some((answer: { data: string | string[] }) =>
-        hasDnsTxtAddress(answer.data, chainId, documentStoreAddress),
+        hasDnsTxtAddress(answer.data, chainId, documentStoreAddress)
       );
       found.push(isFound);
     }
@@ -100,7 +100,7 @@ describe("dns txt-records", () => {
 
       const answers = await resolveDns(dnsTransferableRecord);
       const isFound = answers.some((answer: { data: string | string[] }) =>
-        hasDnsTxtAddress(answer.data, chainId, tokenRegistryAddress),
+        hasDnsTxtAddress(answer.data, chainId, tokenRegistryAddress)
       );
       found.push(isFound);
     }

@@ -1,5 +1,5 @@
 {
-  "network": "hederatestnet",
+  "network": "amoy",
   "wallet": {
     "type": "ENCRYPTED_JSON",
     "encryptedJson": "{\"address\":\"ca93690bb57eeab273c796a9309246bc0fb93649\",\"id\":\"4cf5292d-2fd2-4a8f-8427-708504e5bafe\",\"version\":3,\"Crypto\":{\"cipher\":\"aes-128-ctr\",\"cipherparams\":{\"iv\":\"d9e4767bcf818615d7553a10198ca27a\"},\"ciphertext\":\"547b745aa4e4a3eefa8ffe926758f5630f42d404e790c35ac52ff2de28a893eb\",\"kdf\":\"scrypt\",\"kdfparams\":{\"salt\":\"ad90eeb7541d72ebe829bc23e9e8af23dd8d1b4ebecce14cf4c85f54fd3baa51\",\"n\":131072,\"dklen\":32,\"p\":1,\"r\":8},\"mac\":\"b1b24212a9ed8a070feac12207fb19dc296e9d48c8bfbf3315a598897e758062\"}}"
@@ -33,14 +33,14 @@
           "proof": {
             "type": "OpenAttestationProofMethod",
             "method": "TOKEN_REGISTRY",
-            "value": "0x3DE43bfd3D771931E46CbBd4EDE0D3d95C85f81A",
+            "value": "0x71D28767662cB233F887aD2Bb65d048d760bA694",
             "revocation": {
               "type": "NONE"
             }
           },
           "identityProof": {
             "type": "DNS-TXT",
-            "identifier": "trustlv.org"
+            "identifier": "example.tradetrust.io"
           }
         },
         "credentialSubject": {},
@@ -50,8 +50,8 @@
           "type": "OpenAttestationIssuer"
         },
         "network": {
-          "chain": "HBAR",
-          "chainId": "296"
+          "chain": "MATIC",
+          "chainId": "80002"
         }
       },
       "schema": {
@@ -178,14 +178,14 @@
           "proof": {
             "type": "OpenAttestationProofMethod",
             "method": "DOCUMENT_STORE",
-            "value": "0x222B69788e2e9B7FB93a3a0fE258D4604Dc7df21",
+            "value": "0x93092C2B449712281008112870063fF439367C00",
             "revocation": {
               "type": "NONE"
             }
           },
           "identityProof": {
             "type": "DNS-TXT",
-            "identifier": "trustlv.org"
+            "identifier": "example.tradetrust.io"
           }
         },
         "credentialSubject": {},
@@ -195,8 +195,8 @@
           "type": "OpenAttestationIssuer"
         },
         "network": {
-          "chain": "HBAR",
-          "chainId": "296"
+          "chain": "MATIC",
+          "chainId": "80002"
         }
       },
       "schema": {
@@ -650,14 +650,14 @@
           "proof": {
             "type": "OpenAttestationProofMethod",
             "method": "DOCUMENT_STORE",
-            "value": "0x222B69788e2e9B7FB93a3a0fE258D4604Dc7df21",
+            "value": "0x93092C2B449712281008112870063fF439367C00",
             "revocation": {
               "type": "NONE"
             }
           },
           "identityProof": {
             "type": "DNS-TXT",
-            "identifier": "trustlv.org"
+            "identifier": "example.tradetrust.io"
           }
         },
         "credentialSubject": {},
@@ -667,8 +667,8 @@
           "type": "OpenAttestationIssuer"
         },
         "network": {
-          "chain": "HBAR",
-          "chainId": "296"
+          "chain": "MATIC",
+          "chainId": "80002"
         }
       },
       "schema": {
@@ -767,7 +767,7 @@
           },
           "identityProof": {
             "type": "DNS-DID",
-            "identifier": "trustlv.org"
+            "identifier": "example.tradetrust.io"
           }
         },
         "credentialSubject": {},
@@ -777,8 +777,8 @@
           "type": "OpenAttestationIssuer"
         },
         "network": {
-          "chain": "HBAR",
-          "chainId": "296"
+          "chain": "MATIC",
+          "chainId": "80002"
         }
       },
       "schema": {
@@ -941,14 +941,14 @@
           "proof": {
             "type": "OpenAttestationProofMethod",
             "method": "DOCUMENT_STORE",
-            "value": "0x222B69788e2e9B7FB93a3a0fE258D4604Dc7df21",
+            "value": "0x93092C2B449712281008112870063fF439367C00",
             "revocation": {
               "type": "NONE"
             }
           },
           "identityProof": {
             "type": "DNS-TXT",
-            "identifier": "trustlv.org"
+            "identifier": "example.tradetrust.io"
           }
         },
         "credentialSubject": {},
@@ -958,8 +958,8 @@
           "type": "OpenAttestationIssuer"
         },
         "network": {
-          "chain": "HBAR",
-          "chainId": "296"
+          "chain": "MATIC",
+          "chainId": "80002"
         }
       },
       "schema": {

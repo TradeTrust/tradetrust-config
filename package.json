@@ -35,8 +35,8 @@
   "homepage": "https://github.com/TradeTrust/tradetrust-config#readme",
   "devDependencies": {
     "@netlify/functions": "^1.3.0",
-    "@tradetrust-tt/tradetrust": "^6.6.0",
-    "@tradetrust-tt/tradetrust-utils": "^1.13.1",
+    "@tradetrust-tt/tradetrust": "^6.9.1",
+    "@tradetrust-tt/tradetrust-utils": "^1.13.2",
     "@types/jest": "^29.5.0",
     "@types/node": "^18.15.10",
     "@typescript-eslint/eslint-plugin": "^5.57.0",

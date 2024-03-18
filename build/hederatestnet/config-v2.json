@@ -21,7 +21,7 @@
         "issuers": [
           {
             "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0x222B69788e2e9B7FB93a3a0fE258D4604Dc7df21",
+            "tokenRegistry": "0x3DE43bfd3D771931E46CbBd4EDE0D3d95C85f81A",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "trustlv.org"
@@ -251,7 +251,7 @@
         "issuers": [
           {
             "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0x222B69788e2e9B7FB93a3a0fE258D4604Dc7df21",
+            "tokenRegistry": "0x3DE43bfd3D771931E46CbBd4EDE0D3d95C85f81A",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "trustlv.org"
@@ -1119,11 +1119,12 @@
         },
         "issuers": [
           {
+            "id": "did:ethr:0xca93690bb57eeab273c796a9309246bc0fb93649",
             "name": "Demo DNS-DID",
-            "documentStore": "0x222B69788e2e9B7FB93a3a0fE258D4604Dc7df21",
             "identityProof": {
-              "type": "DNS-TXT",
-              "location": "trustlv.org"
+              "type": "DNS-DID",
+              "location": "trustlv.org",
+              "key": "did:ethr:0xca93690bb57eeab273c796a9309246bc0fb93649#controller"
             },
             "revocation": {
               "type": "NONE"
@@ -1446,7 +1447,7 @@
         "issuers": [
           {
             "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0x222B69788e2e9B7FB93a3a0fE258D4604Dc7df21",
+            "tokenRegistry": "0x3DE43bfd3D771931E46CbBd4EDE0D3d95C85f81A",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "trustlv.org"
