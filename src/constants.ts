@@ -2,30 +2,34 @@ import { CHAIN_ID } from "@tradetrust-tt/tradetrust-utils/constants/supportedCha
 
 // addresses exists as txt-records in respective domains
 export const buildData = [
+  // Stability testnet
   {
     chainId: "20180427" as CHAIN_ID,
-    documentStoreAddress: "0x69E29FA634573BB6b82C01b3FEA3B704488bd853",
-    tokenRegistryAddress: "0x3d23649EB097fa729A8e1e15Fdb37680Caf766F7",
-    dnsVerifiable: "tradetrust-testnet.stabilityprotocol.com",
-    dnsTransferableRecord: "tradetrust-testnet.stabilityprotocol.com",
-    dnsDid: "tradetrust-testnet.stabilityprotocol.com",
+    documentStoreAddress: "0x71D28767662cB233F887aD2Bb65d048d760bA694",
+    tokenRegistryAddress: "0xA594f6e10564e87888425c7CC3910FE1c800aB0B",
+    dnsVerifiable: "example.tradetrust.io",
+    dnsTransferableRecord: "example.tradetrust.io",
+    dnsDid: "example.tradetrust.io",
   },
+  // Stability mainnet
   {
     chainId: "101010" as CHAIN_ID,
-    documentStoreAddress: "0xB3601037855017C8a4d2188C9097C056dd1eDAA6",
-    tokenRegistryAddress: "0x03f9950d6cd37a6040834aded3f47a4755983f53",
-    dnsVerifiable: "tradetrust-gtn.stabilityprotocol.com",
-    dnsTransferableRecord: "tradetrust-gtn.stabilityprotocol.com",
-    dnsDid: "tradetrust-gtn.stabilityprotocol.com",
+    documentStoreAddress: "0xA594f6e10564e87888425c7CC3910FE1c800aB0B",
+    tokenRegistryAddress: "0x71D28767662cB233F887aD2Bb65d048d760bA694",
+    dnsVerifiable: "example.tradetrust.io",
+    dnsTransferableRecord: "example.tradetrust.io",
+    dnsDid: "example.tradetrust.io",
   },
+  // XDC Apothem Testnet
   {
     chainId: "51" as CHAIN_ID,
-    documentStoreAddress: "0x268852277C0eED5A9999B41b0FdbA0443De76475",
-    tokenRegistryAddress: "0x1a378fEEc3ed9B63B872B11561FCf19f6d2CE793",
-    dnsVerifiable: "tradetrust-apothem.xdc.network",
-    dnsTransferableRecord: "tradetrust-apothem.xdc.network",
-    dnsDid: "tradetrust-apothem.xdc.network",
+    documentStoreAddress: "0x93092C2B449712281008112870063fF439367C00",
+    tokenRegistryAddress: "0x71D28767662cB233F887aD2Bb65d048d760bA694",
+    dnsVerifiable: "example.tradetrust.io",
+    dnsTransferableRecord: "example.tradetrust.io",
+    dnsDid: "example.tradetrust.io",
   },
+  // Mumbai
   {
     chainId: "80001" as CHAIN_ID,
     documentStoreAddress: "0x93092C2B449712281008112870063fF439367C00",
@@ -34,6 +38,7 @@ export const buildData = [
     dnsTransferableRecord: "example.tradetrust.io",
     dnsDid: "example.tradetrust.io",
   },
+  // Sepolia
   {
     chainId: "11155111" as CHAIN_ID,
     documentStoreAddress: "0x71D28767662cB233F887aD2Bb65d048d760bA694",
@@ -42,6 +47,7 @@ export const buildData = [
     dnsTransferableRecord: "example.tradetrust.io",
     dnsDid: "example.tradetrust.io",
   },
+  // Local
   {
     chainId: "1337" as CHAIN_ID, // local network will skip dns verifier
     documentStoreAddress: "0x63a223e025256790e88778a01f480eba77731d04",
@@ -50,14 +56,16 @@ export const buildData = [
     dnsTransferableRecord: "example.com",
     dnsDid: "example.com",
   },
+  // Hedera Testnet
   {
     chainId: "296" as CHAIN_ID,
-    documentStoreAddress: "0x222B69788e2e9B7FB93a3a0fE258D4604Dc7df21",
-    tokenRegistryAddress: "0x3DE43bfd3D771931E46CbBd4EDE0D3d95C85f81A",
-    dnsVerifiable: "trustlv.org",
-    dnsTransferableRecord: "trustlv.org",
-    dnsDid: "trustlv.org",
+    documentStoreAddress: "0x93092C2B449712281008112870063fF439367C00",
+    tokenRegistryAddress: "0xA594f6e10564e87888425c7CC3910FE1c800aB0B",
+    dnsVerifiable: "example.tradetrust.io",
+    dnsTransferableRecord: "example.tradetrust.io",
+    dnsDid: "example.tradetrust.io",
   },
+  // Amoy
   {
     chainId: "80002" as CHAIN_ID,
     documentStoreAddress: "0x93092C2B449712281008112870063fF439367C00",

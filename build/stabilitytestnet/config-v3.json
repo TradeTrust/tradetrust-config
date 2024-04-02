@@ -33,14 +33,14 @@
           "proof": {
             "type": "OpenAttestationProofMethod",
             "method": "TOKEN_REGISTRY",
-            "value": "0x3d23649EB097fa729A8e1e15Fdb37680Caf766F7",
+            "value": "0xA594f6e10564e87888425c7CC3910FE1c800aB0B",
             "revocation": {
               "type": "NONE"
             }
           },
           "identityProof": {
             "type": "DNS-TXT",
-            "identifier": "tradetrust-testnet.stabilityprotocol.com"
+            "identifier": "example.tradetrust.io"
           }
         },
         "credentialSubject": {},
@@ -178,14 +178,14 @@
           "proof": {
             "type": "OpenAttestationProofMethod",
             "method": "DOCUMENT_STORE",
-            "value": "0x69E29FA634573BB6b82C01b3FEA3B704488bd853",
+            "value": "0x71D28767662cB233F887aD2Bb65d048d760bA694",
             "revocation": {
               "type": "NONE"
             }
           },
           "identityProof": {
             "type": "DNS-TXT",
-            "identifier": "tradetrust-testnet.stabilityprotocol.com"
+            "identifier": "example.tradetrust.io"
           }
         },
         "credentialSubject": {},
@@ -650,14 +650,14 @@
           "proof": {
             "type": "OpenAttestationProofMethod",
             "method": "DOCUMENT_STORE",
-            "value": "0x69E29FA634573BB6b82C01b3FEA3B704488bd853",
+            "value": "0x71D28767662cB233F887aD2Bb65d048d760bA694",
             "revocation": {
               "type": "NONE"
             }
           },
           "identityProof": {
             "type": "DNS-TXT",
-            "identifier": "tradetrust-testnet.stabilityprotocol.com"
+            "identifier": "example.tradetrust.io"
           }
         },
         "credentialSubject": {},
@@ -767,7 +767,7 @@
           },
           "identityProof": {
             "type": "DNS-DID",
-            "identifier": "tradetrust-testnet.stabilityprotocol.com"
+            "identifier": "example.tradetrust.io"
           }
         },
         "credentialSubject": {},
@@ -941,14 +941,14 @@
           "proof": {
             "type": "OpenAttestationProofMethod",
             "method": "DOCUMENT_STORE",
-            "value": "0x69E29FA634573BB6b82C01b3FEA3B704488bd853",
+            "value": "0x71D28767662cB233F887aD2Bb65d048d760bA694",
             "revocation": {
               "type": "NONE"
             }
           },
           "identityProof": {
             "type": "DNS-TXT",
-            "identifier": "tradetrust-testnet.stabilityprotocol.com"
+            "identifier": "example.tradetrust.io"
           }
         },
         "credentialSubject": {},

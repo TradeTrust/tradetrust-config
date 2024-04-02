@@ -21,10 +21,10 @@
         "issuers": [
           {
             "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0x03f9950d6cd37a6040834aded3f47a4755983f53",
+            "tokenRegistry": "0x71D28767662cB233F887aD2Bb65d048d760bA694",
             "identityProof": {
               "type": "DNS-TXT",
-              "location": "tradetrust-gtn.stabilityprotocol.com"
+              "location": "example.tradetrust.io"
             },
             "revocation": {
               "type": "NONE"
@@ -251,10 +251,10 @@
         "issuers": [
           {
             "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0x03f9950d6cd37a6040834aded3f47a4755983f53",
+            "tokenRegistry": "0x71D28767662cB233F887aD2Bb65d048d760bA694",
             "identityProof": {
               "type": "DNS-TXT",
-              "location": "tradetrust-gtn.stabilityprotocol.com"
+              "location": "example.tradetrust.io"
             },
             "revocation": {
               "type": "NONE"
@@ -384,10 +384,10 @@
         "issuers": [
           {
             "name": "Demo Issuer",
-            "documentStore": "0xB3601037855017C8a4d2188C9097C056dd1eDAA6",
+            "documentStore": "0xA594f6e10564e87888425c7CC3910FE1c800aB0B",
             "identityProof": {
               "type": "DNS-TXT",
-              "location": "tradetrust-gtn.stabilityprotocol.com"
+              "location": "example.tradetrust.io"
             },
             "revocation": {
               "type": "NONE"
@@ -832,10 +832,10 @@
         "issuers": [
           {
             "name": "Demo Issuer",
-            "documentStore": "0xB3601037855017C8a4d2188C9097C056dd1eDAA6",
+            "documentStore": "0xA594f6e10564e87888425c7CC3910FE1c800aB0B",
             "identityProof": {
               "type": "DNS-TXT",
-              "location": "tradetrust-gtn.stabilityprotocol.com"
+              "location": "example.tradetrust.io"
             },
             "revocation": {
               "type": "NONE"
@@ -1028,10 +1028,10 @@
         "issuers": [
           {
             "name": "Demo Issuer",
-            "documentStore": "0xB3601037855017C8a4d2188C9097C056dd1eDAA6",
+            "documentStore": "0xA594f6e10564e87888425c7CC3910FE1c800aB0B",
             "identityProof": {
               "type": "DNS-TXT",
-              "location": "tradetrust-gtn.stabilityprotocol.com"
+              "location": "example.tradetrust.io"
             },
             "revocation": {
               "type": "NONE"
@@ -1123,7 +1123,7 @@
             "name": "Demo DNS-DID",
             "identityProof": {
               "type": "DNS-DID",
-              "location": "tradetrust-gtn.stabilityprotocol.com",
+              "location": "example.tradetrust.io",
               "key": "did:ethr:0xca93690bb57eeab273c796a9309246bc0fb93649#controller"
             },
             "revocation": {
@@ -1284,10 +1284,10 @@
         "issuers": [
           {
             "name": "Demo Issuer",
-            "documentStore": "0xB3601037855017C8a4d2188C9097C056dd1eDAA6",
+            "documentStore": "0xA594f6e10564e87888425c7CC3910FE1c800aB0B",
             "identityProof": {
               "type": "DNS-TXT",
-              "location": "tradetrust-gtn.stabilityprotocol.com"
+              "location": "example.tradetrust.io"
             },
             "revocation": {
               "type": "NONE"
@@ -1447,10 +1447,10 @@
         "issuers": [
           {
             "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0x03f9950d6cd37a6040834aded3f47a4755983f53",
+            "tokenRegistry": "0x71D28767662cB233F887aD2Bb65d048d760bA694",
             "identityProof": {
               "type": "DNS-TXT",
-              "location": "tradetrust-gtn.stabilityprotocol.com"
+              "location": "example.tradetrust.io"
             },
             "revocation": {
               "type": "NONE"
