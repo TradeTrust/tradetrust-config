@@ -29,15 +29,6 @@ export const buildData = [
     dnsTransferableRecord: "example.tradetrust.io",
     dnsDid: "example.tradetrust.io",
   },
-  // Mumbai
-  {
-    chainId: "80001" as CHAIN_ID,
-    documentStoreAddress: "0x93092C2B449712281008112870063fF439367C00",
-    tokenRegistryAddress: "0x072FB36B73a7f52A23ea53162583f78ba3Bc6DEa",
-    dnsVerifiable: "example.tradetrust.io",
-    dnsTransferableRecord: "example.tradetrust.io",
-    dnsDid: "example.tradetrust.io",
-  },
   // Sepolia
   {
     chainId: "11155111" as CHAIN_ID,
