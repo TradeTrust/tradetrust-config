@@ -55,7 +55,6 @@ const writeSamples = () => {
       case CHAIN_ID.xdcapothem:
         wallet = walletApothem;
         break;
-      case CHAIN_ID.maticmum:
       case CHAIN_ID.amoy:
       case CHAIN_ID.sepolia:
       case CHAIN_ID.hederatestnet:
