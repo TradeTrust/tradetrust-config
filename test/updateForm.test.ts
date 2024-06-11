@@ -1,12 +1,14 @@
 import { CHAIN_ID } from "@tradetrust-tt/tradetrust-utils/constants/supportedChains";
 import { Wallet } from "ethers";
-import { updateFormV2, updateFormV3 } from "../src/shared/updateForm";
+import { updateFormV2, updateFormV3, updateFormV4 } from "../src/shared/updateForm";
 import v2VerifiableDocumentForm from "../fixtures/config/forms/v2/invoice.json";
 import v2DnsDidForm from "../fixtures/config/forms/v2/invoice-dns-did.json";
 import v2TransferableRecordForm from "../fixtures/config/forms/v2/bill-of-lading.json";
 import v3VerifiableDocumentForm from "../fixtures/config/forms/v3/invoice.json";
 import v3DnsDidForm from "../fixtures/config/forms/v3/invoice-dns-did.json";
 import v3TransferableRecordForm from "../fixtures/config/forms/v3/bill-of-lading.json";
+import v4VerifiableDocumentForm from "../fixtures/config/forms/v4/invoice.json";
+import v4TransferableRecordForm from "../fixtures/config/forms/v4/bill-of-lading.json";
 
 const v2DidForm = {
   name: "A DID Verifiable Document Form",
@@ -276,6 +278,45 @@ describe("updateFormV3", () => {
     ).toStrictEqual("TransferableDNS.com");
     expect(
       updatedForm.defaults.openAttestationMetadata.proof.value
+    ).toStrictEqual("0xabcTokenRegistry");
+  });
+});
+
+describe("updateFormV4", () => {
+  const wallet = Wallet.fromMnemonic(
+    "tourist quality multiply denial diary height funny calm disease buddy speed gold"
+  );
+  const walletString = JSON.stringify(wallet);
+
+  it("should update the form from a verifiable document correctly", () => {
+    const updatedForm = updateFormV4({
+      chain: { currency: "ETH", id: CHAIN_ID.sepolia },
+      wallet: { type: "ENCRYPTED_JSON", encryptedJson: walletString },
+      form: v4VerifiableDocumentForm,
+      documentStoreAddress: "0xabcDocumentStore",
+      tokenRegistryAddress: "0xabcTokenRegistry",
+      dnsVerifiable: "VerifiableDNS.com",
+      dnsDid: "DNSDID.com",
+      dnsTransferableRecord: "TransferableDNS.com",
+    });
+    expect(
+      updatedForm.defaults.credentialStatus.location
+    ).toStrictEqual("0xabcDocumentStore");
+  });
+
+  it("should update the form from a transferable document correctly", () => {
+    const updatedForm = updateFormV4({
+      chain: { currency: "ETH", id: CHAIN_ID.sepolia },
+      wallet: { type: "ENCRYPTED_JSON", encryptedJson: walletString },
+      form: v4TransferableRecordForm,
+      documentStoreAddress: "0xabcDocumentStore",
+      tokenRegistryAddress: "0xabcTokenRegistry",
+      dnsVerifiable: "VerifiableDNS.com",
+      dnsDid: "DNSDID.com",
+      dnsTransferableRecord: "TransferableDNS.com",
+    });
+    expect(
+      updatedForm.defaults.credentialStatus.location
     ).toStrictEqual("0xabcTokenRegistry");
   });
 });

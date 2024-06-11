@@ -2,10 +2,11 @@ import fs from "fs";
 import path from "path";
 import configSchemaV2 from "./config-v2.schema.json";
 import configSchemaV3 from "./config-v3.schema.json";
-import { configFileV2, configFileV3 } from "./examples/config-file";
+import configSchemaV4 from "./config-v4.schema.json";
+import { configFileV2, configFileV3, configFileV4 } from "./examples/config-file";
 import { walletLocal, walletSample, walletApothem } from "./examples/wallet";
-import { getUpdatedConfigV2, getUpdatedConfigV3 } from "./helpers/helpers";
-import { ConfigFileWithFormV2, ConfigFileWithFormV3 } from "./types";
+import { getUpdatedConfigV2, getUpdatedConfigV3, getUpdatedConfigV4 } from "./helpers/helpers";
+import { ConfigFileWithFormV2, ConfigFileWithFormV3, ConfigFileWithFormV4 } from "./types";
 import {
   SUPPORTED_CHAINS,
   CHAIN_ID,
@@ -15,7 +16,7 @@ import { buildData } from "./constants";
 const DIR = path.join(__dirname, "../build");
 
 const writeConfigFile = (
-  configFile: ConfigFileWithFormV2 | ConfigFileWithFormV3,
+  configFile: ConfigFileWithFormV2 | ConfigFileWithFormV3 | ConfigFileWithFormV4,
   file: string
 ) => {
   fs.writeFile(file, JSON.stringify(configFile, null, 2), (err: any) => {
@@ -33,6 +34,7 @@ const writeReferences = () => {
 
   writeConfigFile(configFileV2, `${DIR_REFERENCE}/config-v2.json`);
   writeConfigFile(configFileV3, `${DIR_REFERENCE}/config-v3.json`);
+  writeConfigFile(configFileV3, `${DIR_REFERENCE}/config-v4.json`);
 };
 
 const writeSamples = () => {
@@ -89,11 +91,24 @@ const writeSamples = () => {
       dnsTransferableRecord,
     });
 
+    const updatedConfigV4 = getUpdatedConfigV4({
+      chainId,
+      wallet,
+      configFile: configFileV4,
+      documentStoreAddress,
+      tokenRegistryAddress,
+      dnsVerifiable,
+      dnsDid,
+      dnsTransferableRecord,
+    });
+
     validateConfig(configSchemaV2, updatedConfigV2);
     validateConfig(configSchemaV3, updatedConfigV3);
+    validateConfig(configSchemaV4, updatedConfigV4);
 
     writeConfigFile(updatedConfigV2, `${DIR_NETWORK}/config-v2.json`);
     writeConfigFile(updatedConfigV3, `${DIR_NETWORK}/config-v3.json`);
+    writeConfigFile(updatedConfigV4, `${DIR_NETWORK}/config-v4.json`);
   });
 };
 

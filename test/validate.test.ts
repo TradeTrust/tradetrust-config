@@ -1,10 +1,13 @@
 import configSchemaFormExampleV2 from "../build/sepolia/config-v2.json";
 import configSchemaFormExampleV3 from "../build/sepolia/config-v3.json";
+import configSchemaFormExampleV4 from "../build/sepolia/config-v4.json";
 import configSchemaV2 from "../src/config-v2.schema.json";
 import configSchemaV3 from "../src/config-v3.schema.json";
+import configSchemaV4 from "../src/config-v4.schema.json";
 import {
   ConfigMinimumExampleV2,
   ConfigMinimumExampleV3,
+  ConfigMinimumExampleV4,
   ErrorHostname,
   ErrorNoWallet,
   ErrorUri,
@@ -45,6 +48,14 @@ describe("validateConfig v3", () => {
   });
 });
 
+describe("validateConfig v4", () => {
+  test("should not throw for minimum config example", () => {
+    expect(() =>
+      validateConfig(configSchemaV4, ConfigMinimumExampleV4)
+    ).not.toThrow();
+  });
+});
+
 describe("validateSchema", () => {
   const { forms } = configSchemaFormExampleV2;
   const invoice = forms.find((form) => form.name === "TradeTrust Invoice v2");
@@ -70,6 +81,28 @@ describe("validateSchema", () => {
 describe("validateSchema", () => {
   const { forms } = configSchemaFormExampleV3;
   const invoice = forms.find((form) => form.name === "TradeTrust Invoice v3");
+  const { schema } = invoice;
+
+  test("should pass with valid data", () => {
+    const { isValidated } = validateSchema(schema, {
+      billFrom: {},
+    });
+
+    expect(isValidated).toBe(true);
+  });
+
+  test("should fail with additional data", () => {
+    const { isValidated } = validateSchema(schema, {
+      foo: "",
+    });
+
+    expect(isValidated).toBe(false);
+  });
+});
+
+describe("validateSchema", () => {
+  const { forms } = configSchemaFormExampleV4;
+  const invoice = forms.find((form) => form.name === "TradeTrust Invoice v4 (IDVC)");
   const { schema } = invoice;
 
   test("should pass with valid data", () => {

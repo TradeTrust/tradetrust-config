@@ -1,0 +1,237 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/TradeTrust/tradetrust-config/master/src/config-v4.schema.json",
+    "type": "object",
+    "required": [
+        "network",
+        "wallet",
+        "forms"
+    ],
+    "properties": {
+        "network": {
+            "type": "string",
+            "enum": [
+                "homestead",
+                "local",
+                "sepolia",
+                "matic",
+                "amoy",
+                "xdc",
+                "xdcapothem",
+                "stabilitytestnet",
+                "stability",
+                "hederatestnet",
+                "hederamainnet"
+            ]
+        },
+        "wallet": {
+            "oneOf": [
+                {
+                    "required": [
+                        "type",
+                        "encryptedJson"
+                    ],
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "ENCRYPTED_JSON"
+                            ]
+                        },
+                        "encryptedJson": {
+                            "type": "string"
+                        }
+                    }
+                },
+                {
+                    "required": [
+                        "type",
+                        "accessKeyId",
+                        "region",
+                        "kmsKeyId"
+                    ],
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "AWS_KMS"
+                            ]
+                        },
+                        "accessKeyId": {
+                            "type": "string"
+                        },
+                        "region": {
+                            "type": "string"
+                        },
+                        "kmsKeyId": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        },
+        "forms": {
+            "type": "array",
+            "items": {
+                "required": [
+                    "name",
+                    "type",
+                    "defaults",
+                    "schema"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Used for document file name."
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "VERIFIABLE_DOCUMENT",
+                            "TRANSFERABLE_RECORD"
+                        ]
+                    },
+                    "defaults": {
+                        "required": [
+                            "@context",
+                            "type",
+                            "credentialStatus",
+                            "network",
+                            "issuer",
+                            "credentialSubject"
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "@context": {
+                                "type": "array"
+                            },
+                            "type": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "VerifiableCredential",
+                                        "TradeTrustCredential"
+                                    ]
+                                }
+                            },
+                            "validFrom": {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            "issuer": {
+                                "type": "object"
+                            },
+                            "credentialSubject": {
+                                "type": "object"
+                            },
+                            "credentialStatus": {
+                                "type": "object",
+                                "properties": {
+                                    "credentialStatusType": {
+                                        "type": "string",
+                                        "enum": [
+                                            "NONE",
+                                            "OCSP_RESPONDER",
+                                            "REVOCATION_STORE",
+                                            "TOKEN_REGISTRY"
+                                        ]
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    },
+                                    "location": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "renderMethod": {
+                                "type": "object"
+                            },
+                            "network": {
+                                "type": "object",
+                                "properties": {
+                                    "chain": {
+                                        "type": "string",
+                                        "enum": [
+                                            "ETH",
+                                            "MATIC",
+                                            "XDC",
+                                            "FREE",
+                                            "HBAR"
+                                        ]
+                                    },
+                                    "chainId": {
+                                        "type": "string",
+                                        "enum": [
+                                            "1337",
+                                            "1",
+                                            "137",
+                                            "80002",
+                                            "11155111",
+                                            "50",
+                                            "51",
+                                            "20180427",
+                                            "101010",
+                                            "296",
+                                            "295"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "schema": {
+                        "type": "object"
+                    },
+                    "uiSchema": {
+                        "type": "object"
+                    },
+                    "attachments": {
+                        "required": [
+                            "allow"
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "allow": {
+                                "type": "boolean"
+                            },
+                            "accept": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "extension": {
+                        "type": "string",
+                        "enum": [
+                            "json",
+                            "tt",
+                            "oc"
+                        ]
+                    },
+                    "fileName": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "documentStorage": {
+            "required": [
+                "url"
+            ],
+            "type": "object",
+            "properties": {
+                "apiKey": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri"
+                }
+            }
+        }
+    }
+}

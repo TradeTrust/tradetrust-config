@@ -1,4 +1,4 @@
-import { v2, v3 } from "@tradetrust-tt/tradetrust";
+import { v2, v3, TTv4 } from "@tradetrust-tt/tradetrust";
 import { CHAIN_ID } from "@tradetrust-tt/tradetrust-utils/constants/supportedChains";
 import { networkName } from "@tradetrust-tt/tradetrust-utils/constants/network";
 
@@ -38,6 +38,10 @@ export interface FormV3 extends Form {
   defaults: v3.OpenAttestationDocument;
 }
 
+export interface FormV4 extends Form {
+  defaults: TTv4.TradeTrustDocument;
+}
+
 interface ConfigFile {
   network: networkName;
   wallet: Wallet;
@@ -53,6 +57,10 @@ export interface ConfigFileWithFormV2 extends ConfigFile {
 
 export interface ConfigFileWithFormV3 extends ConfigFile {
   forms: FormV3[];
+}
+
+export interface ConfigFileWithFormV4 extends ConfigFile {
+  forms: FormV4[];
 }
 
 interface GetUpdatedConfigFile {
@@ -73,4 +81,9 @@ export interface GetUpdatedConfigFileWithFormV2 extends GetUpdatedConfigFile {
 /** @internal */
 export interface GetUpdatedConfigFileWithFormV3 extends GetUpdatedConfigFile {
   configFile: ConfigFileWithFormV3;
+}
+
+/** @internal */
+export interface GetUpdatedConfigFileWithFormV4 extends GetUpdatedConfigFile {
+  configFile: ConfigFileWithFormV4;
 }
