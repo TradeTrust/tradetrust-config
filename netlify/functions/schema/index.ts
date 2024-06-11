@@ -1,13 +1,14 @@
 import { Handler } from "@netlify/functions";
 import schemaV2 from "../../../src/config-v2.schema.json";
 import schemaV3 from "../../../src/config-v3.schema.json";
+import schemaV4 from "../../../src/config-v4.schema.json";
 
 const ALLOWED_ORIGINS = ["https://creator.tradetrust.io"];
 
 export const handler: Handler = async (event) => {
   const { version } = event.queryStringParameters;
   const origin = event.headers.origin;
-  const schema = version === "3.0" ? schemaV3 : schemaV2;
+  const schema = version === "4.0" ? schemaV4 : version === "3.0" ? schemaV3 : schemaV2;
   let headers;
 
   if (process.env.NETLIFY_LOCAL) {

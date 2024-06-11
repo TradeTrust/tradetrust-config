@@ -1,0 +1,414 @@
+{
+  "network": "hederatestnet",
+  "wallet": {
+    "type": "ENCRYPTED_JSON",
+    "encryptedJson": "{\"address\":\"ca93690bb57eeab273c796a9309246bc0fb93649\",\"id\":\"4cf5292d-2fd2-4a8f-8427-708504e5bafe\",\"version\":3,\"Crypto\":{\"cipher\":\"aes-128-ctr\",\"cipherparams\":{\"iv\":\"d9e4767bcf818615d7553a10198ca27a\"},\"ciphertext\":\"547b745aa4e4a3eefa8ffe926758f5630f42d404e790c35ac52ff2de28a893eb\",\"kdf\":\"scrypt\",\"kdfparams\":{\"salt\":\"ad90eeb7541d72ebe829bc23e9e8af23dd8d1b4ebecce14cf4c85f54fd3baa51\",\"n\":131072,\"dklen\":32,\"p\":1,\"r\":8},\"mac\":\"b1b24212a9ed8a070feac12207fb19dc296e9d48c8bfbf3315a598897e758062\"}}"
+  },
+  "forms": [
+    {
+      "name": "TradeTrust Bill of Lading v4 (IDVC)",
+      "type": "TRANSFERABLE_RECORD",
+      "defaults": {
+        "@context": [
+          "https://www.w3.org/2018/credentials/v1",
+          "https://schemata.tradetrust.io/io/tradetrust/4.0/alpha-context.json"
+        ],
+        "type": [
+          "VerifiableCredential",
+          "TradeTrustCredential"
+        ],
+        "validFrom": "2021-03-08T12:00:00+08:00",
+        "issuer": {
+          "id": "did:ethr:0xca93690bb57eeab273c796a9309246bc0fb93649",
+          "type": "TradeTrustIssuer",
+          "name": "My Own Company Pte Ltd",
+          "identityProof": {
+            "identityProofType": "IDVC",
+            "identifier": "My Own Company Pte Ltd",
+            "identityVC": {
+              "type": "TradeTrustIdentityVC",
+              "data": {
+                "@context": [
+                  "https://www.w3.org/2018/credentials/v1",
+                  "https://didrp-test.esatus.com/schemas/basic-did-lei-mapping/v1",
+                  "https://w3id.org/security/bbs/v1",
+                  "https://w3id.org/vc/status-list/2021/v1"
+                ],
+                "credentialStatus": {
+                  "id": "https://didrp-test.esatus.com/credentials/statuslist/1#27934",
+                  "statusListCredential": "https://didrp-test.esatus.com/credentials/statuslist/1",
+                  "statusListIndex": 27934,
+                  "statusPurpose": "revocation",
+                  "type": "StatusList2021Entry"
+                },
+                "credentialSubject": {
+                  "entityName": "IMDA_active",
+                  "id": "did:ethr:0xca93690bb57eeab273c796a9309246bc0fb93649",
+                  "lei": "391200WCZAYD47QIKX37",
+                  "type": [
+                    "BasicDIDLEIMapping"
+                  ]
+                },
+                "issuanceDate": "2024-05-02T13:10:52Z",
+                "expirationDate": "2029-12-03T12:19:52Z",
+                "issuer": "did:web:didrp-test.esatus.com",
+                "type": [
+                  "VerifiableCredential"
+                ],
+                "proof": {
+                  "type": "BbsBlsSignature2020",
+                  "created": "2024-05-02T11:18:20Z",
+                  "proofPurpose": "assertionMethod",
+                  "proofValue": "keNsrRgsK0t75l+GAqO/uwQPeQmyCxVQjU16t90hfIw1zHhqfoeISG8amKt+1zCcYUHlKfzccE4m7waZyoLEkBLFiK2g54Q2i+CdtYBgDdkUDsoULSBMcH1MwGHwdjfXpldFNFrHFx/IAvLVniyeMQ==",
+                  "verificationMethod": "did:web:didrp-test.esatus.com#keys-1"
+                }
+              }
+            }
+          }
+        },
+        "credentialSubject": {},
+        "credentialStatus": {
+          "type": "TradeTrustCredentialStatus",
+          "credentialStatusType": "TOKEN_REGISTRY",
+          "location": "0xA594f6e10564e87888425c7CC3910FE1c800aB0B"
+        },
+        "renderMethod": {
+          "type": "TradeTrustRenderMethod",
+          "renderMethodType": "EMBEDDED_RENDERER",
+          "name": "BILL_OF_LADING",
+          "url": "https://generic-templates.tradetrust.io"
+        },
+        "network": {
+          "chain": "HBAR",
+          "chainId": "296"
+        }
+      },
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "blNumber",
+          "scac"
+        ],
+        "properties": {
+          "blNumber": {
+            "type": "string",
+            "title": "BL Number"
+          },
+          "scac": {
+            "type": "string",
+            "title": "Standard Carrier Alpha Code (SCAC)"
+          },
+          "carrierName": {
+            "title": "Signed for the Carrier",
+            "type": "string"
+          },
+          "shipper": {
+            "title": "Shipper",
+            "type": "object",
+            "properties": {
+              "name": {
+                "title": "Name",
+                "type": "string"
+              },
+              "address": {
+                "title": "Address",
+                "type": "object",
+                "properties": {
+                  "street": {
+                    "title": "Street",
+                    "type": "string"
+                  },
+                  "country": {
+                    "title": "Country",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "consignee": {
+            "title": "Consignee",
+            "type": "object",
+            "properties": {
+              "name": {
+                "title": "Name",
+                "type": "string"
+              }
+            }
+          },
+          "notifyParty": {
+            "title": "Notify Party",
+            "type": "object",
+            "properties": {
+              "name": {
+                "title": "Name",
+                "type": "string"
+              }
+            }
+          },
+          "vessel": {
+            "title": "Vessel",
+            "type": "string"
+          },
+          "voyageNo": {
+            "title": "Voyage No.",
+            "type": "string"
+          },
+          "portOfLoading": {
+            "title": "Port of Loading",
+            "type": "string"
+          },
+          "portOfDischarge": {
+            "title": "Port of Discharge",
+            "type": "string"
+          },
+          "placeOfReceipt": {
+            "title": "Place of Receipt",
+            "type": "string"
+          },
+          "placeOfDelivery": {
+            "title": "Place of Delivery",
+            "type": "string"
+          },
+          "packages": {
+            "type": "array",
+            "title": "Packages",
+            "items": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "title": "Description",
+                  "type": "string"
+                },
+                "measurement": {
+                  "title": "Measurement",
+                  "type": "string"
+                },
+                "weight": {
+                  "title": "Weight",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "extension": "tt"
+    },
+    {
+      "name": "TradeTrust Invoice v4 (IDVC)",
+      "type": "VERIFIABLE_DOCUMENT",
+      "defaults": {
+        "@context": [
+          "https://www.w3.org/2018/credentials/v1",
+          "https://schemata.tradetrust.io/io/tradetrust/4.0/alpha-context.json"
+        ],
+        "type": [
+          "VerifiableCredential",
+          "TradeTrustCredential"
+        ],
+        "validFrom": "2021-03-08T12:00:00+08:00",
+        "issuer": {
+          "id": "did:ethr:0xca93690bb57eeab273c796a9309246bc0fb93649",
+          "type": "TradeTrustIssuer",
+          "name": "My Own Company Pte Ltd",
+          "identityProof": {
+            "identityProofType": "IDVC",
+            "identifier": "My Own Company Pte Ltd",
+            "identityVC": {
+              "type": "TradeTrustIdentityVC",
+              "data": {
+                "@context": [
+                  "https://www.w3.org/2018/credentials/v1",
+                  "https://didrp-test.esatus.com/schemas/basic-did-lei-mapping/v1",
+                  "https://w3id.org/security/bbs/v1",
+                  "https://w3id.org/vc/status-list/2021/v1"
+                ],
+                "credentialStatus": {
+                  "id": "https://didrp-test.esatus.com/credentials/statuslist/1#27934",
+                  "statusListCredential": "https://didrp-test.esatus.com/credentials/statuslist/1",
+                  "statusListIndex": 27934,
+                  "statusPurpose": "revocation",
+                  "type": "StatusList2021Entry"
+                },
+                "credentialSubject": {
+                  "entityName": "IMDA_active",
+                  "id": "did:ethr:0xca93690bb57eeab273c796a9309246bc0fb93649",
+                  "lei": "391200WCZAYD47QIKX37",
+                  "type": [
+                    "BasicDIDLEIMapping"
+                  ]
+                },
+                "issuanceDate": "2024-05-02T13:10:52Z",
+                "expirationDate": "2029-12-03T12:19:52Z",
+                "issuer": "did:web:didrp-test.esatus.com",
+                "type": [
+                  "VerifiableCredential"
+                ],
+                "proof": {
+                  "type": "BbsBlsSignature2020",
+                  "created": "2024-05-02T11:18:20Z",
+                  "proofPurpose": "assertionMethod",
+                  "proofValue": "keNsrRgsK0t75l+GAqO/uwQPeQmyCxVQjU16t90hfIw1zHhqfoeISG8amKt+1zCcYUHlKfzccE4m7waZyoLEkBLFiK2g54Q2i+CdtYBgDdkUDsoULSBMcH1MwGHwdjfXpldFNFrHFx/IAvLVniyeMQ==",
+                  "verificationMethod": "did:web:didrp-test.esatus.com#keys-1"
+                }
+              }
+            }
+          }
+        },
+        "credentialSubject": {},
+        "credentialStatus": {
+          "type": "TradeTrustCredentialStatus",
+          "credentialStatusType": "REVOCATION_STORE",
+          "location": "0x93092C2B449712281008112870063fF439367C00"
+        },
+        "renderMethod": {
+          "type": "TradeTrustRenderMethod",
+          "renderMethodType": "EMBEDDED_RENDERER",
+          "name": "INVOICE",
+          "url": "https://generic-templates.tradetrust.io"
+        },
+        "network": {
+          "chain": "HBAR",
+          "chainId": "296"
+        }
+      },
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "invoiceId": {
+            "type": "string",
+            "title": "Invoice ID"
+          },
+          "date": {
+            "type": "string",
+            "title": "Date"
+          },
+          "customerId": {
+            "type": "string",
+            "title": "Customer ID"
+          },
+          "terms": {
+            "type": "string",
+            "title": "Terms"
+          },
+          "billFrom": {
+            "type": "object",
+            "title": "Bill From",
+            "properties": {
+              "name": {
+                "type": "string",
+                "title": "Name"
+              },
+              "streetAddress": {
+                "type": "string",
+                "title": "Street Address"
+              },
+              "city": {
+                "type": "string",
+                "title": "City"
+              },
+              "postalCode": {
+                "type": "string",
+                "title": "Postal Code"
+              },
+              "phoneNumber": {
+                "type": "string",
+                "title": "Phone Number"
+              }
+            }
+          },
+          "billTo": {
+            "type": "object",
+            "title": "Bill To",
+            "properties": {
+              "name": {
+                "type": "string",
+                "title": "Name"
+              },
+              "email": {
+                "type": "string",
+                "title": "Email"
+              },
+              "company": {
+                "type": "object",
+                "title": "Bill To Company",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "title": "Name"
+                  },
+                  "streetAddress": {
+                    "type": "string",
+                    "title": "Street Address"
+                  },
+                  "city": {
+                    "type": "string",
+                    "title": "City"
+                  },
+                  "postalCode": {
+                    "type": "string",
+                    "title": "Postal Code"
+                  },
+                  "phoneNumber": {
+                    "type": "string",
+                    "title": "Phone Number"
+                  }
+                }
+              }
+            }
+          },
+          "billableItems": {
+            "type": "array",
+            "title": "Billable Items",
+            "items": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "title": "Description"
+                },
+                "quantity": {
+                  "type": "string",
+                  "title": "Quantity"
+                },
+                "unitPrice": {
+                  "type": "string",
+                  "title": "Unit Price"
+                },
+                "amount": {
+                  "type": "string",
+                  "title": "Amount"
+                }
+              }
+            }
+          },
+          "subtotal": {
+            "type": "string",
+            "title": "Subtotal"
+          },
+          "tax": {
+            "type": "string",
+            "title": "Tax (%)"
+          },
+          "taxTotal": {
+            "type": "string",
+            "title": "Tax Total"
+          },
+          "total": {
+            "type": "string",
+            "title": "Total"
+          }
+        }
+      },
+      "uiSchema": {
+        "date": {
+          "ui:widget": "date"
+        }
+      },
+      "extension": "tt"
+    }
+  ]
+}

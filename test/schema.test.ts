@@ -26,6 +26,19 @@ describe("schema v3", () => {
   });
 });
 
+describe("schema v4", () => {
+  test("should return v4 schema", async () => {
+    const getSchema = handler as any;
+    const response = await getSchema({
+      queryStringParameters: { version: "4.0" },
+      headers: { origin: "https://creator.tradetrust.io" },
+    });
+    const { body } = response;
+
+    expect(JSON.parse(body).$id).toContain("config-v4.schema.json");
+  });
+});
+
 describe("cors", () => {
   test("should disallow by default", async () => {
     const getSchema = handler as any;

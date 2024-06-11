@@ -137,3 +137,29 @@ export const updateFormV3 = ({
 
   return form;
 };
+
+export const updateFormV4 = ({
+  chain,
+  wallet,
+  form,
+  documentStoreAddress,
+  tokenRegistryAddress,
+}: UpdateForm) => {
+  const { encryptedJson } = wallet as WalletEncryptedJson;
+  const { address } = JSON.parse(encryptedJson);
+
+  if (form.type === "TRANSFERABLE_RECORD") {
+    form.defaults.credentialStatus.location = tokenRegistryAddress;   
+  } else if (form.type === "VERIFIABLE_DOCUMENT") {
+    form.defaults.credentialStatus.location = documentStoreAddress;
+  }
+  
+  form.defaults.issuer.id = `did:ethr:0x${address}`;
+
+  form.defaults.network = {
+    chain: chain.currency,
+    chainId: chain.id,
+  };
+
+  return form;
+};

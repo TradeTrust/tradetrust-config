@@ -1,0 +1,204 @@
+{
+    "name": "TradeTrust Invoice v4 (IDVC)",
+    "type": "VERIFIABLE_DOCUMENT",
+    "defaults": {
+      "@context": [
+        "https://www.w3.org/2018/credentials/v1",
+        "https://schemata.tradetrust.io/io/tradetrust/4.0/alpha-context.json"
+      ],
+      "type": ["VerifiableCredential", "TradeTrustCredential"],
+      "validFrom": "2021-03-08T12:00:00+08:00",
+      "issuer": {
+        "id": "<WALLET_ADDRESS>",
+        "type": "TradeTrustIssuer",
+        "name": "My Own Company Pte Ltd",
+        "identityProof": {
+          "identityProofType": "IDVC",
+          "identifier": "My Own Company Pte Ltd",
+          "identityVC": {
+            "type": "TradeTrustIdentityVC",
+            "data": {
+                "@context": [
+                  "https://www.w3.org/2018/credentials/v1",
+                  "https://didrp-test.esatus.com/schemas/basic-did-lei-mapping/v1",
+                  "https://w3id.org/security/bbs/v1",
+                  "https://w3id.org/vc/status-list/2021/v1"
+                ],
+                "credentialStatus": {
+                  "id": "https://didrp-test.esatus.com/credentials/statuslist/1#27934",
+                  "statusListCredential": "https://didrp-test.esatus.com/credentials/statuslist/1",
+                  "statusListIndex": 27934,
+                  "statusPurpose": "revocation",
+                  "type": "StatusList2021Entry"
+                },
+                "credentialSubject": {
+                  "entityName": "IMDA_active",
+                  "id": "did:ethr:0xca93690bb57eeab273c796a9309246bc0fb93649",
+                  "lei": "391200WCZAYD47QIKX37",
+                  "type": ["BasicDIDLEIMapping"]
+                },
+                "issuanceDate": "2024-05-02T13:10:52Z",
+                "expirationDate": "2029-12-03T12:19:52Z",
+                "issuer": "did:web:didrp-test.esatus.com",
+                "type": ["VerifiableCredential"],
+                "proof": {
+                  "type": "BbsBlsSignature2020",
+                  "created": "2024-05-02T11:18:20Z",
+                  "proofPurpose": "assertionMethod",
+                  "proofValue": "keNsrRgsK0t75l+GAqO/uwQPeQmyCxVQjU16t90hfIw1zHhqfoeISG8amKt+1zCcYUHlKfzccE4m7waZyoLEkBLFiK2g54Q2i+CdtYBgDdkUDsoULSBMcH1MwGHwdjfXpldFNFrHFx/IAvLVniyeMQ==",
+                  "verificationMethod": "did:web:didrp-test.esatus.com#keys-1"
+                }
+            }
+          }
+        }
+      },
+      "credentialSubject": {},
+      "credentialStatus": {
+          "type": "TradeTrustCredentialStatus",
+          "credentialStatusType": "REVOCATION_STORE",
+          "location": "<DOCUMENT_STORE_ADDRESS>"
+      },
+      "renderMethod": {
+          "type": "TradeTrustRenderMethod",
+          "renderMethodType": "EMBEDDED_RENDERER",
+          "name": "INVOICE",
+          "url": "https://generic-templates.tradetrust.io"
+      }
+    },
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "invoiceId": {
+          "type": "string",
+          "title": "Invoice ID"
+        },
+        "date": {
+          "type": "string",
+          "title": "Date"
+        },
+        "customerId": {
+          "type": "string",
+          "title": "Customer ID"
+        },
+        "terms": {
+          "type": "string",
+          "title": "Terms"
+        },
+        "billFrom": {
+          "type": "object",
+          "title": "Bill From",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Name"
+            },
+            "streetAddress": {
+              "type": "string",
+              "title": "Street Address"
+            },
+            "city": {
+              "type": "string",
+              "title": "City"
+            },
+            "postalCode": {
+              "type": "string",
+              "title": "Postal Code"
+            },
+            "phoneNumber": {
+              "type": "string",
+              "title": "Phone Number"
+            }
+          }
+        },
+        "billTo": {
+          "type": "object",
+          "title": "Bill To",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Name"
+            },
+            "email": {
+              "type": "string",
+              "title": "Email"
+            },
+            "company": {
+              "type": "object",
+              "title": "Bill To Company",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "title": "Name"
+                },
+                "streetAddress": {
+                  "type": "string",
+                  "title": "Street Address"
+                },
+                "city": {
+                  "type": "string",
+                  "title": "City"
+                },
+                "postalCode": {
+                  "type": "string",
+                  "title": "Postal Code"
+                },
+                "phoneNumber": {
+                  "type": "string",
+                  "title": "Phone Number"
+                }
+              }
+            }
+          }
+        },
+        "billableItems": {
+          "type": "array",
+          "title": "Billable Items",
+          "items": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": "string",
+                "title": "Description"
+              },
+              "quantity": {
+                "type": "string",
+                "title": "Quantity"
+              },
+              "unitPrice": {
+                "type": "string",
+                "title": "Unit Price"
+              },
+              "amount": {
+                "type": "string",
+                "title": "Amount"
+              }
+            }
+          }
+        },
+        "subtotal": {
+          "type": "string",
+          "title": "Subtotal"
+        },
+        "tax": {
+          "type": "string",
+          "title": "Tax (%)"
+        },
+        "taxTotal": {
+          "type": "string",
+          "title": "Tax Total"
+        },
+        "total": {
+          "type": "string",
+          "title": "Total"
+        }
+      }
+    },
+    "uiSchema": {
+      "date": {
+        "ui:widget": "date"
+      }
+    },
+    "extension": "tt"
+  }
+  
