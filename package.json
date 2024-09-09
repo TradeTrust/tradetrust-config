@@ -45,7 +45,7 @@
     "eslint": "^8.36.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
-    "netlify-cli": "^17.21.1",
+    "netlify-cli": "^17.35.0",
     "ts-jest": "^29.0.5",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2"
