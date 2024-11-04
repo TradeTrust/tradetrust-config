@@ -65,4 +65,13 @@ export const buildData = [
     dnsTransferableRecord: "example.tradetrust.io",
     dnsDid: "example.tradetrust.io",
   },
+  // Astron
+  {
+    chainId: "1338" as CHAIN_ID,
+    documentStoreAddress: "0x94FD21A026E29E0686583b8be71Cb28a8ca1A8d4",
+    tokenRegistryAddress: "0x0D5da59B93e8AC9b1781CE5694fbcE626586F4c9",
+    dnsVerifiable: "astronlayer2.bitfactory.cn",
+    dnsTransferableRecord: "astronlayer2.bitfactory.cn",
+    dnsDid: "astronlayer2.bitfactory.cn",
+  },
 ];

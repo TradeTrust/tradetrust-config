@@ -17,7 +17,8 @@
         "stabilitytestnet",
         "stability",
         "hederatestnet",
-        "hederamainnet"
+        "hederamainnet",
+	"astron"
       ]
     },
     "wallet": {
@@ -204,7 +205,8 @@
                       "20180427",
                       "101010",
                       "296",
-                      "295"
+                      "295",
+		      "1338"
                     ]
                   }
                 }
