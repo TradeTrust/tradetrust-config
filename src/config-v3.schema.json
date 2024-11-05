@@ -190,7 +190,7 @@
                 "properties": {
                   "chain": {
                     "type": "string",
-                    "enum": ["ETH", "MATIC", "XDC", "FREE", "HBAR"]
+                    "enum": ["ETH", "MATIC", "XDC", "FREE", "HBAR", "ASTRON"]
                   },
                   "chainId": {
                     "type": "string",
