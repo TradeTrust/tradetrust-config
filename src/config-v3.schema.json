@@ -17,7 +17,8 @@
         "stabilitytestnet",
         "stability",
         "hederatestnet",
-        "hederamainnet"
+        "hederamainnet",
+	"astron"
       ]
     },
     "wallet": {
@@ -189,7 +190,7 @@
                 "properties": {
                   "chain": {
                     "type": "string",
-                    "enum": ["ETH", "MATIC", "XDC", "FREE", "HBAR"]
+                    "enum": ["ETH", "MATIC", "XDC", "FREE", "HBAR", "ASTRON"]
                   },
                   "chainId": {
                     "type": "string",
@@ -204,7 +205,8 @@
                       "20180427",
                       "101010",
                       "296",
-                      "295"
+                      "295",
+		      "1338"
                     ]
                   }
                 }
