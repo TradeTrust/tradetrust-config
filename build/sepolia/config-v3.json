@@ -33,7 +33,7 @@
           "proof": {
             "type": "OpenAttestationProofMethod",
             "method": "TOKEN_REGISTRY",
-            "value": "0x142Ca30e3b78A840a82192529cA047ED759a6F7e",
+            "value": "0x8280a08a3D6C8567e5Ad867F3c4d36F286767606",
             "revocation": {
               "type": "NONE"
             }

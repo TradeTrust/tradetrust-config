@@ -21,7 +21,7 @@
         "issuers": [
           {
             "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0x71D28767662cB233F887aD2Bb65d048d760bA694",
+            "tokenRegistry": "0x3652EfBc80aCE560844AFC932D2bf8b452A96c6d",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "example.tradetrust.io"
@@ -251,7 +251,7 @@
         "issuers": [
           {
             "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0x71D28767662cB233F887aD2Bb65d048d760bA694",
+            "tokenRegistry": "0x3652EfBc80aCE560844AFC932D2bf8b452A96c6d",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "example.tradetrust.io"
@@ -1447,7 +1447,7 @@
         "issuers": [
           {
             "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0x71D28767662cB233F887aD2Bb65d048d760bA694",
+            "tokenRegistry": "0x3652EfBc80aCE560844AFC932D2bf8b452A96c6d",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "example.tradetrust.io"
