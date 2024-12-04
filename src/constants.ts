@@ -47,15 +47,6 @@ export const buildData = [
     dnsTransferableRecord: "example.com",
     dnsDid: "example.com",
   },
-  // Hedera Testnet
-  {
-    chainId: "296" as CHAIN_ID,
-    documentStoreAddress: "0x93092C2B449712281008112870063fF439367C00",
-    tokenRegistryAddress: "",
-    dnsVerifiable: "example.tradetrust.io",
-    dnsTransferableRecord: "example.tradetrust.io",
-    dnsDid: "example.tradetrust.io",
-  },
   // Amoy
   {
     chainId: "80002" as CHAIN_ID,
