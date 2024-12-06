@@ -47,20 +47,20 @@ export const buildData = [
     dnsTransferableRecord: "example.com",
     dnsDid: "example.com",
   },
-  // Hedera Testnet
-  {
-    chainId: "296" as CHAIN_ID,
-    documentStoreAddress: "0x93092C2B449712281008112870063fF439367C00",
-    tokenRegistryAddress: "0xA594f6e10564e87888425c7CC3910FE1c800aB0B",
-    dnsVerifiable: "example.tradetrust.io",
-    dnsTransferableRecord: "example.tradetrust.io",
-    dnsDid: "example.tradetrust.io",
-  },
   // Amoy
   {
     chainId: "80002" as CHAIN_ID,
     documentStoreAddress: "0x93092C2B449712281008112870063fF439367C00",
     tokenRegistryAddress: "0x71D28767662cB233F887aD2Bb65d048d760bA694",
+    dnsVerifiable: "example.tradetrust.io",
+    dnsTransferableRecord: "example.tradetrust.io",
+    dnsDid: "example.tradetrust.io",
+  },
+  // Astron
+  {
+    chainId: "1338" as CHAIN_ID,
+    documentStoreAddress: "0xA594f6e10564e87888425c7CC3910FE1c800aB0B",
+    tokenRegistryAddress: "0xF717d93C751F1835078B513275B14121798C7740",
     dnsVerifiable: "example.tradetrust.io",
     dnsTransferableRecord: "example.tradetrust.io",
     dnsDid: "example.tradetrust.io",
