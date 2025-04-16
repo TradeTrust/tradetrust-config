@@ -16,7 +16,8 @@
         "xdcapothem",
         "stabilitytestnet",
         "stability",
-        "astron"
+        "astron",
+        "astrontestnet"
       ]
     },
     "wallet": {
@@ -202,7 +203,8 @@
                       "51",
                       "20180427",
                       "101010",
-                      "1338"
+                      "1338",
+                      "21002"
                     ]
                   }
                 }

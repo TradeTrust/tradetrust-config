@@ -60,6 +60,7 @@ const writeSamples = () => {
       case CHAIN_ID.stabilitytestnet:
       case CHAIN_ID.stability:
       case CHAIN_ID.astron:
+      case CHAIN_ID.astrontestnet:
         wallet = walletSample;
         break;
     }
