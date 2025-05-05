@@ -6,7 +6,7 @@ This repo:
 
 - Aims to synchronise all the forms used in TradeTrust.
 - Generates various config files with inputted `network`, `addresses`, `wallet`. Wallets used are testnets only!
-- Is only as relevent as [TradeTrust creator](https://creator.tradetrust.io). If one day TradeTrust creator is obsolete, this should cease too.
+- Is only as relevant as [TradeTrust creator](https://creator.tradetrust.io). If one day TradeTrust creator is obsolete, this should cease too.
 
 ## ✅ Latest config files
 
