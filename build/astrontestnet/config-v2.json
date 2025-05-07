@@ -21,7 +21,7 @@
         "issuers": [
           {
             "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0xb1Bf514b3893357813F366282E887eE221D5C2dA",
+            "tokenRegistry": "0x57d6E7F04939445f5Ef6cAcDBcCe66bef507e31f",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "dev-astronlayer2.bitfactory.cn"
@@ -39,10 +39,7 @@
       "schema": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "blNumber",
-          "scac"
-        ],
+        "required": ["blNumber", "scac"],
         "properties": {
           "blNumber": {
             "type": "string",
@@ -251,7 +248,7 @@
         "issuers": [
           {
             "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0xb1Bf514b3893357813F366282E887eE221D5C2dA",
+            "tokenRegistry": "0x57d6E7F04939445f5Ef6cAcDBcCe66bef507e31f",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "dev-astronlayer2.bitfactory.cn"
@@ -269,10 +266,7 @@
       "schema": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "blNumber",
-          "scac"
-        ],
+        "required": ["blNumber", "scac"],
         "properties": {
           "blNumber": {
             "type": "string",
@@ -850,9 +844,7 @@
       "schema": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "documentName"
-        ],
+        "required": ["documentName"],
         "properties": {
           "documentName": {
             "type": "string",
@@ -1447,7 +1439,7 @@
         "issuers": [
           {
             "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0xb1Bf514b3893357813F366282E887eE221D5C2dA",
+            "tokenRegistry": "0x57d6E7F04939445f5Ef6cAcDBcCe66bef507e31f",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "dev-astronlayer2.bitfactory.cn"
