@@ -53,6 +53,9 @@ describe("dns txt-records", () => {
       const isFound = answers.some((answer: { data: answerData }) =>
         hasDnsTxtAddress(answer.data, chainId, documentStoreAddress)
       );
+
+      if (chainId == "21002")
+        console.log(dnsVerifiable, chainId, documentStoreAddress, answers);
       found.push(isFound);
     }
 

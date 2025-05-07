@@ -21,7 +21,7 @@
         "issuers": [
           {
             "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0x57d6E7F04939445f5Ef6cAcDBcCe66bef507e31f",
+            "tokenRegistry": "0xb1Bf514b3893357813F366282E887eE221D5C2dA",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "dev-astronlayer2.bitfactory.cn"
@@ -248,7 +248,7 @@
         "issuers": [
           {
             "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0x57d6E7F04939445f5Ef6cAcDBcCe66bef507e31f",
+            "tokenRegistry": "0xb1Bf514b3893357813F366282E887eE221D5C2dA",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "dev-astronlayer2.bitfactory.cn"
@@ -378,7 +378,7 @@
         "issuers": [
           {
             "name": "Demo Issuer",
-            "documentStore": "0xdAEe89A37fEEBCBFAc94aBA63Fb163808dAc38Fb",
+            "documentStore": "0xa1fCAE62b69D85BfBb5B447f038123A1e4d8f6eC",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "dev-astronlayer2.bitfactory.cn"
@@ -826,7 +826,7 @@
         "issuers": [
           {
             "name": "Demo Issuer",
-            "documentStore": "0xdAEe89A37fEEBCBFAc94aBA63Fb163808dAc38Fb",
+            "documentStore": "0xa1fCAE62b69D85BfBb5B447f038123A1e4d8f6eC",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "dev-astronlayer2.bitfactory.cn"
@@ -1020,7 +1020,7 @@
         "issuers": [
           {
             "name": "Demo Issuer",
-            "documentStore": "0xdAEe89A37fEEBCBFAc94aBA63Fb163808dAc38Fb",
+            "documentStore": "0xa1fCAE62b69D85BfBb5B447f038123A1e4d8f6eC",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "dev-astronlayer2.bitfactory.cn"
@@ -1276,7 +1276,7 @@
         "issuers": [
           {
             "name": "Demo Issuer",
-            "documentStore": "0xdAEe89A37fEEBCBFAc94aBA63Fb163808dAc38Fb",
+            "documentStore": "0xa1fCAE62b69D85BfBb5B447f038123A1e4d8f6eC",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "dev-astronlayer2.bitfactory.cn"
@@ -1439,7 +1439,7 @@
         "issuers": [
           {
             "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0x57d6E7F04939445f5Ef6cAcDBcCe66bef507e31f",
+            "tokenRegistry": "0xb1Bf514b3893357813F366282E887eE221D5C2dA",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "dev-astronlayer2.bitfactory.cn"
