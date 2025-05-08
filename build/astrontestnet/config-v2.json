@@ -32,14 +32,17 @@
           }
         ],
         "network": {
-          "chain": "ASTRONTESTNET",
+          "chain": "ASTRON",
           "chainId": "21002"
         }
       },
       "schema": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["blNumber", "scac"],
+        "required": [
+          "blNumber",
+          "scac"
+        ],
         "properties": {
           "blNumber": {
             "type": "string",
@@ -259,14 +262,17 @@
           }
         ],
         "network": {
-          "chain": "ASTRONTESTNET",
+          "chain": "ASTRON",
           "chainId": "21002"
         }
       },
       "schema": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["blNumber", "scac"],
+        "required": [
+          "blNumber",
+          "scac"
+        ],
         "properties": {
           "blNumber": {
             "type": "string",
@@ -389,7 +395,7 @@
           }
         ],
         "network": {
-          "chain": "ASTRONTESTNET",
+          "chain": "ASTRON",
           "chainId": "21002"
         }
       },
@@ -837,14 +843,16 @@
           }
         ],
         "network": {
-          "chain": "ASTRONTESTNET",
+          "chain": "ASTRON",
           "chainId": "21002"
         }
       },
       "schema": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["documentName"],
+        "required": [
+          "documentName"
+        ],
         "properties": {
           "documentName": {
             "type": "string",
@@ -1031,7 +1039,7 @@
           }
         ],
         "network": {
-          "chain": "ASTRONTESTNET",
+          "chain": "ASTRON",
           "chainId": "21002"
         }
       },
@@ -1124,7 +1132,7 @@
           }
         ],
         "network": {
-          "chain": "ASTRONTESTNET",
+          "chain": "ASTRON",
           "chainId": "21002"
         }
       },
@@ -1287,7 +1295,7 @@
           }
         ],
         "network": {
-          "chain": "ASTRONTESTNET",
+          "chain": "ASTRON",
           "chainId": "21002"
         }
       },
@@ -1450,7 +1458,7 @@
           }
         ],
         "network": {
-          "chain": "ASTRONTESTNET",
+          "chain": "ASTRON",
           "chainId": "21002"
         }
       },
