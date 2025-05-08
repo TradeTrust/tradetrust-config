@@ -19,10 +19,7 @@
           "https://schemata.openattestation.com/com/openattestation/1.0/OpenAttestation.v3.json",
           "https://schemata.openattestation.com/io/tradetrust/bill-of-lading/1.0/bill-of-lading-context.json"
         ],
-        "type": [
-          "VerifiableCredential",
-          "OpenAttestationCredential"
-        ],
+        "type": ["VerifiableCredential", "OpenAttestationCredential"],
         "issuanceDate": "2010-01-01T19:23:24Z",
         "openAttestationMetadata": {
           "template": {
@@ -40,7 +37,7 @@
           },
           "identityProof": {
             "type": "DNS-TXT",
-            "identifier": "dev-astronlayer2.bitfactory.cn"
+            "identifier": "example.tradetrust.io"
           }
         },
         "credentialSubject": {},
@@ -57,10 +54,7 @@
       "schema": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "blNumber",
-          "scac"
-        ],
+        "required": ["blNumber", "scac"],
         "properties": {
           "blNumber": {
             "type": "string",
@@ -164,10 +158,7 @@
           "https://schemata.openattestation.com/io/tradetrust/certificate-of-origin/1.0/certificate-of-origin-context.json",
           "https://schemata.openattestation.com/com/openattestation/1.0/OpenAttestation.v3.json"
         ],
-        "type": [
-          "VerifiableCredential",
-          "OpenAttestationCredential"
-        ],
+        "type": ["VerifiableCredential", "OpenAttestationCredential"],
         "issuanceDate": "2010-01-01T19:23:24Z",
         "openAttestationMetadata": {
           "template": {
@@ -185,7 +176,7 @@
           },
           "identityProof": {
             "type": "DNS-TXT",
-            "identifier": "dev-astronlayer2.bitfactory.cn"
+            "identifier": "example.tradetrust.io"
           }
         },
         "credentialSubject": {},
@@ -636,10 +627,7 @@
           "https://schemata.openattestation.com/io/tradetrust/cover-letter/1.0/cover-letter-context.json",
           "https://schemata.openattestation.com/com/openattestation/1.0/OpenAttestation.v3.json"
         ],
-        "type": [
-          "VerifiableCredential",
-          "OpenAttestationCredential"
-        ],
+        "type": ["VerifiableCredential", "OpenAttestationCredential"],
         "issuanceDate": "2010-01-01T19:23:24Z",
         "openAttestationMetadata": {
           "template": {
@@ -657,7 +645,7 @@
           },
           "identityProof": {
             "type": "DNS-TXT",
-            "identifier": "dev-astronlayer2.bitfactory.cn"
+            "identifier": "example.tradetrust.io"
           }
         },
         "credentialSubject": {},
@@ -746,10 +734,7 @@
           "https://schemata.openattestation.com/io/tradetrust/Invoice/1.0/invoice-context.json",
           "https://schemata.openattestation.com/com/openattestation/1.0/OpenAttestation.v3.json"
         ],
-        "type": [
-          "VerifiableCredential",
-          "OpenAttestationCredential"
-        ],
+        "type": ["VerifiableCredential", "OpenAttestationCredential"],
         "issuanceDate": "2010-01-01T19:23:24Z",
         "openAttestationMetadata": {
           "template": {
@@ -767,7 +752,7 @@
           },
           "identityProof": {
             "type": "DNS-DID",
-            "identifier": "dev-astronlayer2.bitfactory.cn"
+            "identifier": "example.tradetrust.io"
           }
         },
         "credentialSubject": {},
@@ -927,10 +912,7 @@
           "https://schemata.openattestation.com/io/tradetrust/Invoice/1.0/invoice-context.json",
           "https://schemata.openattestation.com/com/openattestation/1.0/OpenAttestation.v3.json"
         ],
-        "type": [
-          "VerifiableCredential",
-          "OpenAttestationCredential"
-        ],
+        "type": ["VerifiableCredential", "OpenAttestationCredential"],
         "issuanceDate": "2010-01-01T19:23:24Z",
         "openAttestationMetadata": {
           "template": {
@@ -948,7 +930,7 @@
           },
           "identityProof": {
             "type": "DNS-TXT",
-            "identifier": "dev-astronlayer2.bitfactory.cn"
+            "identifier": "example.tradetrust.io"
           }
         },
         "credentialSubject": {},
