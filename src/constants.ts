@@ -65,4 +65,13 @@ export const buildData = [
     dnsTransferableRecord: "example.tradetrust.io",
     dnsDid: "example.tradetrust.io",
   },
+  // AstronTestnet
+  {
+    chainId: "21002" as CHAIN_ID,
+    documentStoreAddress: "0xa1fCAE62b69D85BfBb5B447f038123A1e4d8f6eC",
+    tokenRegistryAddress: "0x0539C46C46AC548fB4e56df6C7784685a1fcb3dF",
+    dnsVerifiable: "example.tradetrust.io",
+    dnsTransferableRecord: "example.tradetrust.io",
+    dnsDid: "example.tradetrust.io",
+  },
 ];
