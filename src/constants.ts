@@ -68,10 +68,10 @@ export const buildData = [
   // AstronTestnet
   {
     chainId: "21002" as CHAIN_ID,
-    documentStoreAddress: "0xdAEe89A37fEEBCBFAc94aBA63Fb163808dAc38Fb",
-    tokenRegistryAddress: "0xb1Bf514b3893357813F366282E887eE221D5C2dA",
-    dnsVerifiable: "dev-astronlayer2.bitfactory.cn",
-    dnsTransferableRecord: "dev-astronlayer2.bitfactory.cn",
-    dnsDid: "dev-astronlayer2.bitfactory.cn",
+    documentStoreAddress: "0xa1fCAE62b69D85BfBb5B447f038123A1e4d8f6eC",
+    tokenRegistryAddress: "0x57d6E7F04939445f5Ef6cAcDBcCe66bef507e31f",
+    dnsVerifiable: "example.tradetrust.io",
+    dnsTransferableRecord: "example.tradetrust.io",
+    dnsDid: "example.tradetrust.io",
   },
 ];

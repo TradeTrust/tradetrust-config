@@ -53,6 +53,7 @@ describe("dns txt-records", () => {
       const isFound = answers.some((answer: { data: answerData }) =>
         hasDnsTxtAddress(answer.data, chainId, documentStoreAddress)
       );
+
       found.push(isFound);
     }
 
