@@ -68,8 +68,8 @@ export const buildData = [
   // AstronTestnet
   {
     chainId: "21002" as CHAIN_ID,
-    documentStoreAddress: "0xa1fCAE62b69D85BfBb5B447f038123A1e4d8f6eC",
-    tokenRegistryAddress: "0x0539C46C46AC548fB4e56df6C7784685a1fcb3dF",
+    documentStoreAddress: "0x4B50C321ef50A304b0A6DDd668D0527EbECb2b04",
+    tokenRegistryAddress: "0x2EEE8e2ED87ec169FffDBb2A32A2b59cabBf9Daf",
     dnsVerifiable: "example.tradetrust.io",
     dnsTransferableRecord: "example.tradetrust.io",
     dnsDid: "example.tradetrust.io",
