@@ -21,7 +21,7 @@
         "issuers": [
           {
             "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0x0539C46C46AC548fB4e56df6C7784685a1fcb3dF",
+            "tokenRegistry": "0x2EEE8e2ED87ec169FffDBb2A32A2b59cabBf9Daf",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "example.tradetrust.io"
@@ -39,10 +39,7 @@
       "schema": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "blNumber",
-          "scac"
-        ],
+        "required": ["blNumber", "scac"],
         "properties": {
           "blNumber": {
             "type": "string",
@@ -251,7 +248,7 @@
         "issuers": [
           {
             "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0x0539C46C46AC548fB4e56df6C7784685a1fcb3dF",
+            "tokenRegistry": "0x2EEE8e2ED87ec169FffDBb2A32A2b59cabBf9Daf",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "example.tradetrust.io"
@@ -269,10 +266,7 @@
       "schema": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "blNumber",
-          "scac"
-        ],
+        "required": ["blNumber", "scac"],
         "properties": {
           "blNumber": {
             "type": "string",
@@ -384,7 +378,7 @@
         "issuers": [
           {
             "name": "Demo Issuer",
-            "documentStore": "0xa1fCAE62b69D85BfBb5B447f038123A1e4d8f6eC",
+            "documentStore": "0x4B50C321ef50A304b0A6DDd668D0527EbECb2b04",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "example.tradetrust.io"
@@ -832,7 +826,7 @@
         "issuers": [
           {
             "name": "Demo Issuer",
-            "documentStore": "0xa1fCAE62b69D85BfBb5B447f038123A1e4d8f6eC",
+            "documentStore": "0x4B50C321ef50A304b0A6DDd668D0527EbECb2b04",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "example.tradetrust.io"
@@ -850,9 +844,7 @@
       "schema": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "documentName"
-        ],
+        "required": ["documentName"],
         "properties": {
           "documentName": {
             "type": "string",
@@ -1028,7 +1020,7 @@
         "issuers": [
           {
             "name": "Demo Issuer",
-            "documentStore": "0xa1fCAE62b69D85BfBb5B447f038123A1e4d8f6eC",
+            "documentStore": "0x4B50C321ef50A304b0A6DDd668D0527EbECb2b04",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "example.tradetrust.io"
@@ -1284,7 +1276,7 @@
         "issuers": [
           {
             "name": "Demo Issuer",
-            "documentStore": "0xa1fCAE62b69D85BfBb5B447f038123A1e4d8f6eC",
+            "documentStore": "0x4B50C321ef50A304b0A6DDd668D0527EbECb2b04",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "example.tradetrust.io"
@@ -1447,7 +1439,7 @@
         "issuers": [
           {
             "name": "DEMO TOKEN REGISTRY",
-            "tokenRegistry": "0x0539C46C46AC548fB4e56df6C7784685a1fcb3dF",
+            "tokenRegistry": "0x2EEE8e2ED87ec169FffDBb2A32A2b59cabBf9Daf",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "example.tradetrust.io"
