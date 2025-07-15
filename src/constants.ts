@@ -59,11 +59,11 @@ export const buildData = [
   // Astron
   {
     chainId: "1338" as CHAIN_ID,
-    documentStoreAddress: "0xA594f6e10564e87888425c7CC3910FE1c800aB0B",
-    tokenRegistryAddress: "0xF717d93C751F1835078B513275B14121798C7740",
-    dnsVerifiable: "example.tradetrust.io",
-    dnsTransferableRecord: "example.tradetrust.io",
-    dnsDid: "example.tradetrust.io",
+    documentStoreAddress: "0xc98d993271a997384889dd39c14cec0c1e0206c2",
+    tokenRegistryAddress: "0x18bc0127Ae33389cD96593a1a612774fD14c0737",
+    dnsVerifiable: "astronlayer2.bitfactory.cn",
+    dnsTransferableRecord: "astronlayer2.bitfactory.cn",
+    dnsDid: "astronlayer2.bitfactory.cn",
   },
   // AstronTestnet
   {
